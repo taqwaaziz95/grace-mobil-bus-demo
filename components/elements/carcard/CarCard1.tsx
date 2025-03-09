@@ -1,6 +1,18 @@
+import BookingModal from "@/components/modal/BookingModal";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function CarCard1({ car }: any) {
+	const [isModalOpen, setIsModalOpen] = useState(false);
+
+	const handleOpenModal = () => {
+		setIsModalOpen(true);
+	};
+
+	const handleCloseModal = () => {
+		setIsModalOpen(false);
+	};
+
 	return (
 		<>
 			<div className="card-journey-small background-card hover-up">
@@ -39,7 +51,6 @@ export default function CarCard1({ car }: any) {
 							</p>
 						</div>
 						<div className="card-facitlities">
-							{/* <p className="card-miles text-md-medium">25,100 miles</p> */}
 							<p className="card-gear text-md-medium">Automatic</p>
 							<p className="card-fuel text-md-medium">Diesel</p>
 							<p className="card-seat text-md-medium">7 seats</p>
@@ -50,14 +61,15 @@ export default function CarCard1({ car }: any) {
 								<p className="text-md-medium neutral-500">/ Trip</p>
 							</div>
 							<div className="card-button">
-								<Link className="btn btn-gray" href="/cars-details-1">
+								<button className="btn btn-gray" onClick={handleOpenModal}>
 									Book Now
-								</Link>
+								</button>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			{isModalOpen && <BookingModal car={car} onClose={handleCloseModal} />}
 		</>
 	);
 }

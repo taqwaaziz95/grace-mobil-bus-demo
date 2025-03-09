@@ -3,8 +3,17 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
 import { swiperGroup1 } from "@/util/swiperOptions";
 import HeroSearch from "../elements/HeroSearch";
+import { useEffect, useState } from "react";
 
 export default function Hero2() {
+	const [user, setUser] = useState<string | null>(null);
+	useEffect(() => {
+		// Check if user is logged in
+		const loggedInUser = localStorage.getItem("username");
+		if (loggedInUser) {
+			setUser(loggedInUser);
+		}
+	}, []);
 	return (
 		<>
 			<section className="section-box box-banner-home7 background-body">
@@ -71,16 +80,23 @@ export default function Hero2() {
 										All Buses
 									</Link>
 								</div>
-								<div className="right-top-search d-none d-md-flex">
+								{/* <div className="right-top-search d-none d-md-flex">
 									<Link
 										className="text-sm-medium need-some-help"
 										href="/contact"
 									>
 										Need help?
 									</Link>
-								</div>
+								</div> */}
 							</div>
-							<HeroSearch />
+							{user ? (
+								<>
+									<HeroSearch />
+									<label>Saya dah login</label>
+								</>
+							) : (
+								<HeroSearch />
+							)}
 						</div>
 						<div className="align-items-center justify-content-between pt-40 d-none d-lg-flex">
 							<span className="text-lg-medium color-white">

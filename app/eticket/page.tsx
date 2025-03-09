@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import jsPDF from "jspdf";
-import "./ETicketPage.css";
+import "./eticket.css";
 
 const ETicketPage: React.FC = () => {
 	const router = useRouter();

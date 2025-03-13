@@ -36,10 +36,10 @@ const BookingModal: React.FC<BookingModalProps> = ({ car, onClose }) => {
 
 	const renderSeats = () => {
 		const seats = [];
-		for (let i = 1; i <= 30; i++) {
+		for (let i = 1; i <= 5; i++) {
 			seats.push(
 				<div key={`row-${i}`} className="seat-row">
-					{["a", "b"].map((suffix) => {
+					{["a", "b", "c"].map((suffix) => {
 						const seat = `${i}${suffix}`;
 						const isSelected = selectedSeats.includes(seat);
 						return (
@@ -52,10 +52,39 @@ const BookingModal: React.FC<BookingModalProps> = ({ car, onClose }) => {
 							</div>
 						);
 					})}
+					<div className="seat-spacer"></div>
+					{["d", "e"].map((suffix) => {
+						const seat = `${i}${suffix}`;
+						const isSelected = selectedSeats.includes(seat);
+						return (
+							<>
+								<div
+									key={seat}
+									className={`seat ${isSelected ? "selected" : ""}`}
+									onClick={() => handleSeatClick(seat)}
+								>
+									{seat}
+								</div>
+							</>
+						);
+					})}
 				</div>
 			);
 		}
 		return seats;
+	};
+
+	const renderTimeOptions = () => {
+		const times = [];
+		for (let hour = 5; hour <= 21; hour++) {
+			const timeString = `${hour.toString().padStart(2, "0")}:00`;
+			times.push(
+				<option key={timeString} value={timeString}>
+					{timeString}
+				</option>
+			);
+		}
+		return times;
 	};
 
 	return (
@@ -64,33 +93,56 @@ const BookingModal: React.FC<BookingModalProps> = ({ car, onClose }) => {
 				<label>
 					Book <strong>{car.name}</strong>
 				</label>
+
 				<div className="form-group">
 					<label>Time</label>
-					<input
-						type="time"
-						value={time}
-						onChange={(e) => setTime(e.target.value)}
-					/>
+					<select value={time} onChange={(e) => setTime(e.target.value)}>
+						<option value="" disabled>
+							Select a time
+						</option>
+						{renderTimeOptions()}
+					</select>
 				</div>
-				<div className="form-group">
-					<label>Number of Passengers</label>
-					<input
-						type="number"
-						min="1"
-						max="60"
-						value={passengerCount}
-						onChange={(e) => {
-							setPassengerCount(parseInt(e.target.value));
-							setSelectedSeats([]);
-						}}
-					/>
+				<div className="form-row">
+					<div className="form-group">
+						<label>Destination</label>
+						<input type="text" value={car.location} disabled />
+					</div>
+
+					<div className="form-group">
+						<label>Number of Passengers</label>
+						<input
+							type="number"
+							min="1"
+							max="60"
+							value={passengerCount}
+							onChange={(e) => {
+								setPassengerCount(parseInt(e.target.value));
+								setSelectedSeats([]);
+							}}
+						/>
+					</div>
 				</div>
 				<div className="form-group">
 					<label>Select Seats</label>
 					<div className="seats-container">{renderSeats()}</div>
 				</div>
-				<button onClick={handleSubmit}>Confirm Booking</button>
-				<button onClick={onClose}>Close</button>
+				<div style={{ display: "flex", alignSelf: "flex-end" }}>
+					<div className="flex justify-end space-x-2 mt-4">
+						<button
+							onClick={onClose}
+							className="bg-black text-white font-bold py-2 px-4  rounded"
+						>
+							Close
+						</button>
+						<button
+							onClick={handleSubmit}
+							className="bg-black text-white font-bold py-2 px-4 rounded"
+						>
+							Confirm Booking
+						</button>
+					</div>
+				</div>
 			</div>
 		</div>
 	);

@@ -15,7 +15,7 @@ export default function Footer1() {
 							</div>
 							<div className="col-lg-7 col-md-6 text-center text-md-end mt-md-0 mt-4">
 								<div className="d-flex align-items-center justify-content-center justify-content-md-end">
-									<form className="form-newsletter wow fadeInUp" action="#">
+									<form className="form-newsletter wow " action="#">
 										<input
 											className="form-control"
 											type="text"
@@ -39,11 +39,15 @@ export default function Footer1() {
 										className="light-mode"
 										alt="Grace Mobil"
 										src="/assets/imgs/template/grace-logo.png"
+										width={300}
+										height={100}
 									/>
 									<img
 										className="dark-mode"
 										alt="Grace Mobil"
 										src="/assets/imgs/template/grace-logo.png"
+										width={300}
+										height={100}
 									/>
 								</Link>
 							</div>

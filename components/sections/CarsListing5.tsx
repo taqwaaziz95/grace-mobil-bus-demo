@@ -7,17 +7,14 @@ export default function CarsListing5() {
 				<div className="container">
 					<div className="row align-items-end mb-10">
 						<div className="col-md-8">
-							<h3 className="neutral-1000 wow fadeInUp">Featured Listings</h3>
-							<p className="text-lg-medium neutral-500 wow fadeInUp">
+							<h3 className="neutral-1000 wow ">Featured Listings</h3>
+							<p className="text-lg-medium neutral-500 wow ">
 								Find the perfect ride for any occasion
 							</p>
 						</div>
 						<div className="col-md-4 mt-md-0 mt-4">
 							<div className="d-flex justify-content-end">
-								<Link
-									className="btn btn-primary wow fadeInUp"
-									href="/cars-list-1"
-								>
+								<Link className="btn btn-primary wow " href="/cars-list-1">
 									View More
 									<svg
 										width={16}

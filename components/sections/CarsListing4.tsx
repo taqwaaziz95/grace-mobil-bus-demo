@@ -35,7 +35,7 @@ export default function CarsListing4() {
 							</div>
 						</div>
 					</div>
-					<div className="row pt-30 wow fadeInUp">
+					<div className="row pt-30 wow ">
 						<div className="col-lg-3 col-md-6">
 							<div className="card-journey-small background-card hover-up">
 								<div className="card-image">

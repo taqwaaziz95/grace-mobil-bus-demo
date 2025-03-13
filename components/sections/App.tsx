@@ -8,17 +8,17 @@ export default function App() {
 					<div className="row align-items-center py-5">
 						<div className="col-lg-5">
 							<h4 className=" wow fadeInDown">Grace Mobil App is Available</h4>
-							<p className="text-md-medium pb-3 wow fadeInUp">
+							<p className="text-md-medium pb-3 wow ">
 								Manage all your bus bookings on the go with the Grace Mobil app
 							</p>
 							<div className="download-apps mt-0">
-								<Link className=" wow fadeInUp" href="#">
+								<Link className=" wow " href="#">
 									<img
 										src="/assets/imgs/template/googleplay.png"
 										alt="Grace Mobil"
 									/>
 								</Link>
-								<Link className=" wow fadeInUp" data-wow-delay="0.2s" href="#">
+								<Link className=" wow " data-wow-delay="0.2s" href="#">
 									<img
 										src="/assets/imgs/template/appstore.png"
 										alt="Grace Mobil"

@@ -1,10 +1,14 @@
 "use client";
-import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import MyDatePicker from "./MyDatePicker";
+import Link from "next/link";
 
 export default function HeroSearch() {
+	const [pickUpLocation, setPickUpLocation] = useState("Central Park, Jakarta");
+	const [dropOffLocation, setDropOffLocation] = useState("Bandung, Indonesia");
+	const [passengerType, setPassengerType] = useState("Warga");
+
 	return (
 		<>
 			<div className="box-bottom-search background-card">
@@ -16,59 +20,59 @@ export default function HeroSearch() {
 							className="btn btn-secondary dropdown-toggle btn-dropdown-search location-search"
 							aria-expanded="false"
 						>
-							Central Park, Jakarta
+							{pickUpLocation}
 						</Dropdown.Toggle>
 						<Dropdown.Menu as="ul" className="dropdown-menu">
-							<li>
-								<Link className="dropdown-item" href="#">
-									Jakarta Barat, Indonesia
-								</Link>
-							</li>
-							<li>
-								<Link className="dropdown-item" href="#">
-									Central Park, Jakarta
-								</Link>
-							</li>
-							<li>
-								<Link className="dropdown-item" href="#">
-									Jakarta Selatan, Indonesia
-								</Link>
-							</li>
-							<li>
-								<Link className="dropdown-item" href="#">
-									Pondok Indah, Jakarta
-								</Link>
-							</li>
-							<li>
-								<Link className="dropdown-item" href="#">
-									Kemang, Jakarta
-								</Link>
-							</li>
-							<li>
-								<Link className="dropdown-item" href="#">
-									Menteng, Jakarta
-								</Link>
-							</li>
-							<li>
-								<Link className="dropdown-item" href="#">
-									Kebayoran Baru, Jakarta
-								</Link>
-							</li>
-							<li>
-								<Link className="dropdown-item" href="#">
-									Tebet, Jakarta
-								</Link>
-							</li>
-							<li>
-								<Link className="dropdown-item" href="#">
-									Kelapa Gading, Jakarta
-								</Link>
-							</li>
-							<li>
-								<Link className="dropdown-item" href="#">
-									Sudirman, Jakarta
-								</Link>
-							</li>
+							<Dropdown.Item
+								onClick={() => setPickUpLocation("Jakarta Barat, Indonesia")}
+							>
+								Jakarta Barat, Indonesia
+							</Dropdown.Item>
+							<Dropdown.Item
+								onClick={() => setPickUpLocation("Central Park, Jakarta")}
+							>
+								Central Park, Jakarta
+							</Dropdown.Item>
+							<Dropdown.Item
+								onClick={() => setPickUpLocation("Jakarta Selatan, Indonesia")}
+							>
+								Jakarta Selatan, Indonesia
+							</Dropdown.Item>
+							<Dropdown.Item
+								onClick={() => setPickUpLocation("Pondok Indah, Jakarta")}
+							>
+								Pondok Indah, Jakarta
+							</Dropdown.Item>
+							<Dropdown.Item
+								onClick={() => setPickUpLocation("Kemang, Jakarta")}
+							>
+								Kemang, Jakarta
+							</Dropdown.Item>
+							<Dropdown.Item
+								onClick={() => setPickUpLocation("Menteng, Jakarta")}
+							>
+								Menteng, Jakarta
+							</Dropdown.Item>
+							<Dropdown.Item
+								onClick={() => setPickUpLocation("Kebayoran Baru, Jakarta")}
+							>
+								Kebayoran Baru, Jakarta
+							</Dropdown.Item>
+							<Dropdown.Item
+								onClick={() => setPickUpLocation("Tebet, Jakarta")}
+							>
+								Tebet, Jakarta
+							</Dropdown.Item>
+							<Dropdown.Item
+								onClick={() => setPickUpLocation("Kelapa Gading, Jakarta")}
+							>
+								Kelapa Gading, Jakarta
+							</Dropdown.Item>
+							<Dropdown.Item
+								onClick={() => setPickUpLocation("Sudirman, Jakarta")}
+							>
+								Sudirman, Jakarta
+							</Dropdown.Item>
 						</Dropdown.Menu>
 					</Dropdown>
 				</div>
@@ -79,90 +83,90 @@ export default function HeroSearch() {
 							as="div"
 							className="btn btn-secondary dropdown-toggle btn-dropdown-search location-search"
 						>
-							Bandung, Indonesia
+							{dropOffLocation}
 						</Dropdown.Toggle>
 						<Dropdown.Menu as="ul" className="dropdown-menu">
-							<li>
-								<Link className="dropdown-item" href="#">
-									Jakarta, Indonesia
-								</Link>
-							</li>
-							<li>
-								<Link className="dropdown-item" href="#">
-									Bali, Indonesia
-								</Link>
-							</li>
-							<li>
-								<Link className="dropdown-item" href="#">
-									Surabaya, Indonesia
-								</Link>
-							</li>
-							<li>
-								<Link className="dropdown-item" href="#">
-									Bandung, Indonesia
-								</Link>
-							</li>
-							<li>
-								<Link className="dropdown-item" href="#">
-									Medan, Indonesia
-								</Link>
-							</li>
-							<li>
-								<Link className="dropdown-item" href="#">
-									Yogyakarta, Indonesia
-								</Link>
-							</li>
-							<li>
-								<Link className="dropdown-item" href="#">
-									Semarang, Indonesia
-								</Link>
-							</li>
-							<li>
-								<Link className="dropdown-item" href="#">
-									Makassar, Indonesia
-								</Link>
-							</li>
-							<li>
-								<Link className="dropdown-item" href="#">
-									Palembang, Indonesia
-								</Link>
-							</li>
-							<li>
-								<Link className="dropdown-item" href="#">
-									Batam, Indonesia
-								</Link>
-							</li>
+							<Dropdown.Item
+								onClick={() => setDropOffLocation("Jakarta, Indonesia")}
+							>
+								Jakarta, Indonesia
+							</Dropdown.Item>
+							<Dropdown.Item
+								onClick={() => setDropOffLocation("Bali, Indonesia")}
+							>
+								Bali, Indonesia
+							</Dropdown.Item>
+							<Dropdown.Item
+								onClick={() => setDropOffLocation("Surabaya, Indonesia")}
+							>
+								Surabaya, Indonesia
+							</Dropdown.Item>
+							<Dropdown.Item
+								onClick={() => setDropOffLocation("Bandung, Indonesia")}
+							>
+								Bandung, Indonesia
+							</Dropdown.Item>
+							<Dropdown.Item
+								onClick={() => setDropOffLocation("Medan, Indonesia")}
+							>
+								Medan, Indonesia
+							</Dropdown.Item>
+							<Dropdown.Item
+								onClick={() => setDropOffLocation("Yogyakarta, Indonesia")}
+							>
+								Yogyakarta, Indonesia
+							</Dropdown.Item>
+							<Dropdown.Item
+								onClick={() => setDropOffLocation("Semarang, Indonesia")}
+							>
+								Semarang, Indonesia
+							</Dropdown.Item>
+							<Dropdown.Item
+								onClick={() => setDropOffLocation("Makassar, Indonesia")}
+							>
+								Makassar, Indonesia
+							</Dropdown.Item>
+							<Dropdown.Item
+								onClick={() => setDropOffLocation("Palembang, Indonesia")}
+							>
+								Palembang, Indonesia
+							</Dropdown.Item>
+							<Dropdown.Item
+								onClick={() => setDropOffLocation("Batam, Indonesia")}
+							>
+								Batam, Indonesia
+							</Dropdown.Item>
 						</Dropdown.Menu>
 					</Dropdown>
 				</div>
 				<div className="item-search item-search-3">
-					<label className="text-sm-bold neutral-500">
-						Tanggal Keberangkatan
-					</label>
+					<label className="text-sm-bold neutral-500">Berangkat</label>
+					<div className="box-calendar-date">
+						<MyDatePicker />
+					</div>
+				</div>
+				<div className="item-search item-search-3">
+					<label className="text-sm-bold neutral-500">Kembali</label>
 					<div className="box-calendar-date">
 						<MyDatePicker />
 					</div>
 				</div>
 				<div className="item-people-used">
-					<label className="text-sm-bold neutral-500">Tipe Penumpang</label>
+					<label className="text-sm-bold neutral-500">Penumpang</label>
 					<Dropdown className="dropdown">
 						<Dropdown.Toggle
 							as="div"
 							className="btn btn-secondary dropdown-toggle btn-dropdown-search location-search"
 						>
-							Warga
+							{passengerType}
 						</Dropdown.Toggle>
 						<Dropdown.Menu as="ul" className="dropdown-menu">
-							<li>
-								<Link className="dropdown-item" href="#">
-									Warga
-								</Link>
-							</li>
-							<li>
-								<Link className="dropdown-item" href="#">
-									Non Warga
-								</Link>
-							</li>
+							<Dropdown.Item onClick={() => setPassengerType("Warga")}>
+								Warga
+							</Dropdown.Item>
+							<Dropdown.Item onClick={() => setPassengerType("Non Warga")}>
+								Non Warga
+							</Dropdown.Item>
 						</Dropdown.Menu>
 					</Dropdown>
 				</div>

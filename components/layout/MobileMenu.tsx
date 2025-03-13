@@ -23,11 +23,15 @@ export default function MobileMenu({ isMobileMenu, handleMobileMenu }: any) {
 								className="light-mode"
 								alt="Carento"
 								src="/assets/imgs/template/grace-logo.png"
+								width={150}
+								height={50}
 							/>
 							<img
 								className="dark-mode"
 								alt="Carento"
 								src="/assets/imgs/template/grace-logo.png"
+								width={150}
+								height={50}
 							/>
 						</Link>
 						<div
@@ -40,7 +44,7 @@ export default function MobileMenu({ isMobileMenu, handleMobileMenu }: any) {
 							<div className="mobile-menu-wrap mobile-header-border">
 								<nav>
 									<ul className="mobile-menu font-heading">
-										<li
+										{/* <li
 											className={`has-children ${
 												isAccordion === 1 ? "active" : ""
 											}`}
@@ -243,9 +247,24 @@ export default function MobileMenu({ isMobileMenu, handleMobileMenu }: any) {
 													<Link href="/blog-details">News Details</Link>
 												</li>
 											</ul>
+										</li> */}
+										<li>
+											<Link href="/">Booking Shuttle</Link>
 										</li>
 										<li>
-											<Link href="/contact">Contact</Link>
+											<Link href="/">Check Posisi Mobil</Link>
+										</li>
+										<li>
+											<Link href="/">History Pembayaran</Link>
+										</li>
+										<li>
+											<Link href="/">Profile</Link>
+										</li>
+										<li>
+											<Link href="/">FAQ</Link>
+										</li>
+										<li style={{ color: "red" }}>
+											<Link href="/">Logout</Link>
 										</li>
 									</ul>
 								</nav>

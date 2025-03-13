@@ -18,28 +18,43 @@
 	max-width: 500px;
 }
 
-.seats-container {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 5px;
-}
-
 .seat-row {
 	display: flex;
-	gap: 5px;
+	align-items: center;
+	margin-bottom: 10px;
 }
 
 .seat {
 	width: 30px;
 	height: 30px;
-	border: 1px solid #ccc;
+	background-color: #ffffff;
+	margin: 5px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	cursor: pointer;
+	border: 1px solid #ccc;
 }
 
 .seat.selected {
-	background: green;
+	background-color: #4caf50;
 	color: white;
+}
+
+.seat-spacer {
+	width: 20px;
+}
+
+.form-row {
+	display: flex;
+	justify-content: space-between;
+}
+
+.form-group {
+	flex: 1;
+	margin-right: 10px;
+}
+
+.form-group:last-child {
+	margin-right: 0;
 }

@@ -5,6 +5,15 @@ import { useEffect, useState } from "react";
 import jsPDF from "jspdf";
 import "./eticket.css";
 
+const generateRandomString = (length: number) => {
+	const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+	let result = "";
+	for (let i = 0; i < length; i++) {
+		result += characters.charAt(Math.floor(Math.random() * characters.length));
+	}
+	return result;
+};
+
 const ETicketPage: React.FC = () => {
 	const router = useRouter();
 	const [bookingDetails, setBookingDetails] = useState<any>(null);
@@ -33,27 +42,88 @@ const ETicketPage: React.FC = () => {
 		return null;
 	}
 
+	const bookingNo = generateRandomString(8);
+	const shuttleBookingRef = generateRandomString(6);
+	const ticketNumber = generateRandomString(10);
+	const busCode = generateRandomString(5);
+	const issuedDate = new Date().toLocaleDateString();
+
+	const generalInformation = [
+		"The bus booking reference can be used to check in, select seats, and purchase goods.",
+		"All departure/arrival times are in local times.",
+		"Please arrive at the bus station at least 30 minutes before departure.",
+		"Keep your e-ticket and ID ready for verification.",
+		"Seats are assigned on a first-come, first-served basis.",
+		"Luggage should be checked in at the designated counters.",
+		"Food and beverages are available for purchase on board.",
+		"Free Wi-Fi is available on the bus.",
+		"Smoking is strictly prohibited on the bus.",
+		"Contact customer service for any assistance.",
+	];
+
 	return (
 		<div className="eticket-container">
 			<div className="eticket">
-				<h5>
-					<strong>Here is your issued E-Ticket</strong>
-				</h5>
-				<p>
-					<strong>Bus Name:</strong> {bookingDetails.car.name}
-				</p>
-				<p>
-					<strong>Username:</strong> {bookingDetails.username}
-				</p>
-				<p>
-					<strong>Date:</strong> {bookingDetails.date}
-				</p>
-				<p>
-					<strong>Time:</strong> {bookingDetails.time}
-				</p>
-				<p>
-					<strong>Seats:</strong> {bookingDetails.seats.join(", ")}
-				</p>
+				<header className="header">
+					<img
+						src="/assets/imgs/template/grace-logo.png"
+						alt="Grace Logo"
+						className="logo"
+					/>
+					<div className="title">
+						<div className="main-title">E-Ticket Itinerary</div>
+						<div className="subtitle">Issued Date: {issuedDate}</div>
+					</div>
+				</header>
+				<section className="booking-info">
+					<p>
+						<strong>Booking No:</strong> {bookingNo}
+					</p>
+					<p>
+						<strong>Shuttle Booking Reference:</strong> {shuttleBookingRef}
+					</p>
+				</section>
+				<section className="passenger-details">
+					<div className="section-title">Passenger Details</div>
+					<table>
+						<tbody>
+							<tr>
+								<td>
+									<strong>Username:</strong> {bookingDetails.username}
+								</td>
+								<td>
+									<strong>Ticket Number:</strong> {ticketNumber}
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section className="bus-details">
+					<div className="section-title">Shuttle Bus Departure Details</div>
+					<p>
+						<strong>Bus Name:</strong> {bookingDetails.car.name}
+					</p>
+					<p>
+						<strong>Bus Code:</strong> {busCode}
+					</p>
+					<p>
+						<strong>From:</strong> {bookingDetails.car.location}
+					</p>
+					<p>
+						<strong>To:</strong> Destination
+					</p>
+					<p>
+						<strong>Estimated Time of Arrival:</strong> {bookingDetails.time}
+					</p>
+				</section>
+				<section className="additional-info">
+					<div className="section-title">Additional Information</div>
+					<ul>
+						{generalInformation.map((info, index) => (
+							<li key={index}>{info}</li>
+						))}
+					</ul>
+				</section>
 				<button onClick={handleExportPDF}>Export as PDF</button>
 			</div>
 		</div>

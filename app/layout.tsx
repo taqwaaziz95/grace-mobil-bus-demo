@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Urbanist } from "next/font/google";
-import "/node_modules/react-modal-video/css/modal-video.css";
+
 import "/public/assets/css/main.css";
+import "/node_modules/react-modal-video/css/modal-video.css";
+import "./globals.css";
 
 const urbanist = Urbanist({
   weight: ["300", "400", "500", "600", "700", "800", "900"],

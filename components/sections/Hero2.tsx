@@ -57,7 +57,7 @@ export default function Hero2() {
         </div>
         <div className="container-search-advance">
           <div className="container">
-            <div className="box-search-advance background-card wow  mb-70">
+            <div className="box-search-advance background-card  mb-70">
               <div className="box-top-search">
                 <div className="left-top-search">
                   <button

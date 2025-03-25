@@ -2,7 +2,7 @@ import BookingModal from "../../../components/modal/BookingModal";
 import Link from "next/link";
 import { useState } from "react";
 
-export default function CarCard1({ car }: any) {
+export default function CarCard1({ car, handleBooking }: any) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleOpenModal = () => {
@@ -17,9 +17,13 @@ export default function CarCard1({ car }: any) {
     <>
       <div className="card-journey-small background-card hover-up">
         <div className="card-image">
-          <Link href="/cars-details-1">
+          <Link
+            className="text-lg-bold neutral-1000 text-nowrap"
+            href="/cars-details-1"
+          >
             <img
-              src={`/assets/imgs/cars-listing/cars-listing-6/${car.image}`}
+              src={`/assets/imgs/cars-listing/${car.image}`}
+              className="tw:!max-h-[240px]"
               alt="Grace Mobil"
             />
           </Link>
@@ -57,7 +61,13 @@ export default function CarCard1({ car }: any) {
 						</div> */}
             <div className="endtime">
               <div className="card-price">
-                <h6 className="text-lg-bold neutral-1000">Rp450.000</h6>
+                <h6 className="text-lg-bold neutral-1000">
+                  {car.carType == "Big Bus"
+                    ? "Rp70.000"
+                    : car.carType == "Medium Bus"
+                      ? "Rp60.000"
+                      : "Rp40.000"}
+                </h6>
                 <p className="text-md-medium neutral-500"></p>
               </div>
               <div className="card-button">
@@ -69,7 +79,13 @@ export default function CarCard1({ car }: any) {
           </div>
         </div>
       </div>
-      {isModalOpen && <BookingModal car={car} onClose={handleCloseModal} />}
+      {isModalOpen && (
+        <BookingModal
+          car={car}
+          onClose={handleCloseModal}
+          handleBooking={handleBooking}
+        />
+      )}
     </>
   );
 }

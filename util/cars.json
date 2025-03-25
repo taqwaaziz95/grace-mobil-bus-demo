@@ -3,36 +3,36 @@
 		"id": 1,
 		"price": 100,
 		"duration": "7",
-		"carType": "Sedans",
+		"carType": "Mini Bus",
 		"amenities": "Leather upholstery",
 		"rating": "4.5",
 		"fuelType": "Plug-in Hybrid (PHEV)",
 		"location": "Suvana Sutera -> Serpong",
-		"image": "shuttle-1.png",
-		"name": "Hi Ace"
+		"image": "mini_bus.jpg",
+		"name": "Mini Bus - Hi Ace"
 	},
 	{
 		"id": 15,
 		"price": 410,
 		"duration": "5",
-		"carType": "SUVs",
+		"carType": "Medium Bus",
 		"amenities": "Sunroof/Moonroof",
 		"rating": "4.5",
 		"fuelType": "Plug-in Hybrid (PHEV)",
 		"location": "BSD City -> Bintaro Sek 9",
-		"image": "shuttle-2.png",
-		"name": "Shuttle bus"
+		"image": "medium_bus.jpg",
+		"name": "Medium Bus - Mitsubishi Rosa"
 	},
 	{
 		"id": 2,
 		"price": 410,
 		"duration": "5",
-		"carType": "SUVs",
+		"carType": "Big Bus",
 		"amenities": "Sunroof/Moonroof",
 		"rating": "4.5",
 		"fuelType": "Plug-in Hybrid (PHEV)",
 		"location": "Foresta -> Melati Mas",
-		"image": "shuttle-2.png",
-		"name": "Shuttle bus"
+		"image": "big_bus.jpg",
+		"name": "Big Bus - Mercedes-Benz OH 1626"
 	}
 ]

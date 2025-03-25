@@ -28,13 +28,8 @@ export default function Header3({
               <div className="header-logo">
                 <Link className="d-flex" href="/">
                   <img
-                    className="light-mode"
-                    alt="Carento"
-                    src="/assets/imgs/template/grace-logo.png"
-                  />
-                  <img
-                    className="dark-mode"
-                    alt="Carento"
+                    className="tw:!max-h-[40px]"
+                    alt="Gracetrans"
                     src="/assets/imgs/template/grace-logo.png"
                   />
                 </Link>
@@ -42,18 +37,61 @@ export default function Header3({
               <div className="header-nav">
                 <nav className="nav-main-menu">
                   <ul className="main-menu">
+                    <li>
+                      <Link href="/tentang">Tentang</Link>
+                    </li>
+
                     <li className="has-children">
+                      <Link href="#">Sewa Kendaraan</Link>
+                      <ul className="sub-menu">
+                        <li>
+                          <Link href="/about-us">Antar Jemput Bandara</Link>
+                        </li>
+                        <li>
+                          <Link href="/services">Harian</Link>
+                        </li>
+                        <li>
+                          <Link href="/pricing">Bulanan</Link>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li className="has-children">
+                      <Link href="#">Shuttle</Link>
+                      <ul className="sub-menu">
+                        <li>
+                          <Link href="/about-us">Resident</Link>
+                        </li>
+                        <li>
+                          <Link href="/services">Korporat</Link>
+                        </li>
+                        <li>
+                          <Link href="/pricing">Antar Kota</Link>
+                        </li>
+                        <li>
+                          <Link href="/calculator">Shopping Mall</Link>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <Link href="/blog">Blog</Link>
+                    </li>
+                    <li>
+                      <Link href="/kontak">Kontak Kami</Link>
+                    </li>
+
+                    {/* <li className="has-children">
                       <Link href="#">Home</Link>
                       <ul className="sub-menu">
                         <li>
                           <Link href="/">Home page v1</Link>
                         </li>
-                        {/* <li>
-													<Link href="/index-2">Home page v2</Link>
-												</li>
-												<li>
-													<Link href="/index-3">Home page v3</Link>
-												</li> */}
+                        <li>
+                          <Link href="/index-2">Home page v2</Link>
+                        </li>
+                        <li>
+                          <Link href="/index-3">Home page v3</Link>
+                        </li>
                       </ul>
                     </li>
                     <li className="mega-li-small has-children">
@@ -190,7 +228,7 @@ export default function Header3({
                     </li>
                     <li>
                       <Link href="/contact">Contact</Link>
-                    </li>
+                    </li> */}
                   </ul>
                 </nav>
               </div>

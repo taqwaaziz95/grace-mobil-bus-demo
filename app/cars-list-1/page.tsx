@@ -52,6 +52,11 @@ export default function CarsList1() {
     endItemIndex,
   } = useCarFilter(carsData);
 
+  const urlParams = new URLSearchParams(window.location.search);
+  const category = urlParams.get("category");
+
+  console.log("category", category);
+
   return (
     <>
       <Layout footerStyle={1}>
@@ -66,12 +71,9 @@ export default function CarsList1() {
                 />
               </div>
               <div className="container position-absolute z-1 top-50 start-50 pb-70 translate-middle text-center">
-                <span className="text-sm-bold bg-2 px-4 py-3 rounded-12">
-                  Find bus near your location
-                </span>
-                <h2 className="text-white mt-4">List of our Bus and Routes</h2>
+                <h2 className="text-white mt-4">{"Shuttle Bus"}</h2>
                 <span className="text-white text-lg-medium">
-                  Search and find your best premium shuttle bus
+                  Pilih shuttle bus sesuai kebutuhan anda
                 </span>
               </div>
             </div>
@@ -82,12 +84,12 @@ export default function CarsList1() {
           <section className="section-box pt-50 background-body">
             <div className="container">
               <div className="row align-items-end">
-                <div className="col-md-9 mb-30 wow ">
+                <div className="col-md-9 mb-30  ">
                   <h4 className="title-svg neutral-1000 mb-15">
-                    Our Latest Fleet
+                    Hasil Pencarian
                   </h4>
                   <p className="text-lg-medium text-bold neutral-500">
-                    Choose your bus and destination from our latest fleet
+                    Pilih Bus dan rute yang sesuai
                   </p>
                 </div>
               </div>
@@ -109,10 +111,10 @@ export default function CarsList1() {
                       sortedCars={sortedCars}
                     />
                   </div>
-                  <div className="box-grid-tours wow fadeIn">
+                  <div className="box-grid-tours  fadeIn">
                     <div className="row">
                       {paginatedCars.map((car) => (
-                        <div className="col-lg-4 col-md-6 wow " key={car.id}>
+                        <div className="col-lg-4 col-md-6  " key={car.id}>
                           <CarCard1 car={car} />
                         </div>
                       ))}
@@ -133,7 +135,7 @@ export default function CarsList1() {
 								<Marquee
 									direction="left"
 									pauseOnHover={true}
-									className="carouselTicker carouselTicker-left box-list-brand-car justify-content-center  wow fadeIn"
+									className="carouselTicker carouselTicker-left box-list-brand-car justify-content-center   fadeIn"
 								>
 									<ul className="carouselTicker__list">
 										<li className="carouselTicker__item">

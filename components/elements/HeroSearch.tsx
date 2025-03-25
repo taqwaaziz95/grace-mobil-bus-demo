@@ -234,7 +234,7 @@ export default function HeroSearch({ category = "" }) {
 </select>
 
 <select
-  value={months[getMonth(date) - 1]}
+  value={months[Number(getMonth(date)) - 1]}
   onChange={({ target: { value } }) =>
     changeMonth(months.indexOf(value))
   }

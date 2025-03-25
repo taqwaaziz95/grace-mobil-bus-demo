@@ -223,28 +223,28 @@ export default function HeroSearch({ category = "" }) {
                     {"<"}
                   </button>
                   <select
-                    value={getYear(date)}
-                    onChange={({ target: { value } }) => changeYear(value)}
-                  >
-                    {years.map((option) => (
-                      <option key={option} value={option}>
-                        {option}
-                      </option>
-                    ))}
-                  </select>
+  value={getYear(date)}
+  onChange={({ target: { value } }) => changeYear(Number(value))}
+>
+  {years.map((option) => (
+    <option key={option} value={option}>
+      {option}
+    </option>
+  ))}
+</select>
 
-                  <select
-                    value={months[getMonth(date) - 1]}
-                    onChange={({ target: { value } }) =>
-                      changeMonth(months.indexOf(value))
-                    }
-                  >
-                    {months.map((option) => (
-                      <option key={option} value={option}>
-                        {option}
-                      </option>
-                    ))}
-                  </select>
+<select
+  value={months[getMonth(date) - 1]}
+  onChange={({ target: { value } }) =>
+    changeMonth(months.indexOf(value))
+  }
+>
+  {months.map((option) => (
+    <option key={option} value={option}>
+      {option}
+    </option>
+  ))}
+</select>
 
                   <button
                     onClick={increaseMonth}

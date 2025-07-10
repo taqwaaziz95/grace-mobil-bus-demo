@@ -664,7 +664,7 @@ const BreadcrumbsDemo = () => (
 );
 
 // Main Documentation Page
-const ComponentDocs = () => {
+const NewPlayground = () => {
 	const [selected, setSelected] = useState("button");
 	const [show, setShow] = React.useState(false);
 	const timer = React.useRef<NodeJS.Timeout | null>(null);
@@ -773,4 +773,4 @@ const ComponentDocs = () => {
 	);
 };
 
-export default ComponentDocs;
+export default NewPlayground;

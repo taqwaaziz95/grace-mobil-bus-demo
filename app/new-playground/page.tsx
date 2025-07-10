@@ -125,7 +125,7 @@ const teamMembers = [
 	// ...add more team members here
 ];
 
-export const testimonialData = [
+const testimonialData = [
 	{
 		title: "No Hidden Fees",
 		content:
@@ -166,7 +166,7 @@ export const testimonialData = [
 
 // data/whyData.tsx
 
-export const whyData = [
+const whyData = [
 	{
 		icon: (
 			<svg width={62} height={62} viewBox="0 0 62 62" fill="none">

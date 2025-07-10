@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Dropdown from "react-bootstrap/Dropdown";
+import SelectInput from "../select-input";
 // import MyDatePicker from "./MyDatePicker";
 import Link from "next/link";
 import { filter } from "lodash";
@@ -138,77 +138,34 @@ export default function HeroSearch({ category = "" }) {
 		<>
 			<div className="box-bottom-search background-card">
 				{(category == "bulanan" || category == "harian") && (
-					<div className="item-search">
-						<label className="text-sm-bold neutral-500">{"Durasi"}</label>
-						<Dropdown className="dropdown">
-							<Dropdown.Toggle
-								as="div"
-								className="btn btn-secondary dropdown-toggle btn-dropdown-search"
-								aria-expanded="false"
-							>
-								{durasi}
-							</Dropdown.Toggle>
-							<Dropdown.Menu as="ul" className="dropdown-menu">
-								{durasiList.map((location) => (
-									<Dropdown.Item
-										key={location}
-										onClick={() => setDurasi(location)}
-									>
-										{location}
-									</Dropdown.Item>
-								))}
-							</Dropdown.Menu>
-						</Dropdown>
-					</div>
+					<SelectInput
+						label="Durasi"
+						labelClassName="text-sm-bold neutral-500"
+						value={durasi}
+						options={durasiList}
+						onChange={setDurasi}
+						className="item-search"
+					/>
 				)}
 				{category != "bulanan" && (
-					<div className="item-search">
-						<label className="text-sm-bold neutral-500">
-							{category != "harian" ? "Keberangkatan" : "Penjemputan"}
-						</label>
-						<Dropdown className="dropdown">
-							<Dropdown.Toggle
-								as="div"
-								className="btn btn-secondary dropdown-toggle btn-dropdown-search"
-								aria-expanded="false"
-							>
-								{pickUpLocation}
-							</Dropdown.Toggle>
-							<Dropdown.Menu as="ul" className="dropdown-menu">
-								{pickUpLocations.map((location) => (
-									<Dropdown.Item
-										key={location}
-										onClick={() => setPickUpLocation(location)}
-									>
-										{location}
-									</Dropdown.Item>
-								))}
-							</Dropdown.Menu>
-						</Dropdown>
-					</div>
+					<SelectInput
+						label={category != "harian" ? "Keberangkatan" : "Penjemputan"}
+						labelClassName="text-sm-bold neutral-500"
+						value={pickUpLocation}
+						options={pickUpLocations}
+						onChange={setPickUpLocation}
+						className="item-search"
+					/>
 				)}
 				{category != "harian" && category != "bulanan" && (
-					<div className="item-search item-search-2">
-						<label className="text-sm-bold neutral-500">Tujuan</label>
-						<Dropdown className="dropdown">
-							<Dropdown.Toggle
-								as="div"
-								className="btn btn-secondary dropdown-toggle btn-dropdown-search"
-							>
-								{dropOffLocation}
-							</Dropdown.Toggle>
-							<Dropdown.Menu as="ul" className="dropdown-menu">
-								{dropOffLocations.map((location) => (
-									<Dropdown.Item
-										key={location}
-										onClick={() => setDropOffLocation(location)}
-									>
-										{location}
-									</Dropdown.Item>
-								))}
-							</Dropdown.Menu>
-						</Dropdown>
-					</div>
+					<SelectInput
+						label="Tujuan"
+						labelClassName="text-sm-bold neutral-500"
+						value={dropOffLocation}
+						options={dropOffLocations}
+						onChange={setDropOffLocation}
+						className="item-search item-search-2"
+					/>
 				)}
 
 				<div className="item-search item-search-3">
@@ -240,6 +197,7 @@ export default function HeroSearch({ category = "" }) {
 									>
 										{"<"}
 									</button>
+
 									<select
 										value={getYear(date)}
 										onChange={({ target: { value } }) =>
@@ -276,13 +234,11 @@ export default function HeroSearch({ category = "" }) {
 							)}
 							minDate={new Date()}
 							selected={isShuttle ? startDateShuttle : startDateRent}
-							onChange={(date) => {
-								if (date) {
-									isShuttle
-										? setStartDateShuttle(date)
-										: setStartDateRent(date);
-								}
-							}}
+							onChange={(date) =>
+								isShuttle
+									? date && setStartDateShuttle(date)
+									: date && setStartDateRent(date)
+							}
 							selectsStart
 							todayButton="Hari ini"
 							dateFormat="dd/MM/yyyy"
@@ -357,13 +313,11 @@ export default function HeroSearch({ category = "" }) {
 										</div>
 									)}
 									selected={isShuttle ? endDateShuttle : endDateRent}
-									onChange={(date) => {
-										if (date) {
-											isShuttle
-												? setEndDateShuttle(date)
-												: setEndDateRent(date);
-										}
-									}}
+									onChange={(date) =>
+										isShuttle
+											? date && setEndDateShuttle(date)
+											: date && setEndDateRent(date)
+									}
 									maxDate={
 										isShuttle
 											? moment(startDateShuttle).add(9, "days").toDate()
@@ -380,25 +334,14 @@ export default function HeroSearch({ category = "" }) {
 						</div>
 					)}
 				{isShuttle && (
-					<div className="item-people-used">
-						<label className="text-sm-bold neutral-500">Penumpang</label>
-						<Dropdown className="dropdown">
-							<Dropdown.Toggle
-								as="div"
-								className="btn btn-secondary dropdown-toggle btn-dropdown-search"
-							>
-								{passengerType}
-							</Dropdown.Toggle>
-							<Dropdown.Menu as="ul" className="dropdown-menu">
-								<Dropdown.Item onClick={() => setPassengerType("Warga")}>
-									Warga
-								</Dropdown.Item>
-								<Dropdown.Item onClick={() => setPassengerType("Non Warga")}>
-									Non Warga
-								</Dropdown.Item>
-							</Dropdown.Menu>
-						</Dropdown>
-					</div>
+					<SelectInput
+						label="Penumpang"
+						labelClassName="text-sm-bold neutral-500"
+						value={passengerType}
+						options={["Warga", "Non Warga"]}
+						onChange={setPassengerType}
+						className="item-people-used"
+					/>
 				)}
 				<div className="item-search bd-none d-flex justify-content-end">
 					<Link href={"/cars-list-1?category=" + category}>

@@ -32,6 +32,8 @@ import { size } from "lodash";
 import CustomGridImage from "@/components/custom-grid-image";
 import Breadcrumbs from "@/components/breadcrumbs";
 import { on } from "events";
+import CustomDatePicker from "@/components/date-picker";
+import SelectInput from "@/components/select-input";
 
 // Define the RadioButtonColor type if not imported from the component
 type RadioButtonColor =
@@ -53,6 +55,8 @@ type RadioButtonSize = "xs" | "sm" | "md" | "lg" | "xl";
 const sidebarItems = [
 	{ key: "button", label: "Button" },
 	{ key: "input", label: "Input" },
+	{ key: "select-input", label: "Select Input" },
+	{ key: "datePicker", label: "Date Picker" },
 	{ key: "alert", label: "Alert" },
 	{ key: "typography", label: "Typography" },
 	{ key: "card", label: "Card" },
@@ -141,7 +145,7 @@ const teamMembers = [
 
 // data/testimonialData.ts
 
-const testimonialData = [
+export const testimonialData = [
 	{
 		title: "No Hidden Fees",
 		content:
@@ -182,7 +186,7 @@ const testimonialData = [
 
 // data/whyData.tsx
 
-const whyData = [
+export const whyData = [
 	{
 		icon: (
 			<svg width={62} height={62} viewBox="0 0 62 62" fill="none">
@@ -356,6 +360,84 @@ const InputDemo = () => (
 		<MultiTextInput placeholder="Disabled textarea" rows={4} disabled />
 	</div>
 );
+
+// Select Input Component Example
+const SelectInputDemo = () => {
+	const [dropOffLocation, setDropOffLocation] =
+		useState<string>("Stasiun Gambir");
+	const dropOffLocations = [
+		"Bandara Soekarno-Hatta",
+		"Stasiun Gambir",
+		"Terminal Kampung Rambutan",
+		"Pelabuhan Tanjung Priok",
+	];
+
+	return (
+		<div className="tw:!space-y-4">
+			<H2 className="tw:!text-xl tw:!font-semibold">Select Input</H2>
+			<P>
+				Select input adalah komponen yang memungkinkan pengguna memilih satu
+				opsi dari daftar dropdown. Komponen ini berguna untuk memilih kategori,
+				status, atau data lain yang memiliki pilihan terbatas.
+			</P>
+
+			<SelectInput
+				label="Contoh Select Input"
+				labelClassName="text-sm-bold neutral-500"
+				value={dropOffLocation}
+				options={dropOffLocations}
+				onChange={setDropOffLocation}
+				className="tw:!w-72 tw:!p-2 tw:!rounded-xl tw:!border-2 tw:!border-blue-200 tw:!shadow-lg tw:!bg-blue-50 tw:!transition-all tw:!duration-300 hover:tw:!border-blue-400 hover:tw:!shadow-xl"
+			/>
+		</div>
+	);
+};
+
+// Date Select Input Component Example
+const DatePickerDemo = () => {
+	const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
+	const [startDate, setStartDate] = useState<Date | null>(null);
+	const [endDate, setEndDate] = useState<Date | null>(null);
+	const [range, setRange] = useState<[Date | null, Date | null]>([null, null]);
+
+	return (
+		<div className="tw:!space-y-4">
+			<H3>Custom Date Picker</H3>
+			<P>
+				Berikut adalah contoh penggunaan <code>Date Picker</code>. Komponen ini
+				memungkinkan pengguna untuk memilih tanggal (atau rentang tanggal)
+				dengan mudah melalui antarmuka kalender yang interaktif. Anda dapat
+				menyesuaikan tampilan, format, serta batas tanggal sesuai kebutuhan
+				aplikasi Anda.
+			</P>
+			<CustomDatePicker
+				selected={selectedDate}
+				onChange={(date) =>
+					setSelectedDate(
+						date instanceof Date ? date : Array.isArray(date) ? date[0] : null
+					)
+				}
+				minDate={new Date()}
+				startDate={startDate ?? undefined}
+				endDate={endDate ?? undefined}
+				selectsStart
+			/>
+			<P>
+				Anda dapat menggunakan <code>Date Picker</code> untuk memilih satu
+				tanggal, atau <code>Date Range Picker</code> untuk memilih rentang
+				tanggal (daterange). Pilihan <strong>daterange</strong> memungkinkan
+				pengguna memilih tanggal mulai dan tanggal akhir sekaligus melalui
+				antarmuka kalender yang interaktif.
+			</P>
+			<CustomDatePicker
+				type="date-range-picker"
+				selected={range[0]}
+				rangeValue={range}
+				onChange={(update) => setRange(update as [Date | null, Date | null])}
+			/>
+		</div>
+	);
+};
 
 // Alert Component Example
 const AlertDemo = () => {
@@ -910,12 +992,12 @@ const ComponentDocs = () => {
 		case "input":
 			Content = <InputDemo />;
 			break;
+
+		case "select-input":
+			Content = <SelectInputDemo />;
+			break;
 		case "alert":
-			Content = (
-				<>
-					<AlertDemo />
-				</>
-			);
+			Content = <AlertDemo />;
 			break;
 		case "typography":
 			Content = <Typography />;
@@ -941,6 +1023,9 @@ const ComponentDocs = () => {
 		case "breadcrumbs":
 			Content = <BreadcrumbsDemo />;
 			break;
+		case "datePicker":
+			Content = <DatePickerDemo />;
+			break;
 		default:
 			Content = null;
 	}
@@ -948,8 +1033,11 @@ const ComponentDocs = () => {
 	return (
 		<div className="tw:!min-h-screen tw:!bg-white tw:!flex tw:!font-sans">
 			{/* Sidebar */}
-			<aside className="tw:!w-56 tw:!bg-gray-50 tw:!border-r tw:!border-gray-200 tw:!py-8 tw:!px-4">
-				<h1 className="tw:!text-xl tw:!font-bold tw:!mb-8 tw:!text-blue-700">
+			<aside
+				className="tw:!w-56 tw:!bg-gray-50 tw:!border-r tw:!border-gray-200 tw:!py-8 tw:!px-4 tw:!h-screen tw:!overflow-y-auto tw:!sticky tw:!top-0 tw:!self-start"
+				style={{ flexShrink: 0 }}
+			>
+				<h1 className="tw:!text-xl tw:!font-bold tw:!mb-8 tw:!text-blue-700 tw:!sticky tw:!top-0 tw:!bg-gray-50 tw:!z-10 tw:!py-1">
 					GraceTrans Components
 				</h1>
 				<nav className="tw:!space-y-2">

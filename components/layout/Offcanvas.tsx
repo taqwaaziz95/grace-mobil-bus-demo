@@ -1,6 +1,18 @@
 import Link from "next/link";
-
+import React, { useEffect, useState } from "react";
 export default function Offcanvas({ isOffcanvas, handleOffcanvas }: any) {
+  const [isUserChecked, setIsUserChecked] = useState(false);
+  const [user, setUser] = useState<string | null>(null);
+  useEffect(() => {
+    // Check if user is logged in
+    const loggedInUser = localStorage.getItem("username");
+    if (loggedInUser) {
+      setUser(loggedInUser);
+    }
+    setIsUserChecked(true);
+  }, []);
+
+  console.log("user", user);
   return (
     <>
       <div
@@ -87,23 +99,33 @@ export default function Offcanvas({ isOffcanvas, handleOffcanvas }: any) {
             </div>
           </div>
           <div className="sidebar-canvas-content">
-            <div className="box-author-profile">
-              <div className="card-author">
-                <div className="card-image">
-                  <img
-                    src="/assets/imgs/page/homepage1/author2.png"
-                    alt="Carento"
-                  />
+            {user ? (
+              <div className="box-author-profile">
+                <div className="card-author">
+                  <div className="card-image">
+                    <img
+                      src="/assets/imgs/page/homepage1/author2.png"
+                      alt="Carento"
+                    />
+                  </div>
+                  <div className="card-info">
+                    <p className="text-md-bold neutral-1000">Halo, Steven</p>
+                    <p className="text-xs neutral-1000">Saldo: Rp200.000</p>
+                  </div>
                 </div>
-                <div className="card-info">
-                  <p className="text-md-bold neutral-1000">Halo, Steven</p>
-                  <p className="text-xs neutral-1000">Saldo: Rp2.000.000</p>
-                </div>
+                <Link className="btn btn-black" href="#">
+                  Keluar
+                </Link>
               </div>
-              <Link className="btn btn-black" href="#">
-                Keluar
-              </Link>
-            </div>
+            ) : (
+              <div className="tw:!flex-row tw:!justify-center tw:!items-center tw:!flex tw:!mb-10">
+                <div className="tw:!mr-4">Anda belum Login</div>
+                <Link className="btn btn-black" href="/login">
+                  Login
+                </Link>
+              </div>
+            )}
+
             <div className="sidebar-banner">
               <div className="position-relative">
                 <p className="text-xl-bold neutral-1000 mb-4">Daftar Tiket</p>
@@ -138,11 +160,13 @@ export default function Offcanvas({ isOffcanvas, handleOffcanvas }: any) {
                 </ul>
               </div>
             </div>
+
             <Link href="/booking">
               <button className="btn btn-clear text-xs-medium">
                 Pembayaran
               </button>
             </Link>
+
             {/* <div className="box-contactus">
               <h6 className="title-contactus neutral-1000">Contact Us</h6>
               <div className="contact-info">

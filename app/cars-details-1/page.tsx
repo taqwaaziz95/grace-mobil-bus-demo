@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
 import ModalVideo from "react-modal-video";
 import Slider from "react-slick";
+import Dropdown from "react-bootstrap/Dropdown";
 const SlickArrowLeft = ({ currentSlide, slideCount, ...props }: any) => (
   <button
     {...props}
@@ -97,6 +98,14 @@ export default function CarsDetails1() {
   const handleAccordion = (key: any) => {
     setIsAccordion((prevState) => (prevState === key ? null : key));
   };
+
+  const [category, setCategory] = useState<any>(null);
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    setCategory(urlParams.get("category"));
+  }, []);
+
   return (
     <>
       <Layout footerStyle={1}>
@@ -308,10 +317,7 @@ export default function CarsDetails1() {
                 <div className="row">
                   <div className="col-lg-8">
                     <div className="tour-title-main">
-                      <h4 className="neutral-1000">
-                        Hyundai Accent 2015 - Modern compact sedan in blue color
-                        on beautiful dark wheels
-                      </h4>
+                      <h4 className="neutral-1000">Toyota Innova Reborn</h4>
                     </div>
                   </div>
                 </div>
@@ -331,7 +337,7 @@ export default function CarsDetails1() {
                           fill="#101010"
                         />
                       </svg>
-                      Las Vegas, USA
+                      Tangerang Selatan
                     </p>
                     <Link
                       className="text-md-medium neutral-1000 mr-30"
@@ -367,10 +373,10 @@ export default function CarsDetails1() {
                           fill="#101010"
                         />
                       </svg>
-                      Fleet Code:
+                      Kode Armada:
                     </p>
                     <Link className="text-md-medium neutral-1000" href="#">
-                      LVA-4125
+                      GRA-821
                     </Link>
                   </div>
                   <div className="tour-meta-right">
@@ -443,7 +449,7 @@ export default function CarsDetails1() {
                           </div>
                         </div>
                       </div>
-                      <div className="item-feature-car w-md-25">
+                      {/* <div className="item-feature-car w-md-25">
                         <div className="item-feature-car-inner">
                           <div className="feature-image">
                             <img
@@ -457,7 +463,7 @@ export default function CarsDetails1() {
                             </p>
                           </div>
                         </div>
-                      </div>
+                      </div> */}
                       <div className="item-feature-car w-md-25">
                         <div className="item-feature-car-inner">
                           <div className="feature-image">
@@ -473,7 +479,7 @@ export default function CarsDetails1() {
                           </div>
                         </div>
                       </div>
-                      <div className="item-feature-car w-md-25">
+                      {/* <div className="item-feature-car w-md-25">
                         <div className="item-feature-car-inner">
                           <div className="feature-image">
                             <img
@@ -487,7 +493,7 @@ export default function CarsDetails1() {
                             </p>
                           </div>
                         </div>
-                      </div>
+                      </div> */}
                       <div className="item-feature-car w-md-25">
                         <div className="item-feature-car-inner">
                           <div className="feature-image">
@@ -546,7 +552,7 @@ export default function CarsDetails1() {
                         aria-controls="collapseOverview"
                         onClick={() => handleAccordion(1)}
                       >
-                        <h6>Overview</h6>
+                        <h6>Tentang Kendaraan</h6>
                         <svg
                           width={12}
                           height={7}
@@ -571,26 +577,26 @@ export default function CarsDetails1() {
                       >
                         <div className="card card-body">
                           <p>
-                            Elevate your Las Vegas experience to new heights
-                            with a journey aboard The High Roller at The LINQ.
-                            As the tallest observation wheel in the world,
-                            standing at an impressive 550 feet tall, The High
-                            Roller offers a bird's-eye perspective of the iconic
-                            Las Vegas Strip and its surrounding desert
-                            landscape. From the moment you step into one of the
-                            spacious cabins, you'll be transported on a
-                            mesmerizing adventure, where every turn offers a new
-                            and breathtaking vista of the vibrant city below.
+                            Temukan kenyamanan dan fleksibilitas Toyota Innova
+                            Reborn — perpaduan sempurna antara performa, ruang
+                            yang luas, dan fitur modern. Cocok untuk perjalanan
+                            keluarga, liburan bersama teman, atau kebutuhan
+                            transportasi harian yang andal.
                           </p>
                           <p>
-                            Whether you're a first-time visitor or a seasoned
-                            Las Vegas aficionado, The High Roller promises an
-                            unparalleled experience that will leave you in awe.
-                            With its climate-controlled cabins and immersive
-                            audio commentary, this attraction provides a unique
-                            opportunity to see Las Vegas from a whole new
-                            perspective, while learning about its rich history
-                            and famous landmarks along the way.
+                            Dilengkapi dengan mesin bertenaga, kabin lega untuk
+                            hingga 7 penumpang, serta fitur keselamatan canggih,
+                            Innova Reborn dirancang untuk memberikan pengalaman
+                            berkendara yang halus, baik untuk perjalanan jauh
+                            maupun aktivitas dalam kota.
+                          </p>
+                          <p>
+                            Interior yang dilengkapi dengan pendingin udara,
+                            ruang bagasi yang luas, dan sistem hiburan terkini
+                            akan memastikan setiap perjalanan terasa nyaman dan
+                            menyenangkan. Lihat detail lengkap Innova Reborn di
+                            bawah ini — mulai dari spesifikasi, fitur unggulan,
+                            hingga informasi harga.
                           </p>
                         </div>
                       </div>
@@ -609,7 +615,7 @@ export default function CarsDetails1() {
                         aria-controls="collapseItinerary"
                         onClick={() => handleAccordion(2)}
                       >
-                        <h6>Included in the price</h6>
+                        <h6>Harga sudah termasuk</h6>
                         <svg
                           width={12}
                           height={7}
@@ -635,13 +641,26 @@ export default function CarsDetails1() {
                         <div className="card card-body">
                           <ul className="list-checked-green">
                             <li>
-                              Free cancellation up to 48 hours before pick-up
+                              Pembatalan gratis hingga 48 jam sebelum waktu
+                              penjemputan
                             </li>
                             <li>
-                              Collision Damage Waiver with $700 deductible
+                              Sudah termasuk sopir profesional dari Gracetrans
                             </li>
-                            <li>Theft Protection with ₫66,926,626 excess</li>
-                            <li>Unlimited mileage</li>
+                            <li>
+                              Perlindungan asuransi kendaraan dan penumpang
+                            </li>
+                            <li>
+                              Perlindungan terhadap pencurian dengan biaya
+                              tanggungan Rp.50.000.000
+                            </li>
+                            <li>
+                              Jaminan kerusakan (Collision Damage Waiver) dengan
+                              deductible sebesar Rp20.000.000
+                            </li>
+                            <li>
+                              Jarak tempuh tanpa batas (unlimited mileage)
+                            </li>
                           </ul>
                         </div>
                       </div>
@@ -660,7 +679,7 @@ export default function CarsDetails1() {
                         aria-controls="collapseQuestion"
                         onClick={() => handleAccordion(3)}
                       >
-                        <h6>Question Answers</h6>
+                        <h6>Pertanyaan & Jawaban</h6>
                         <svg
                           width={12}
                           height={7}
@@ -688,45 +707,64 @@ export default function CarsDetails1() {
                             <div className="item-question">
                               <div className="head-question">
                                 <p className="text-md-bold neutral-1000">
-                                  Is The High Roller suitable for all ages?
+                                  Apakah layanan sewa sudah termasuk sopir?
                                 </p>
                               </div>
                               <div className="content-question">
                                 <p className="text-sm-medium neutral-800">
-                                  Absolutely! The High Roller offers a
-                                  family-friendly experience suitable for
-                                  visitors of all ages. Children must be
-                                  accompanied by an adult.
+                                  Ya, setiap penyewaan kendaraan dari Gracetrans
+                                  sudah termasuk sopir profesional yang
+                                  berpengalaman dan ramah.
                                 </p>
                               </div>
                             </div>
+
                             <div className="item-question active">
                               <div className="head-question">
                                 <p className="text-md-bold neutral-1000">
-                                  Can I bring food or drinks aboard The High
-                                  Roller?
+                                  Apakah saya boleh membawa makanan dan minuman
+                                  ke dalam kendaraan?
                                 </p>
                               </div>
                               <div className="content-question">
                                 <p className="text-sm-medium neutral-800">
-                                  Outside food and beverages are not permitted
-                                  on The High Roller. However, there are nearby
-                                  dining options at The LINQ Promenade where you
-                                  can enjoy a meal before or after your ride.
+                                  Anda diperbolehkan membawa makanan dan minuman
+                                  ringan selama tidak mengganggu kebersihan dan
+                                  kenyamanan penumpang lain. Mohon hindari
+                                  makanan berbau menyengat.
                                 </p>
                               </div>
                             </div>
+
                             <div className="item-question">
                               <div className="head-question">
                                 <p className="text-md-bold neutral-1000">
-                                  Is The High Roller wheelchair accessible?
+                                  Apakah kendaraan Gracetrans ramah untuk
+                                  pengguna kursi roda?
                                 </p>
                               </div>
                               <div className="content-question">
                                 <p className="text-sm-medium neutral-800">
-                                  es, The High Roller cabins are wheelchair
-                                  accessible, making it possible for everyone to
-                                  enjoy the breathtaking views of Las Vegas.
+                                  Beberapa unit kendaraan kami dapat disesuaikan
+                                  untuk kebutuhan pengguna kursi roda. Silakan
+                                  hubungi kami terlebih dahulu untuk memastikan
+                                  ketersediaan.
+                                </p>
+                              </div>
+                            </div>
+
+                            <div className="item-question">
+                              <div className="head-question">
+                                <p className="text-md-bold neutral-1000">
+                                  Apakah tersedia asuransi dalam layanan sewa
+                                  ini?
+                                </p>
+                              </div>
+                              <div className="content-question">
+                                <p className="text-sm-medium neutral-800">
+                                  Tentu! Semua layanan sewa dari Gracetrans
+                                  sudah termasuk asuransi dasar untuk kendaraan
+                                  dan penumpang.
                                 </p>
                               </div>
                             </div>
@@ -1158,7 +1196,7 @@ export default function CarsDetails1() {
                         </div>
                       </div>
                     </div>
-                    <div className="group-collapse-expand">
+                    {/* <div className="group-collapse-expand">
                       <button
                         className={
                           isAccordion == 5
@@ -1430,11 +1468,11 @@ export default function CarsDetails1() {
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
                 <div className="col-lg-4">
-                  <div className="sidebar-banner">
+                  {/* <div className="sidebar-banner">
                     <div className="p-4 background-body border rounded-3">
                       <p className="text-xl-bold neutral-1000 mb-4">
                         Get Started
@@ -1479,15 +1517,86 @@ export default function CarsDetails1() {
                         </svg>
                       </Link>
                     </div>
-                  </div>
+                  </div> */}
                   <div className="booking-form">
                     <div className="head-booking-form">
-                      <p className="text-xl-bold neutral-1000">
-                        Rent This Vehicle
-                      </p>
+                      <p className="text-xl-bold neutral-1000">Sewa Sekarang</p>
                     </div>
                     <div className="content-booking-form">
                       <div className="item-line-booking border-bottom-0 pb-0">
+                        <strong className="text-md-bold neutral-1000 tw:!mr-6">
+                          Jenis
+                        </strong>
+                        <select name="tipe">
+                          <option>Mobil + Supir</option>
+                          <option>Mobil + Supir + Bensin</option>
+                          <option>Mobil + Supir + Bensin + Tol</option>
+                        </select>
+                      </div>
+                      <div className="item-line-booking border-bottom-0 pb-0">
+                        <strong className="text-md-bold neutral-1000 tw:!mr-6">
+                          Transmisi
+                        </strong>
+                        <select name="tipe">
+                          <option>Automatic</option>
+                          <option>Manual</option>
+                        </select>
+                      </div>
+                      <div className="item-line-booking border-bottom-0 pb-0">
+                        <strong className="text-md-bold neutral-1000 tw:!mr-6">
+                          Warna
+                        </strong>
+                        <select name="tipe">
+                          <option>Putih</option>
+                          <option>Abu-abu</option>
+                          <option>Hitam</option>
+                          <option>Cokelat</option>
+                        </select>
+                      </div>
+                      {category == "harian" && (
+                        <div className="item-line-booking border-bottom-0 pb-0">
+                          <strong className="text-md-bold neutral-1000 tw:!mr-6">
+                            Durasi
+                          </strong>
+                          <select name="tipe">
+                            <option>12 Jam</option>
+                            <option>18 Jam</option>
+                            <option>1 Hari</option>
+                            <option>2 Hari</option>
+                            <option>3 Hari</option>
+                            <option>4 Hari</option>
+                            <option>5 Hari</option>
+                            <option>6 Hari</option>
+                            <option>7 Hari</option>
+                            <option>8 Hari</option>
+                            <option>9 Hari</option>
+                            <option>10 Hari</option>
+                          </select>
+                        </div>
+                      )}
+                      {category == "bulanan" && (
+                        <div className="item-line-booking border-bottom-0 pb-0">
+                          <strong className="text-md-bold neutral-1000 tw:!mr-6">
+                            Bulanan
+                          </strong>
+                          <select name="bulanan">
+                            <option>6 Bulan</option>
+                            <option>12 Bulan</option>
+                            <option>24 Bulan</option>
+                          </select>
+                        </div>
+                      )}
+                      <div className="item-line-booking border-bottom-0 pb-0">
+                        <strong className="text-md-bold neutral-1000 tw:!mr-6">
+                          Lokasi Penjemputan
+                        </strong>
+                        <input
+                          className="form-control"
+                          type="text"
+                          placeholder="Jakarta Selatan"
+                        />
+                      </div>
+                      {/* <div className="item-line-booking border-bottom-0 pb-0">
                         <strong className="text-md-bold neutral-1000">
                           Pick-Up
                         </strong>
@@ -1526,34 +1635,35 @@ export default function CarsDetails1() {
                             />
                           </svg>
                         </div>
-                      </div>
-                      <div className="item-line-booking">
-                        <div className="box-tickets">
-                          <strong className="text-md-bold neutral-1000">
-                            Add Extra:
-                          </strong>
-                          <div className="line-booking-tickets">
-                            <div className="item-ticket">
-                              <ul className="list-filter-checkbox">
-                                <li>
-                                  <label className="cb-container">
-                                    {" "}
-                                    <input type="checkbox" />
-                                    <span className="text-md-medium">
-                                      GPS Navigation System{" "}
-                                    </span>
-                                    <span className="checkmark" />{" "}
-                                  </label>
-                                </li>
-                              </ul>
+                      </div> */}
+                      {category == "bulanan" && (
+                        <div className="item-line-booking">
+                          <div className="box-tickets">
+                            <strong className="text-md-bold neutral-1000">
+                              Tambahan:
+                            </strong>
+                            <div className="line-booking-tickets">
+                              <div className="item-ticket">
+                                <ul className="list-filter-checkbox">
+                                  <li>
+                                    <label className="cb-container">
+                                      {" "}
+                                      <input type="checkbox" />
+                                      <span className="text-md-medium">
+                                        Mobil Pengganti{" "}
+                                      </span>
+                                      <span className="checkmark" />{" "}
+                                    </label>
+                                  </li>
+                                </ul>
+                              </div>
+                              <div className="include-price">
+                                <p className="text-md-bold neutral-1000">
+                                  + Rp1.000.000
+                                </p>
+                              </div>
                             </div>
-                            <div className="include-price">
-                              <p className="text-md-bold neutral-1000">
-                                $25.00
-                              </p>
-                            </div>
-                          </div>
-                          <div className="line-booking-tickets">
+                            {/* <div className="line-booking-tickets">
                             <div className="item-ticket">
                               <ul className="list-filter-checkbox">
                                 <li>
@@ -1594,8 +1704,8 @@ export default function CarsDetails1() {
                                 $25.00
                               </p>
                             </div>
-                          </div>
-                          <div className="line-booking-tickets">
+                          </div> */}
+                            {/* <div className="line-booking-tickets">
                             <div className="item-ticket">
                               <ul className="list-filter-checkbox">
                                 <li>
@@ -1615,10 +1725,11 @@ export default function CarsDetails1() {
                                 $52.00
                               </p>
                             </div>
+                          </div> */}
                           </div>
                         </div>
-                      </div>
-                      <div className="item-line-booking last-item pb-0">
+                      )}
+                      {/* <div className="item-line-booking last-item pb-0">
                         <strong className="text-md-medium neutral-1000">
                           Subtotal
                         </strong>
@@ -1633,18 +1744,23 @@ export default function CarsDetails1() {
                         <div className="line-booking-right">
                           <p className="text-xl-bold neutral-1000">$124.00</p>
                         </div>
-                      </div>
+                      </div> */}
                       <div className="item-line-booking last-item">
                         <strong className="text-md-bold neutral-1000">
-                          Total Payable
+                          Total
                         </strong>
                         <div className="line-booking-right">
-                          <p className="text-xl-bold neutral-1000">$124.00</p>
+                          <p className="text-xl-bold neutral-1000">
+                            Rp10.000.000
+                          </p>
                         </div>
                       </div>
                       <div className="box-button-book">
-                        <Link className="btn btn-book" href="#">
-                          Book Now
+                        <Link
+                          className="btn btn-book"
+                          href={"/booking?category=" + category}
+                        >
+                          Pesan Sekarang
                           <svg
                             width={16}
                             height={16}
@@ -1681,7 +1797,7 @@ export default function CarsDetails1() {
                       </div>
                     </div>
                   </div>
-                  <div className="sidebar-left border-1 background-card">
+                  {/* <div className="sidebar-left border-1 background-card">
                     <h6 className="text-xl-bold neutral-1000">Listed by</h6>
                     <div className="box-sidebar-content">
                       <div className="box-agent-support border-bottom pb-3 mb-3">
@@ -1744,7 +1860,7 @@ export default function CarsDetails1() {
                         </Link>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

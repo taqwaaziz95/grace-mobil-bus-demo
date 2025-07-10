@@ -74,10 +74,10 @@ export default function Header3({
                       </ul>
                     </li>
                     <li>
-                      <Link href="/blog">Blog</Link>
+                      <Link href="/blog-list">Blog</Link>
                     </li>
                     <li>
-                      <Link href="/kontak">Kontak Kami</Link>
+                      <Link href="/contact">Kontak Kami</Link>
                     </li>
 
                     {/* <li className="has-children">

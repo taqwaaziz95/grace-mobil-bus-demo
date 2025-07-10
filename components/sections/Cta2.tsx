@@ -176,15 +176,15 @@ export default function Cta2() {
 								<div className="authors-partner-left">
 									<img
 										src="/assets/imgs/page/homepage5/author.png"
-										alt="Carento"
+										alt="Gracetrans"
 									/>
 									<img
 										src="/assets/imgs/page/homepage5/author2.png"
-										alt="Carento"
+										alt="Gracetrans"
 									/>
 									<img
 										src="/assets/imgs/page/homepage5/author3.png"
-										alt="Carento"
+										alt="Gracetrans"
 									/>
 									<span className="item-author">
 										<svg

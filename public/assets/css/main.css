@@ -5195,7 +5195,9 @@ label {
 }
 
 .noUi-state-tap .noUi-origin {
-	transition: left 0.3s, top 0.3s;
+	transition:
+		left 0.3s,
+		top 0.3s;
 }
 
 .noUi-state-drag * {
@@ -9479,6 +9481,10 @@ a.icon-socials:hover svg path {
 
 .section-box-banner-2 .box-banner-1 {
 	position: relative;
+}
+
+.image-test {
+	background-image: url(../imgs/banners/banners-2/img-1.png);
 }
 
 .section-box-banner-2 .box-banner-1::before {

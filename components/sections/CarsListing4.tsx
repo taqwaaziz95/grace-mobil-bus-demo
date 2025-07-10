@@ -42,7 +42,7 @@ export default function CarsListing4() {
 									<Link href="/cars-details-2">
 										<img
 											src="/assets/imgs/cars-listing/cars-listing-2/car-1.png"
-											alt="Carento"
+											alt="Gracetrans"
 										/>
 									</Link>
 								</div>
@@ -99,7 +99,7 @@ export default function CarsListing4() {
 									<Link href="/cars-details-2">
 										<img
 											src="/assets/imgs/cars-listing/cars-listing-2/car-5.png"
-											alt="Carento"
+											alt="Gracetrans"
 										/>
 									</Link>
 								</div>
@@ -156,7 +156,7 @@ export default function CarsListing4() {
 									<Link href="/cars-details-2">
 										<img
 											src="/assets/imgs/cars-listing/cars-listing-2/car-6.png"
-											alt="Carento"
+											alt="Gracetrans"
 										/>
 									</Link>
 								</div>
@@ -213,7 +213,7 @@ export default function CarsListing4() {
 									<Link href="/cars-details-2">
 										<img
 											src="/assets/imgs/cars-listing/cars-listing-2/car-7.png"
-											alt="Carento"
+											alt="Gracetrans"
 										/>
 									</Link>
 								</div>
@@ -270,7 +270,7 @@ export default function CarsListing4() {
 									<Link href="/cars-details-2">
 										<img
 											src="/assets/imgs/cars-listing/cars-listing-2/car-8.png"
-											alt="Carento"
+											alt="Gracetrans"
 										/>
 									</Link>
 								</div>
@@ -327,7 +327,7 @@ export default function CarsListing4() {
 									<Link href="/cars-details-2">
 										<img
 											src="/assets/imgs/cars-listing/cars-listing-2/car-9.png"
-											alt="Carento"
+											alt="Gracetrans"
 										/>
 									</Link>
 								</div>
@@ -384,7 +384,7 @@ export default function CarsListing4() {
 									<Link href="/cars-details-2">
 										<img
 											src="/assets/imgs/cars-listing/cars-listing-2/car-10.png"
-											alt="Carento"
+											alt="Gracetrans"
 										/>
 									</Link>
 								</div>
@@ -441,7 +441,7 @@ export default function CarsListing4() {
 									<Link href="/cars-details-2">
 										<img
 											src="/assets/imgs/cars-listing/cars-listing-2/car-11.png"
-											alt="Carento"
+											alt="Gracetrans"
 										/>
 									</Link>
 								</div>

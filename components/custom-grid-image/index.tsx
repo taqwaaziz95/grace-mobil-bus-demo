@@ -1,5 +1,7 @@
 import React from "react";
 import { H1, H3 } from "../typography";
+import Image from "next/image";
+import { withBasePath } from "@/lib/basePath";
 
 const IMAGES = {
 	img1: "/assets/imgs/section-1/img-1.png",
@@ -51,7 +53,14 @@ const CustomGridImage = ({
 			<div className="row g-4">
 				<div className="col-lg-4 col-md-6">
 					<div className="box-image rounded-12 position-relative overflow-hidden">
-						<img className="rounded-12" src={IMAGES.img1} alt="img" />
+						<Image
+							className="rounded-12"
+							src={withBasePath(IMAGES.img1)}
+							alt="img"
+							width={400}
+							height={400}
+							style={{ width: "100%", height: "auto" }}
+						/>
 						<div className="box-tag bg-white p-3 d-flex align-items-center position-absolute bottom-0 end-0 rounded-12 m-3">
 							<H1 className="text-dark fs-72 me-4">{tagOne.number}</H1>
 							<H3>
@@ -63,7 +72,14 @@ const CustomGridImage = ({
 
 				<div className="col-lg-4 col-md-6">
 					<div className="box-image rounded-12 position-relative overflow-hidden">
-						<img className="rounded-12" src={IMAGES.img2} alt="img" />
+						<Image
+							className="rounded-12"
+							src={IMAGES.img2}
+							alt="img"
+							width={400}
+							height={400}
+							style={{ width: "100%", height: "auto" }}
+						/>
 					</div>
 				</div>
 
@@ -75,7 +91,14 @@ const CustomGridImage = ({
 								{tagTwo.title} <br /> {tagTwo.subtitle}
 							</H3>
 						</div>
-						<img className="rounded-12" src={IMAGES.img3} alt="img" />
+						<Image
+							className="rounded-12"
+							src={IMAGES.img3}
+							alt="img"
+							width={400}
+							height={400}
+							style={{ width: "100%", height: "auto" }}
+						/>
 					</div>
 				</div>
 			</div>

@@ -1,6 +1,5 @@
 "use client";
 
-import React, { useState } from "react";
 import { Alert } from "@/components/alert";
 import { LinkButton } from "@/components/button";
 import Card from "@/components/card";
@@ -21,15 +20,18 @@ import {
 	Pre,
 	UL,
 } from "@/components/typography";
-
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { swiperGroupAnimate } from "@/util/swiperOptions";
 import Accordion, { AccordionItem } from "@/components/accordion";
+import Link from "next/link";
 import RadioButton from "@/components/radio-button";
 import { Checkbox } from "@/components/checkbox";
+import { size } from "lodash";
 import CustomGridImage from "@/components/custom-grid-image";
 import Breadcrumbs from "@/components/breadcrumbs";
+import { on } from "events";
 
 // Define the RadioButtonColor type if not imported from the component
 type RadioButtonColor =
@@ -67,27 +69,32 @@ const teamMembers = [
 		imageSrc: "/assets/imgs/team/team-1/portrait-1.png",
 		name: "Aldo RP",
 		role: "CTO (Chief Tech Officer)",
-		profileLink: "/dealer-details",
+		profileLink: "#",
+		onClick: () => alert("Aldo's profile clicked!"),
 		socialIcons: [
 			{
 				iconSrc: "/assets/imgs/team/team-1/icon-1.svg",
 				iconAlt: "icon1",
 				iconLink: "#",
+				onClick: () => alert("Icon 1 clicked!"),
 			},
 			{
 				iconSrc: "/assets/imgs/team/team-1/icon-2.svg",
 				iconAlt: "icon2",
 				iconLink: "#",
+				onClick: () => alert("Icon 2 clicked!"),
 			},
 			{
 				iconSrc: "/assets/imgs/team/team-1/icon-3.svg",
 				iconAlt: "icon3",
 				iconLink: "#",
+				onClick: () => alert("Icon 3 clicked!"),
 			},
 			{
 				iconSrc: "/assets/imgs/team/team-1/icon-4.svg",
 				iconAlt: "icon4",
 				iconLink: "#",
+				onClick: () => alert("Icon 4 clicked!"),
 			},
 		],
 		arrowIconSrc: "/assets/imgs/team/team-1/arrow-up-right.svg",
@@ -97,33 +104,42 @@ const teamMembers = [
 		imageSrc: "/assets/imgs/team/team-1/portrait-2.png",
 		name: "Willy Andika",
 		role: "CFO (Chief Financial Officer)",
-		profileLink: "/dealer-details",
+		profileLink: "#",
+		onClick: () => alert("Willy's profile clicked!"),
 		socialIcons: [
 			{
 				iconSrc: "/assets/imgs/team/team-1/icon-1.svg",
 				iconAlt: "icon1",
 				iconLink: "#",
+				onClick: () => alert("Icon 1 clicked!"),
 			},
 			{
 				iconSrc: "/assets/imgs/team/team-1/icon-2.svg",
 				iconAlt: "icon2",
 				iconLink: "#",
+				onClick: () => alert("Icon 2 clicked!"),
 			},
 			{
 				iconSrc: "/assets/imgs/team/team-1/icon-3.svg",
 				iconAlt: "icon3",
 				iconLink: "#",
+				onClick: () => alert("Icon 3 clicked!"),
 			},
 			{
 				iconSrc: "/assets/imgs/team/team-1/icon-4.svg",
 				iconAlt: "icon4",
 				iconLink: "#",
+				onClick: () => alert("Icon 4 clicked!"),
 			},
 		],
 		arrowIconSrc: "/assets/imgs/team/team-1/arrow-up-right.svg",
 	},
 	// ...add more team members here
 ];
+
+// set alert here
+
+// data/testimonialData.ts
 
 const testimonialData = [
 	{
@@ -265,27 +281,64 @@ const faqs: AccordionItem[] = [
 ];
 
 // Button Component Example
-const ButtonDemo = () => (
-	<div className="tw:!space-y-4">
-		<H3>Button</H3>
-		<P>
-			Berikut adalah contoh penggunaan <code>Button</code>. Anda dapat
-			menyesuaikan tampilan, varian, ukuran, dan status tombol sesuai kebutuhan
-			aplikasi Anda.
-		</P>
-		<div className="tw:!flex tw:!gap-4 tw:!flex-wrap">
-			<LinkButton href="#" variant="white">
-				Kontak Kami
-			</LinkButton>
-			<LinkButton href="/book-shuttle" variant="sky">
-				Pesan Shuttle
-			</LinkButton>
-			<LinkButton href="/sewa-mobil" variant="yellow">
-				Sewa Mobil
-			</LinkButton>
+const ButtonDemo = () => {
+	const [alertMsg, setAlertMsg] = useState<string | null>(null);
+	const handleClick = (msg: string) => {
+		setAlertMsg(msg);
+		setTimeout(() => setAlertMsg(null), 2000);
+	};
+	return (
+		<div className="tw:!space-y-4">
+			<H3>Button</H3>
+			<P>
+				Berikut adalah contoh penggunaan <code>Button</code>. Anda dapat
+				menyesuaikan tampilan, varian, ukuran, dan status tombol sesuai
+				kebutuhan aplikasi Anda.
+			</P>
+			<div
+				style={{
+					position: "fixed",
+					top: 24,
+					right: 24,
+					zIndex: 9999,
+					transition: "transform 0.3s, opacity 0.3s",
+					transform: alertMsg ? "translateY(0)" : "translateY(-40px)",
+					opacity: alertMsg ? 1 : 0,
+					pointerEvents: alertMsg ? "auto" : "none",
+				}}
+			>
+				{alertMsg && (
+					<Alert type="success" title="Success!">
+						Button {alertMsg}
+					</Alert>
+				)}
+			</div>
+			<div className="tw:!flex tw:!gap-4 tw:!flex-wrap">
+				<LinkButton
+					href="#"
+					variant="white"
+					onClick={() => handleClick("Kontak Kami clicked!")}
+				>
+					Kontak Kami
+				</LinkButton>
+				<LinkButton
+					href="#"
+					variant="sky"
+					onClick={() => handleClick("Pesan Shuttle clicked!")}
+				>
+					Pesan Shuttle
+				</LinkButton>
+				<LinkButton
+					href="#"
+					variant="yellow"
+					onClick={() => handleClick("Sewa Mobil clicked!")}
+				>
+					Sewa Mobil
+				</LinkButton>
+			</div>
 		</div>
-	</div>
-);
+	);
+};
 
 // Input Component Example
 const InputDemo = () => (
@@ -305,23 +358,128 @@ const InputDemo = () => (
 );
 
 // Alert Component Example
-const AlertDemo = () => (
-	<div className="tw:!space-y-4">
-		<h2 className="tw:!text-xl tw:!font-semibold">Alert</h2>
-		<Alert type="success" title="Sukses Alert" className="tw:!mb-4">
-			This is a Sukses alert.
-		</Alert>
-		<Alert type="warning" title="Warning Alert" className="tw:!mb-4">
-			This is a warning alert.
-		</Alert>
-		<Alert type="error" title="error Alert" className="tw:!mb-4">
-			This is a error alert.
-		</Alert>
-		<Alert type="info" title="info Alert" className="tw:!mb-4">
-			This is a info alert.
-		</Alert>
-	</div>
-);
+const AlertDemo = () => {
+	const [show, setShow] = useState(false);
+	const [alertType, setAlertType] = useState<
+		"success" | "warning" | "error" | "info"
+	>("success");
+	const [alertTitle, setAlertTitle] = useState("Success!");
+	const [alertMsg, setAlertMsg] = useState(
+		"This alert will disappear after 3 seconds."
+	);
+	const timer = React.useRef<NodeJS.Timeout | null>(null);
+
+	const handleShowAlert = (
+		type: "success" | "warning" | "error" | "info",
+		title: string,
+		msg: string
+	) => {
+		setAlertType(type);
+		setAlertTitle(title);
+		setAlertMsg(msg);
+		setShow(true);
+		if (timer.current) clearTimeout(timer.current);
+		timer.current = setTimeout(() => setShow(false), 3000);
+	};
+
+	React.useEffect(() => {
+		return () => {
+			if (timer.current) clearTimeout(timer.current);
+		};
+	}, []);
+
+	return (
+		<div className="tw:!space-y-4">
+			<h2 className="tw:!text-xl tw:!font-semibold">Alert</h2>
+			<div className="tw:!flex tw:!gap-4 tw:!items-center">
+				<Alert
+					type="success"
+					title="Sukses Alert"
+					className="tw:!mb-4 tw:!flex-1"
+				>
+					This is a Sukses alert.
+				</Alert>
+				<button
+					className="tw:!bg-green-500 tw:!text-white tw:!px-4 tw:!py-2 tw:!rounded"
+					onClick={() =>
+						handleShowAlert(
+							"success",
+							"Sukses Alert",
+							"This is a Sukses alert."
+						)
+					}
+				>
+					Show
+				</button>
+			</div>
+			<div className="tw:!flex tw:!gap-4 tw:!items-center">
+				<Alert
+					type="warning"
+					title="Warning Alert"
+					className="tw:!mb-4 tw:!flex-1"
+				>
+					This is a warning alert.
+				</Alert>
+				<button
+					className="tw:!bg-yellow-500 tw:!text-white tw:!px-4 tw:!py-2 tw:!rounded"
+					onClick={() =>
+						handleShowAlert(
+							"warning",
+							"Warning Alert",
+							"This is a warning alert."
+						)
+					}
+				>
+					Show
+				</button>
+			</div>
+			<div className="tw:!flex tw:!gap-4 tw:!items-center">
+				<Alert type="error" title="Error Alert" className="tw:!mb-4 tw:!flex-1">
+					This is a error alert.
+				</Alert>
+				<button
+					className="tw:!bg-red-500 tw:!text-white tw:!px-4 tw:!py-2 tw:!rounded"
+					onClick={() =>
+						handleShowAlert("error", "Error Alert", "This is a error alert.")
+					}
+				>
+					Show
+				</button>
+			</div>
+			<div className="tw:!flex tw:!gap-4 tw:!items-center">
+				<Alert type="info" title="Info Alert" className="tw:!mb-4 tw:!flex-1">
+					This is a info alert.
+				</Alert>
+				<button
+					className="tw:!bg-blue-500 tw:!text-white tw:!px-4 tw:!py-2 tw:!rounded"
+					onClick={() =>
+						handleShowAlert("info", "Info Alert", "This is a info alert.")
+					}
+				>
+					Show
+				</button>
+			</div>
+			<div
+				style={{
+					position: "fixed",
+					top: 24,
+					right: 24,
+					zIndex: 9999,
+					transition: "transform 0.3s, opacity 0.3s",
+					transform: show ? "translateY(0)" : "translateY(-40px)",
+					opacity: show ? 1 : 0,
+					pointerEvents: show ? "auto" : "none",
+				}}
+			>
+				{show && (
+					<Alert type={alertType} title={alertTitle}>
+						{alertMsg}
+					</Alert>
+				)}
+			</div>
+		</div>
+	);
+};
 
 // Typography Component Example
 const Typography = () => (
@@ -603,6 +761,51 @@ const ChecklistButtonDemo = () => {
 			<div className="tw:!mt-2 tw:!text-gray-600">
 				{/* Selected: <span className="tw:!font-bold">{selected}</span> */}
 			</div>
+
+			<hr className="tw:!my-8" />
+
+			<H6>Contoh Penerapan: Pilih Fasilitas Mobil</H6>
+			<P>
+				Simulasi aplikasi: Pilih fasilitas tambahan yang Anda inginkan saat
+				menyewa mobil.
+			</P>
+			<div className="tw:!flex tw:!gap-4">
+				<Checkbox
+					label="GPS"
+					checked={selected.includes("gps")}
+					onChange={() => handleChange("gps")}
+					size="md"
+				/>
+				<Checkbox
+					label="Child Seat"
+					checked={selected.includes("child-seat")}
+					onChange={() => handleChange("child-seat")}
+					size="md"
+				/>
+				<Checkbox
+					label="Asuransi"
+					checked={selected.includes("insurance")}
+					onChange={() => handleChange("insurance")}
+					size="md"
+				/>
+			</div>
+			<div className="tw:!mt-2 tw:!text-gray-600">
+				Fasilitas dipilih:{" "}
+				<span className="tw:!font-bold">
+					{["gps", "child-seat", "insurance"]
+						.filter((v) => selected.includes(v))
+						.map((v) =>
+							v === "gps"
+								? "GPS"
+								: v === "child-seat"
+									? "Child Seat"
+									: v === "insurance"
+										? "Asuransi"
+										: v
+						)
+						.join(", ") || "Tidak ada"}
+				</span>
+			</div>
 		</div>
 	);
 };
@@ -639,8 +842,8 @@ const BreadcrumbsDemo = () => (
 		</P>
 		<Breadcrumbs
 			routes={[
-				{ label: "Home", href: "/" },
-				{ label: "About Us", href: "/about-us" },
+				{ label: "Home", href: "#", onClick: () => alert("Home clicked") },
+				{ label: "About Us", href: "#", onClick: () => alert("About Us") },
 			]}
 			className="tw:!bg-blue-50 tw:!p-4 tw:!rounded-lg tw:!border tw:!border-gray-200"
 		/>
@@ -652,8 +855,8 @@ const BreadcrumbsDemo = () => (
 		</P>
 		<Breadcrumbs
 			routes={[
-				{ label: "Home", href: "/" },
-				{ label: "About Us", href: "/about-us" },
+				{ label: "Home", href: "#", onClick: () => alert("Home clicked") },
+				{ label: "About Us", href: "#", onClick: () => alert("About Us") },
 			]}
 			className="tw:!bg-amber-500 tw:!p-4 tw:!rounded-lg tw:!border tw:!border-gray-200"
 		/>
@@ -661,7 +864,7 @@ const BreadcrumbsDemo = () => (
 );
 
 // Main Documentation Page
-const NewPlayground = () => {
+const ComponentDocs = () => {
 	const [selected, setSelected] = useState("button");
 	const [show, setShow] = React.useState(false);
 	const timer = React.useRef<NodeJS.Timeout | null>(null);
@@ -680,7 +883,29 @@ const NewPlayground = () => {
 	let Content;
 	switch (selected) {
 		case "button":
-			Content = <ButtonDemo />;
+			Content = (
+				<>
+					<ButtonDemo />
+					<div
+						style={{
+							position: "fixed",
+							top: 24,
+							right: 24,
+							zIndex: 9999,
+							transition: "transform 0.3s, opacity 0.3s",
+							transform: show ? "translateY(0)" : "translateY(-40px)",
+							opacity: show ? 1 : 0,
+							pointerEvents: show ? "auto" : "none",
+						}}
+					>
+						{show && (
+							<Alert type="success" title="Success!">
+								This alert will disappear after 3 seconds.
+							</Alert>
+						)}
+					</div>
+				</>
+			);
 			break;
 		case "input":
 			Content = <InputDemo />;
@@ -689,27 +914,6 @@ const NewPlayground = () => {
 			Content = (
 				<>
 					<AlertDemo />
-					<div>
-						<button onClick={handleShowAlert}>Click To Show Alert</button>
-						<div
-							style={{
-								position: "fixed",
-								top: 24,
-								right: 24,
-								zIndex: 9999,
-								transition: "transform 0.3s, opacity 0.3s",
-								transform: show ? "translateY(0)" : "translateY(-40px)",
-								opacity: show ? 1 : 0,
-								pointerEvents: show ? "auto" : "none",
-							}}
-						>
-							{show && (
-								<Alert type="success" title="Success!">
-									This alert will disappear after 3 seconds.
-								</Alert>
-							)}
-						</div>
-					</div>
 				</>
 			);
 			break;
@@ -770,4 +974,4 @@ const NewPlayground = () => {
 	);
 };
 
-export default NewPlayground;
+export default ComponentDocs;

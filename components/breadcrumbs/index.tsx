@@ -1,10 +1,13 @@
 import React from "react";
 import Link from "next/link";
+import { withBasePath } from "@/lib/basePath";
 
 interface Route {
 	label: string;
 	href: string;
 	active?: boolean;
+	onClick?: () => void; // Optional click handler for the route
+	disabled?: boolean; // Optional disabled state for the route
 }
 
 interface BreadcrumbsProps {
@@ -30,20 +33,35 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
 		>
 			{routes.map((route, idx) => (
 				<React.Fragment key={route.href + route.label}>
-					<Link
-						href={route.href}
-						className={
-							idx === routes.length - 1
-								? "neutral-1000 text-md-bold"
-								: "neutral-700 text-md-medium"
-						}
-						aria-current={idx === routes.length - 1 ? "page" : undefined}
-					>
-						{route.label}
-					</Link>
+					{route.disabled ? (
+						<span
+							className={
+								(idx === routes.length - 1
+									? "neutral-1000 text-md-bold"
+									: "neutral-700 text-md-medium") +
+								" opacity-50 cursor-not-allowed"
+							}
+							aria-disabled="true"
+						>
+							{route.label}
+						</span>
+					) : (
+						<Link
+							href={route.href}
+							onClick={route.onClick}
+							className={
+								idx === routes.length - 1
+									? "neutral-1000 text-md-bold"
+									: "neutral-700 text-md-medium"
+							}
+							aria-current={idx === routes.length - 1 ? "page" : undefined}
+						>
+							{route.label}
+						</Link>
+					)}
 					{idx < routes.length - 1 && (
 						<span style={{ display: "flex", alignItems: "center" }}>
-							<img src={separatorIcon} alt="separator" />
+							<img src={withBasePath(separatorIcon)} alt="separator" />
 						</span>
 					)}
 				</React.Fragment>

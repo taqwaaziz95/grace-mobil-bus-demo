@@ -46,7 +46,7 @@ export default function Categories1() {
 										<Link className="card-title" href="/cars-list-1">
 											<img
 												src="/assets/imgs/categories/categories-1/car-1.png"
-												alt="Carento"
+												alt="Gracetrans"
 											/>
 										</Link>
 									</div>
@@ -89,7 +89,7 @@ export default function Categories1() {
 										<Link className="card-title" href="/cars-list-1">
 											<img
 												src="/assets/imgs/categories/categories-1/car-2.png"
-												alt="Carento"
+												alt="Gracetrans"
 											/>
 										</Link>
 									</div>
@@ -132,7 +132,7 @@ export default function Categories1() {
 										<Link className="card-title" href="/cars-list-1">
 											<img
 												src="/assets/imgs/categories/categories-1/car-3.png"
-												alt="Carento"
+												alt="Gracetrans"
 											/>
 										</Link>
 									</div>
@@ -175,7 +175,7 @@ export default function Categories1() {
 										<Link className="card-title" href="/cars-list-1">
 											<img
 												src="/assets/imgs/categories/categories-1/car-4.png"
-												alt="Carento"
+												alt="Gracetrans"
 											/>
 										</Link>
 									</div>
@@ -218,7 +218,7 @@ export default function Categories1() {
 										<Link className="card-title" href="/cars-list-1">
 											<img
 												src="/assets/imgs/categories/categories-1/car-5.png"
-												alt="Carento"
+												alt="Gracetrans"
 											/>
 										</Link>
 									</div>
@@ -261,7 +261,7 @@ export default function Categories1() {
 										<Link className="card-title" href="/cars-list-1">
 											<img
 												src="/assets/imgs/categories/categories-1/car-6.png"
-												alt="Carento"
+												alt="Gracetrans"
 											/>
 										</Link>
 									</div>
@@ -304,7 +304,7 @@ export default function Categories1() {
 										<Link className="card-title" href="/cars-list-1">
 											<img
 												src="/assets/imgs/categories/categories-1/car-7.png"
-												alt="Carento"
+												alt="Gracetrans"
 											/>
 										</Link>
 									</div>
@@ -347,7 +347,7 @@ export default function Categories1() {
 										<Link className="card-title" href="/cars-list-1">
 											<img
 												src="/assets/imgs/categories/categories-1/car-8.png"
-												alt="Carento"
+												alt="Gracetrans"
 											/>
 										</Link>
 									</div>

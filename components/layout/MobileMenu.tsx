@@ -21,14 +21,14 @@ export default function MobileMenu({ isMobileMenu, handleMobileMenu }: any) {
 						<Link className="d-flex" href="/">
 							<img
 								className="light-mode"
-								alt="Carento"
+								alt="Gracetrans"
 								src="/assets/imgs/template/grace-logo.png"
 								width={150}
 								height={50}
 							/>
 							<img
 								className="dark-mode"
-								alt="Carento"
+								alt="Gracetrans"
 								src="/assets/imgs/template/grace-logo.png"
 								width={150}
 								height={50}

@@ -11,6 +11,7 @@ import Header2 from "./header/Header2";
 import Header3 from "./header/Header3";
 import Marquee from "react-fast-marquee";
 import { ArrowRight } from "lucide-react";
+import { withBasePath } from "@/lib/basePath";
 
 interface LayoutProps {
 	headerStyle?: Number;
@@ -26,7 +27,7 @@ function Footer() {
 				{/* 1. Logo & Mission */}
 				<div className="tw:!basis-64 tw:!flex-shrink-0">
 					<img
-						src="/assets/imgs/template/grace-logo.png"
+						src={withBasePath("/assets/imgs/template/grace-logo.png")}
 						alt="Grace Trans Logo"
 						className="tw:!h-16 tw:!mb-4"
 					/>
@@ -37,7 +38,7 @@ function Footer() {
 					</p>
 					<a href="#" target="_blank" rel="noopener noreferrer">
 						<img
-							src="/assets/imgs/download_android.png"
+							src={withBasePath("/assets/imgs/download_android.png")}
 							alt="Google Play"
 							className="tw:!w-48"
 						/>
@@ -143,13 +144,13 @@ function Clients() {
 							<div className="item-brand">
 								<img
 									className="light-mode"
-									src="/assets/imgs/page/homepage2/lexus.png"
-									alt="Carento"
+									src={withBasePath("/assets/imgs/page/homepage2/lexus.png")}
+									alt="Gracetransx"
 								/>
 								<img
 									className="dark-mode"
-									src="/assets/imgs/page/homepage2/lexus-w.png"
-									alt="Carento"
+									src={withBasePath("/assets/imgs/page/homepage2/lexus-w.png")}
+									alt="Gracetrans"
 								/>
 							</div>
 						</li>
@@ -157,13 +158,13 @@ function Clients() {
 							<div className="item-brand">
 								<img
 									className="light-mode"
-									src="/assets/imgs/page/homepage2/mer.png"
-									alt="Carento"
+									src={withBasePath("/assets/imgs/page/homepage2/mer.png")}
+									alt="Gracetrans"
 								/>
 								<img
 									className="dark-mode"
-									src="/assets/imgs/page/homepage2/mer-w.png"
-									alt="Carento"
+									src={withBasePath("/assets/imgs/page/homepage2/mer-w.png")}
+									alt="Gracetrans"
 								/>
 							</div>
 						</li>
@@ -171,13 +172,15 @@ function Clients() {
 							<div className="item-brand">
 								<img
 									className="light-mode"
-									src="/assets/imgs/page/homepage2/bugatti.png"
-									alt="Carento"
+									src={withBasePath("/assets/imgs/page/homepage2/bugatti.png")}
+									alt="Gracetrans"
 								/>
 								<img
 									className="dark-mode"
-									src="/assets/imgs/page/homepage2/bugatti-w.png"
-									alt="Carento"
+									src={withBasePath(
+										"/assets/imgs/page/homepage2/bugatti-w.png"
+									)}
+									alt="Gracetrans"
 								/>
 							</div>
 						</li>
@@ -185,13 +188,13 @@ function Clients() {
 							<div className="item-brand">
 								<img
 									className="light-mode"
-									src="/assets/imgs/page/homepage2/jaguar.png"
-									alt="Carento"
+									src={withBasePath("/assets/imgs/page/homepage2/jaguar.png")}
+									alt="Gracetrans"
 								/>
 								<img
 									className="dark-mode"
-									src="/assets/imgs/page/homepage2/jaguar-w.png"
-									alt="Carento"
+									src={withBasePath("/assets/imgs/page/homepage2/jaguar-w.png")}
+									alt="Gracetrans"
 								/>
 							</div>
 						</li>
@@ -199,13 +202,13 @@ function Clients() {
 							<div className="item-brand">
 								<img
 									className="light-mode"
-									src="/assets/imgs/page/homepage2/honda.png"
-									alt="Carento"
+									src={withBasePath("/assets/imgs/page/homepage2/honda.png")}
+									alt="Gracetrans"
 								/>
 								<img
 									className="dark-mode"
-									src="/assets/imgs/page/homepage2/honda-w.png"
-									alt="Carento"
+									src={withBasePath("/assets/imgs/page/homepage2/honda-w.png")}
+									alt="Gracetrans"
 								/>
 							</div>
 						</li>
@@ -213,13 +216,17 @@ function Clients() {
 							<div className="item-brand">
 								<img
 									className="light-mode"
-									src="/assets/imgs/page/homepage2/chevrolet.png"
-									alt="Carento"
+									src={withBasePath(
+										"/assets/imgs/page/homepage2/chevrolet.png"
+									)}
+									alt="Gracetrans"
 								/>
 								<img
 									className="dark-mode"
-									src="/assets/imgs/page/homepage2/chevrolet-w.png"
-									alt="Carento"
+									src={withBasePath(
+										"/assets/imgs/page/homepage2/chevrolet-w.png"
+									)}
+									alt="Gracetrans"
 								/>
 							</div>
 						</li>
@@ -227,13 +234,13 @@ function Clients() {
 							<div className="item-brand">
 								<img
 									className="light-mode"
-									src="/assets/imgs/page/homepage2/acura.png"
-									alt="Carento"
+									src={withBasePath("/assets/imgs/page/homepage2/acura.png")}
+									alt="Gracetrans"
 								/>
 								<img
 									className="dark-mode"
-									src="/assets/imgs/page/homepage2/acura-w.png"
-									alt="Carento"
+									src={withBasePath("/assets/imgs/page/homepage2/acura-w.png")}
+									alt="Gracetrans"
 								/>
 							</div>
 						</li>
@@ -241,13 +248,13 @@ function Clients() {
 							<div className="item-brand">
 								<img
 									className="light-mode"
-									src="/assets/imgs/page/homepage2/bmw.png"
-									alt="Carento"
+									src={withBasePath("/assets/imgs/page/homepage2/bmw.png")}
+									alt="Gracetrans"
 								/>
 								<img
 									className="dark-mode"
-									src="/assets/imgs/page/homepage2/bmw-w.png"
-									alt="Carento"
+									src={withBasePath("/assets/imgs/page/homepage2/bmw-w.png")}
+									alt="Gracetrans"
 								/>
 							</div>
 						</li>
@@ -255,13 +262,13 @@ function Clients() {
 							<div className="item-brand">
 								<img
 									className="light-mode"
-									src="/assets/imgs/page/homepage2/toyota.png"
-									alt="Carento"
+									src={withBasePath("/assets/imgs/page/homepage2/toyota.png")}
+									alt="Gracetrans"
 								/>
 								<img
 									className="dark-mode"
-									src="/assets/imgs/page/homepage2/toyota-w.png"
-									alt="Carento"
+									src={withBasePath("/assets/imgs/page/homepage2/toyota-w.png")}
+									alt="Gracetrans"
 								/>
 							</div>
 						</li>
@@ -269,13 +276,13 @@ function Clients() {
 							<div className="item-brand">
 								<img
 									className="light-mode"
-									src="/assets/imgs/page/homepage2/lexus.png"
-									alt="Carento"
+									src={withBasePath("/assets/imgs/page/homepage2/lexus.png")}
+									alt="Gracetrans"
 								/>
 								<img
 									className="dark-mode"
-									src="/assets/imgs/page/homepage2/lexus-w.png"
-									alt="Carento"
+									src={withBasePath("/assets/imgs/page/homepage2/lexus-w.png")}
+									alt="Gracetrans"
 								/>
 							</div>
 						</li>
@@ -283,13 +290,13 @@ function Clients() {
 							<div className="item-brand">
 								<img
 									className="light-mode"
-									src="/assets/imgs/page/homepage2/mer.png"
-									alt="Carento"
+									src={withBasePath("/assets/imgs/page/homepage2/mer.png")}
+									alt="Gracetrans"
 								/>
 								<img
 									className="dark-mode"
-									src="/assets/imgs/page/homepage2/mer-w.png"
-									alt="Carento"
+									src={withBasePath("/assets/imgs/page/homepage2/mer-w.png")}
+									alt="Gracetrans"
 								/>
 							</div>
 						</li>
@@ -297,13 +304,15 @@ function Clients() {
 							<div className="item-brand">
 								<img
 									className="light-mode"
-									src="/assets/imgs/page/homepage2/bugatti.png"
-									alt="Carento"
+									src={withBasePath("/assets/imgs/page/homepage2/bugatti.png")}
+									alt="Gracetrans"
 								/>
 								<img
 									className="dark-mode"
-									src="/assets/imgs/page/homepage2/bugatti-w.png"
-									alt="Carento"
+									src={withBasePath(
+										"/assets/imgs/page/homepage2/bugatti-w.png"
+									)}
+									alt="Gracetrans"
 								/>
 							</div>
 						</li>

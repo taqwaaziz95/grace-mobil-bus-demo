@@ -63,24 +63,24 @@ export default function Cta6() {
 											<img
 												className="bdrd8 w-100 mb-15 wow "
 												src="/assets/imgs/cta/cta-6/img-1.png"
-												alt="Carento"
+												alt="Gracetrans"
 											/>
 											<img
 												className="bdrd8 w-100 mb-15 wow "
 												src="/assets/imgs/cta/cta-6/img-2.png"
-												alt="Carento"
+												alt="Gracetrans"
 											/>
 										</div>
 										<div className="col-sm-6 mt-md-50">
 											<img
 												className="bdrd8 w-100 mb-15 wow "
 												src="/assets/imgs/cta/cta-6/img-3.png"
-												alt="Carento"
+												alt="Gracetrans"
 											/>
 											<img
 												className="bdrd8 w-100 wow "
 												src="/assets/imgs/cta/cta-6/img-4.png"
-												alt="Carento"
+												alt="Gracetrans"
 											/>
 										</div>
 									</div>

@@ -55,7 +55,7 @@ export default function CarReview1() {
 										<img
 											className="mr-10"
 											src="/assets/imgs/car-review/car-review-1/img-video-1.png"
-											alt="Carento"
+											alt="Gracetrans"
 										/>
 									</div>
 									<div className="card-info">
@@ -82,7 +82,7 @@ export default function CarReview1() {
 											<img
 												className="mr-10"
 												src="/assets/imgs/car-review/car-review-1/img-video-2.png"
-												alt="Carento"
+												alt="Gracetrans"
 											/>
 										</div>
 										<div className="item-info">
@@ -108,7 +108,7 @@ export default function CarReview1() {
 											<img
 												className="mr-10"
 												src="/assets/imgs/car-review/car-review-1/img-video-3.png"
-												alt="Carento"
+												alt="Gracetrans"
 											/>
 										</div>
 										<div className="item-info">
@@ -134,7 +134,7 @@ export default function CarReview1() {
 											<img
 												className="mr-10"
 												src="/assets/imgs/car-review/car-review-1/img-video-4.png"
-												alt="Carento"
+												alt="Gracetrans"
 											/>
 										</div>
 										<div className="item-info">

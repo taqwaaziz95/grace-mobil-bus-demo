@@ -42,7 +42,7 @@ export default function CarsListing2() {
 									<Link href="/cars-details-2">
 										<img
 											src="/assets/imgs/cars-listing/cars-listing-2/car-1.png"
-											alt="Carento"
+											alt="Gracetrans"
 										/>
 									</Link>
 								</div>
@@ -99,7 +99,7 @@ export default function CarsListing2() {
 									<Link href="/cars-details-2">
 										<img
 											src="/assets/imgs/cars-listing/cars-listing-2/car-2.png"
-											alt="Carento"
+											alt="Gracetrans"
 										/>
 									</Link>
 								</div>
@@ -156,7 +156,7 @@ export default function CarsListing2() {
 									<Link href="/cars-details-2">
 										<img
 											src="/assets/imgs/cars-listing/cars-listing-2/car-3.png"
-											alt="Carento"
+											alt="Gracetrans"
 										/>
 									</Link>
 								</div>
@@ -213,7 +213,7 @@ export default function CarsListing2() {
 									<Link href="/cars-details-2">
 										<img
 											src="/assets/imgs/cars-listing/cars-listing-2/car-4.png"
-											alt="Carento"
+											alt="Gracetrans"
 										/>
 									</Link>
 								</div>

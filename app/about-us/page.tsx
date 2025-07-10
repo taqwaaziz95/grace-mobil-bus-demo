@@ -1,4 +1,5 @@
 "use client";
+import { withBasePath } from "@/lib/basePath";
 import CounterUp from "../../components/elements/CounterUp";
 import Layout from "../../components/layout/Layout";
 import { swiperGroup3, swiperGroupAnimate } from "../../util/swiperOptions";
@@ -22,8 +23,8 @@ export default function AboutUs() {
 							<div className="bg-overlay rounded-12 overflow-hidden">
 								<img
 									className="w-100 h-100 img-banner"
-									src="/assets/imgs/page-header/banner.png"
-									alt="Carento"
+									src={withBasePath("/assets/imgs/page/about-us/banner.png")}
+									alt="Gracetrans"
 								/>
 							</div>
 							<div className="container position-absolute z-1 top-50 start-50 translate-middle">
@@ -38,8 +39,10 @@ export default function AboutUs() {
 								</Link>
 								<span>
 									<img
-										src="/assets/imgs/template/icons/arrow-right.svg"
-										alt="Carento"
+										src={withBasePath(
+											"/assets/imgs/template/icons/arrow-right.svg"
+										)}
+										alt="Gracetrans"
 									/>
 								</span>
 								<Link href="#" className="neutral-1000 text-md-bold">
@@ -75,8 +78,8 @@ export default function AboutUs() {
 									<div className="box-image rounded-12 position-relative overflow-hidden">
 										<img
 											className="rounded-12"
-											src="/assets/imgs/section-1/img-1.png"
-											alt="Carento"
+											src={withBasePath("/assets/imgs/section-1/img-1.png")}
+											alt="Gracetrans"
 										/>
 										<div className="box-tag bg-white p-3 d-flex position-absolute bottom-0 end-0 rounded-12 m-3">
 											<span className="text-dark fs-72 me-3">86</span>
@@ -91,8 +94,8 @@ export default function AboutUs() {
 									<div className="box-image rounded-12 position-relative overflow-hidden">
 										<img
 											className="rounded-12"
-											src="/assets/imgs/section-1/img-2.png"
-											alt="Carento"
+											src={withBasePath("/assets/imgs/section-1/img-2.png")}
+											alt="Gracetrans"
 										/>
 									</div>
 								</div>
@@ -107,8 +110,8 @@ export default function AboutUs() {
 										</div>
 										<img
 											className="rounded-12"
-											src="/assets/imgs/section-1/img-3.png"
-											alt="Carento"
+											src={withBasePath("/assets/imgs/section-1/img-3.png")}
+											alt="Gracetrans"
 										/>
 									</div>
 								</div>
@@ -294,8 +297,10 @@ export default function AboutUs() {
 										<div className="card-image">
 											<Link href="/dealer-details">
 												<img
-													src="/assets/imgs/team/team-1/portrait-1.png"
-													alt="Carento"
+													src={withBasePath(
+														"/assets/imgs/team/team-1/portrait-1.png"
+													)}
+													alt="Gracetrans"
 												/>
 											</Link>
 										</div>
@@ -320,8 +325,10 @@ export default function AboutUs() {
 														>
 															<img
 																className="m-0"
-																src="/assets/imgs/team/team-1/icon-1.svg"
-																alt="Carento"
+																src={withBasePath(
+																	"/assets/imgs/team/team-1/icon-1.svg"
+																)}
+																alt="Gracetrans"
 															/>
 														</Link>
 														<Link
@@ -330,8 +337,10 @@ export default function AboutUs() {
 														>
 															<img
 																className="m-0"
-																src="/assets/imgs/team/team-1/icon-2.svg"
-																alt="Carento"
+																src={withBasePath(
+																	"/assets/imgs/team/team-1/icon-2.svg"
+																)}
+																alt="Gracetrans"
 															/>
 														</Link>
 														<Link
@@ -340,8 +349,10 @@ export default function AboutUs() {
 														>
 															<img
 																className="m-0"
-																src="/assets/imgs/team/team-1/icon-3.svg"
-																alt="Carento"
+																src={withBasePath(
+																	"/assets/imgs/team/team-1/icon-3.svg"
+																)}
+																alt="Gracetrans"
 															/>
 														</Link>
 														<Link
@@ -350,8 +361,10 @@ export default function AboutUs() {
 														>
 															<img
 																className="m-0"
-																src="/assets/imgs/team/team-1/icon-4.svg"
-																alt="Carento"
+																src={withBasePath(
+																	"/assets/imgs/team/team-1/icon-4.svg"
+																)}
+																alt="Gracetrans"
 															/>
 														</Link>
 													</div>
@@ -361,8 +374,10 @@ export default function AboutUs() {
 													>
 														<img
 															className="m-0"
-															src="/assets/imgs/team/team-1/arrow-up-right.svg"
-															alt="Carento"
+															src={withBasePath(
+																"/assets/imgs/team/team-1/arrow-up-right.svg"
+															)}
+															alt="Gracetrans"
 														/>
 													</Link>
 												</div>
@@ -375,8 +390,10 @@ export default function AboutUs() {
 										<div className="card-image">
 											<Link href="/dealer-details">
 												<img
-													src="/assets/imgs/team/team-1/portrait-2.png"
-													alt="Carento"
+													src={withBasePath(
+														"/assets/imgs/team/team-1/portrait-2.png"
+													)}
+													alt="Gracetrans"
 												/>
 											</Link>
 										</div>
@@ -401,8 +418,10 @@ export default function AboutUs() {
 														>
 															<img
 																className="m-0"
-																src="/assets/imgs/team/team-1/icon-1.svg"
-																alt="Carento"
+																src={withBasePath(
+																	"/assets/imgs/team/team-1/icon-1.svg"
+																)}
+																alt="Gracetrans"
 															/>
 														</Link>
 														<Link
@@ -411,8 +430,10 @@ export default function AboutUs() {
 														>
 															<img
 																className="m-0"
-																src="/assets/imgs/team/team-1/icon-2.svg"
-																alt="Carento"
+																src={withBasePath(
+																	"/assets/imgs/team/team-1/icon-2.svg"
+																)}
+																alt="Gracetrans"
 															/>
 														</Link>
 														<Link
@@ -421,8 +442,10 @@ export default function AboutUs() {
 														>
 															<img
 																className="m-0"
-																src="/assets/imgs/team/team-1/icon-3.svg"
-																alt="Carento"
+																src={withBasePath(
+																	"/assets/imgs/team/team-1/icon-3.svg"
+																)}
+																alt="Gracetrans"
 															/>
 														</Link>
 														<Link
@@ -431,8 +454,10 @@ export default function AboutUs() {
 														>
 															<img
 																className="m-0"
-																src="/assets/imgs/team/team-1/icon-4.svg"
-																alt="Carento"
+																src={withBasePath(
+																	"/assets/imgs/team/team-1/icon-4.svg"
+																)}
+																alt="Gracetrans"
 															/>
 														</Link>
 													</div>
@@ -443,7 +468,7 @@ export default function AboutUs() {
 														<img
 															className="m-0"
 															src="/assets/imgs/team/team-1/arrow-up-right.svg"
-															alt="Carento"
+															alt="Gracetrans"
 														/>
 													</Link>
 												</div>
@@ -457,7 +482,7 @@ export default function AboutUs() {
 											<Link href="/dealer-details">
 												<img
 													src="/assets/imgs/team/team-1/portrait-3.png"
-													alt="Carento"
+													alt="Gracetrans"
 												/>
 											</Link>
 										</div>
@@ -482,8 +507,10 @@ export default function AboutUs() {
 														>
 															<img
 																className="m-0"
-																src="/assets/imgs/team/team-1/icon-1.svg"
-																alt="Carento"
+																src={withBasePath(
+																	"/assets/imgs/team/team-1/icon-1.svg"
+																)}
+																alt="Gracetrans"
 															/>
 														</Link>
 														<Link
@@ -492,8 +519,10 @@ export default function AboutUs() {
 														>
 															<img
 																className="m-0"
-																src="/assets/imgs/team/team-1/icon-2.svg"
-																alt="Carento"
+																src={withBasePath(
+																	"/assets/imgs/team/team-1/icon-2.svg"
+																)}
+																alt="Gracetrans"
 															/>
 														</Link>
 														<Link
@@ -502,8 +531,10 @@ export default function AboutUs() {
 														>
 															<img
 																className="m-0"
-																src="/assets/imgs/team/team-1/icon-3.svg"
-																alt="Carento"
+																src={withBasePath(
+																	"/assets/imgs/team/team-1/icon-3.svg"
+																)}
+																alt="Gracetrans"
 															/>
 														</Link>
 														<Link
@@ -512,8 +543,10 @@ export default function AboutUs() {
 														>
 															<img
 																className="m-0"
-																src="/assets/imgs/team/team-1/icon-4.svg"
-																alt="Carento"
+																src={withBasePath(
+																	"/assets/imgs/team/team-1/icon-4.svg"
+																)}
+																alt="Gracetrans"
 															/>
 														</Link>
 													</div>
@@ -524,7 +557,7 @@ export default function AboutUs() {
 														<img
 															className="m-0"
 															src="/assets/imgs/team/team-1/arrow-up-right.svg"
-															alt="Carento"
+															alt="Gracetrans"
 														/>
 													</Link>
 												</div>
@@ -538,7 +571,7 @@ export default function AboutUs() {
 											<Link href="/dealer-details">
 												<img
 													src="/assets/imgs/team/team-1/portrait-4.png"
-													alt="Carento"
+													alt="Gracetrans"
 												/>
 											</Link>
 										</div>
@@ -563,8 +596,10 @@ export default function AboutUs() {
 														>
 															<img
 																className="m-0"
-																src="/assets/imgs/team/team-1/icon-1.svg"
-																alt="Carento"
+																src={withBasePath(
+																	"/assets/imgs/team/team-1/icon-1.svg"
+																)}
+																alt="Gracetrans"
 															/>
 														</Link>
 														<Link
@@ -573,8 +608,10 @@ export default function AboutUs() {
 														>
 															<img
 																className="m-0"
-																src="/assets/imgs/team/team-1/icon-2.svg"
-																alt="Carento"
+																src={withBasePath(
+																	"/assets/imgs/team/team-1/icon-2.svg"
+																)}
+																alt="Gracetrans"
 															/>
 														</Link>
 														<Link
@@ -583,8 +620,10 @@ export default function AboutUs() {
 														>
 															<img
 																className="m-0"
-																src="/assets/imgs/team/team-1/icon-3.svg"
-																alt="Carento"
+																src={withBasePath(
+																	"/assets/imgs/team/team-1/icon-3.svg"
+																)}
+																alt="Gracetrans"
 															/>
 														</Link>
 														<Link
@@ -593,8 +632,10 @@ export default function AboutUs() {
 														>
 															<img
 																className="m-0"
-																src="/assets/imgs/team/team-1/icon-4.svg"
-																alt="Carento"
+																src={withBasePath(
+																	"/assets/imgs/team/team-1/icon-4.svg"
+																)}
+																alt="Gracetrans"
 															/>
 														</Link>
 													</div>
@@ -605,7 +646,7 @@ export default function AboutUs() {
 														<img
 															className="m-0"
 															src="/assets/imgs/team/team-1/arrow-up-right.svg"
-															alt="Carento"
+															alt="Gracetrans"
 														/>
 													</Link>
 												</div>
@@ -683,14 +724,14 @@ export default function AboutUs() {
 													<img
 														className="bdrd8 w-100"
 														src="/assets/imgs/cta/cta-8/img-1.png"
-														alt="Carento"
+														alt="Gracetrans"
 													/>
 												</div>
 												<div className="mt-auto">
 													<img
 														className="bdrd8 w-100"
 														src="/assets/imgs/cta/cta-8/img-2.png"
-														alt="Carento"
+														alt="Gracetrans"
 													/>
 												</div>
 											</div>
@@ -699,14 +740,14 @@ export default function AboutUs() {
 													<img
 														className="bdrd8 w-100"
 														src="/assets/imgs/cta/cta-8/img-3.png"
-														alt="Carento"
+														alt="Gracetrans"
 													/>
 												</div>
 												<div className="position-relative">
 													<img
 														className="bdrd8 w-100"
 														src="/assets/imgs/cta/cta-8/img-4.png"
-														alt="Carento"
+														alt="Gracetrans"
 													/>
 												</div>
 											</div>
@@ -806,7 +847,7 @@ export default function AboutUs() {
 											<img
 												className="rounded-12"
 												src="/assets/imgs/cta/cta-9/img-1.png"
-												alt="Carento"
+												alt="Gracetrans"
 											/>
 											<a
 												className="btn btn-play popup-youtube position-absolute top-50 start-50 translate-middle"
@@ -815,7 +856,7 @@ export default function AboutUs() {
 											<img
 												className="position-absolute top-100 start-100 translate-middle rounded-12 d-none d-md-block"
 												src="/assets/imgs/cta/cta-9/img-2.png"
-												alt="Carento"
+												alt="Gracetrans"
 											/>
 										</div>
 									</div>
@@ -886,15 +927,15 @@ export default function AboutUs() {
 									<div className="box-author-testimonials background-100">
 										<img
 											src="/assets/imgs/page/homepage1/testimonial.png"
-											alt="Carento"
+											alt="Gracetrans"
 										/>
 										<img
 											src="/assets/imgs/page/homepage1/testimonial2.png"
-											alt="Carento"
+											alt="Gracetrans"
 										/>
 										<img
 											src="/assets/imgs/page/homepage1/testimonial3.png"
-											alt="Carento"
+											alt="Gracetrans"
 										/>
 										Testimonials
 									</div>
@@ -930,7 +971,7 @@ export default function AboutUs() {
 																<div className="card-image">
 																	<img
 																		src="/assets/imgs/testimonials/testimonials-1/author-1.png"
-																		alt="Carento"
+																		alt="Gracetrans"
 																	/>
 																</div>
 																<div className="card-info">
@@ -946,27 +987,27 @@ export default function AboutUs() {
 																<img
 																	className="background-brand-2 p-1"
 																	src="/assets/imgs/template/icons/star-black.svg"
-																	alt="Carento"
+																	alt="Gracetrans"
 																/>
 																<img
 																	className="background-brand-2 p-1"
 																	src="/assets/imgs/template/icons/star-black.svg"
-																	alt="Carento"
+																	alt="Gracetrans"
 																/>
 																<img
 																	className="background-brand-2 p-1"
 																	src="/assets/imgs/template/icons/star-black.svg"
-																	alt="Carento"
+																	alt="Gracetrans"
 																/>
 																<img
 																	className="background-brand-2 p-1"
 																	src="/assets/imgs/template/icons/star-black.svg"
-																	alt="Carento"
+																	alt="Gracetrans"
 																/>
 																<img
 																	className="background-brand-2 p-1"
 																	src="/assets/imgs/template/icons/star-black.svg"
-																	alt="Carento"
+																	alt="Gracetrans"
 																/>
 															</div>
 														</div>
@@ -990,7 +1031,7 @@ export default function AboutUs() {
 																<div className="card-image">
 																	<img
 																		src="/assets/imgs/testimonials/testimonials-1/author-2.png"
-																		alt="Carento"
+																		alt="Gracetrans"
 																	/>
 																</div>
 																<div className="card-info">
@@ -1006,27 +1047,27 @@ export default function AboutUs() {
 																<img
 																	className="background-brand-2 p-1"
 																	src="/assets/imgs/template/icons/star-black.svg"
-																	alt="Carento"
+																	alt="Gracetrans"
 																/>
 																<img
 																	className="background-brand-2 p-1"
 																	src="/assets/imgs/template/icons/star-black.svg"
-																	alt="Carento"
+																	alt="Gracetrans"
 																/>
 																<img
 																	className="background-brand-2 p-1"
 																	src="/assets/imgs/template/icons/star-black.svg"
-																	alt="Carento"
+																	alt="Gracetrans"
 																/>
 																<img
 																	className="background-brand-2 p-1"
 																	src="/assets/imgs/template/icons/star-black.svg"
-																	alt="Carento"
+																	alt="Gracetrans"
 																/>
 																<img
 																	className="background-brand-2 p-1"
 																	src="/assets/imgs/template/icons/star-black.svg"
-																	alt="Carento"
+																	alt="Gracetrans"
 																/>
 															</div>
 														</div>
@@ -1050,7 +1091,7 @@ export default function AboutUs() {
 																<div className="card-image">
 																	<img
 																		src="/assets/imgs/testimonials/testimonials-1/author-3.png"
-																		alt="Carento"
+																		alt="Gracetrans"
 																	/>
 																</div>
 																<div className="card-info">
@@ -1066,27 +1107,27 @@ export default function AboutUs() {
 																<img
 																	className="background-brand-2 p-1"
 																	src="/assets/imgs/template/icons/star-black.svg"
-																	alt="Carento"
+																	alt="Gracetrans"
 																/>
 																<img
 																	className="background-brand-2 p-1"
 																	src="/assets/imgs/template/icons/star-black.svg"
-																	alt="Carento"
+																	alt="Gracetrans"
 																/>
 																<img
 																	className="background-brand-2 p-1"
 																	src="/assets/imgs/template/icons/star-black.svg"
-																	alt="Carento"
+																	alt="Gracetrans"
 																/>
 																<img
 																	className="background-brand-2 p-1"
 																	src="/assets/imgs/template/icons/star-black.svg"
-																	alt="Carento"
+																	alt="Gracetrans"
 																/>
 																<img
 																	className="background-brand-2 p-1"
 																	src="/assets/imgs/template/icons/star-black.svg"
-																	alt="Carento"
+																	alt="Gracetrans"
 																/>
 															</div>
 														</div>
@@ -1109,7 +1150,7 @@ export default function AboutUs() {
 																<div className="card-image">
 																	<img
 																		src="/assets/imgs/testimonials/testimonials-1/author-1.png"
-																		alt="Carento"
+																		alt="Gracetrans"
 																	/>
 																</div>
 																<div className="card-info">
@@ -1125,27 +1166,27 @@ export default function AboutUs() {
 																<img
 																	className="background-brand-2 p-1"
 																	src="/assets/imgs/template/icons/star-black.svg"
-																	alt="Carento"
+																	alt="Gracetrans"
 																/>
 																<img
 																	className="background-brand-2 p-1"
 																	src="/assets/imgs/template/icons/star-black.svg"
-																	alt="Carento"
+																	alt="Gracetrans"
 																/>
 																<img
 																	className="background-brand-2 p-1"
 																	src="/assets/imgs/template/icons/star-black.svg"
-																	alt="Carento"
+																	alt="Gracetrans"
 																/>
 																<img
 																	className="background-brand-2 p-1"
 																	src="/assets/imgs/template/icons/star-black.svg"
-																	alt="Carento"
+																	alt="Gracetrans"
 																/>
 																<img
 																	className="background-brand-2 p-1"
 																	src="/assets/imgs/template/icons/star-black.svg"
-																	alt="Carento"
+																	alt="Gracetrans"
 																/>
 															</div>
 														</div>
@@ -1499,7 +1540,7 @@ export default function AboutUs() {
 														<Link href="/blog-details">
 															<img
 																src="/assets/imgs/blog/blog-1/img-2.png"
-																alt="Carento"
+																alt="Gracetrans"
 															/>
 														</Link>
 													</div>
@@ -1535,7 +1576,7 @@ export default function AboutUs() {
 																<div className="card-author">
 																	<img
 																		src="/assets/imgs/blog/blog-1/avatar-2.png"
-																		alt="Carento"
+																		alt="Gracetrans"
 																	/>
 																	<p className="text-sm-bold neutral-1000">
 																		Steven Job

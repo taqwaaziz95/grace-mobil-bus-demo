@@ -12,7 +12,7 @@ export default function Banners() {
 									<img
 										className="position-absolute bottom-0 end-0"
 										src="/assets/imgs/banners/banners-1/img-1.png"
-										alt="Carento"
+										alt="Gracetrans"
 									/>
 								</div>
 								<div className="banner-info">
@@ -55,7 +55,7 @@ export default function Banners() {
 									<img
 										className="position-absolute bottom-0 end-0"
 										src="/assets/imgs/banners/banners-1/img-2.png"
-										alt="Carento"
+										alt="Gracetrans"
 									/>
 								</div>
 								<div className="banner-info">

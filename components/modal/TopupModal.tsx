@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./BookingModal.css";
+import { useRouter } from "next/navigation";
+import moment from "moment";
 
 interface TopupModalProps {
-	onClose: () => void;
+	car?: any;
+	onClose?: () => void;
 	handleBooking?: () => void;
 }
 

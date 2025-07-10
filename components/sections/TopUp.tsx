@@ -12,12 +12,12 @@ const TopUp: React.FC = () => {
 									<img
 										className="rounded-12"
 										src="/assets/imgs/cta/cta-11/img-3.png"
-										alt="Carento"
+										alt="Gracetrans"
 									/>
 									<img
 										className="position-absolute top-100 start-100 translate-middle d-none d-md-block"
 										src="/assets/imgs/cta/cta-11/img-car.png"
-										alt="Carento"
+										alt="Gracetrans"
 									/>
 								</div>
 							</div>

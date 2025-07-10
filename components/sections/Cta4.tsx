@@ -22,7 +22,7 @@ export default function Cta4() {
 									<img
 										className="dark-invert"
 										src="/assets/imgs/cta/cta-4/icon-1.svg"
-										alt="Carento"
+										alt="Gracetrans"
 									/>
 								</span>
 								<h6 className=" wow ">Loking for a rental car?</h6>
@@ -51,7 +51,10 @@ export default function Cta4() {
 							</div>
 						</div>
 						<div className="col-lg-4 text-center wow ">
-							<img src="/assets/imgs/cta/cta-4/car-center.png" alt="Carento" />
+							<img
+								src="/assets/imgs/cta/cta-4/car-center.png"
+								alt="Gracetrans"
+							/>
 						</div>
 						<div className="col-lg-4">
 							<div className="bg-white rounded-12 p-5 d-flex flex-column gap-4">
@@ -59,7 +62,7 @@ export default function Cta4() {
 									<img
 										className="dark-invert"
 										src="/assets/imgs/cta/cta-4/icon-2.svg"
-										alt="Carento"
+										alt="Gracetrans"
 									/>
 								</span>
 								<h6 className=" wow ">Loking for a rental car?</h6>

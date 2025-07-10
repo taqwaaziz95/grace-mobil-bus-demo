@@ -2,11 +2,14 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { withBasePath } from "@/lib/basePath";
 
 export interface SocialIcon {
 	iconSrc: string;
 	iconAlt: string;
 	iconLink: string;
+	onClick?: () => void; // Optional click handler for social icons
 }
 
 export interface CardProps {
@@ -19,6 +22,7 @@ export interface CardProps {
 	profileLink?: string;
 	socialIcons?: SocialIcon[];
 	arrowIconSrc?: string;
+	onClick?: () => void;
 
 	// WHY CARD
 	icon?: React.ReactNode;
@@ -54,19 +58,30 @@ const Card: React.FC<CardProps> = ({
 	authorImage,
 	rating = 5,
 	className = "",
+	onClick = () => {},
 }) => {
 	if (type === "team-card") {
 		return (
 			<div className={`col-lg-3 col-md-6 col-12 ${className}`}>
 				<div className="card-news background-card hover-up shadow-2 mb-4 mb-lg-0">
 					<div className="card-image">
-						<Link href={profileLink}>
-							<img src={imageSrc} alt={name} />
+						<Link href={profileLink} onClick={onClick}>
+							<Image
+								src={withBasePath(imageSrc || "")}
+								alt={name || ""}
+								width={300}
+								height={300}
+								style={{ width: "100%", height: "auto" }}
+							/>
 						</Link>
 					</div>
 					<div className="card-info p-4">
 						<div className="card-title">
-							<Link className="text-xl-bold neutral-1000" href={profileLink}>
+							<Link
+								className="text-xl-bold neutral-1000"
+								href={profileLink}
+								onClick={onClick}
+							>
 								<h6>{name}</h6>
 							</Link>
 							<span className="text-sm-medium neutral-500">{role}</span>
@@ -79,11 +94,15 @@ const Card: React.FC<CardProps> = ({
 											key={idx}
 											href={icon.iconLink}
 											className="rounded-circle background-100 icon-shape icon icon-sm hover-up"
+											onClick={onClick}
 										>
-											<img
+											<Image
 												className="m-0"
-												src={icon.iconSrc}
-												alt={icon.iconAlt}
+												src={withBasePath(icon.iconSrc || "")}
+												alt={icon.iconAlt || ""}
+												width={24}
+												height={24}
+												// style={{ width: "100%", height: "auto" }}
 											/>
 										</Link>
 									))}
@@ -92,7 +111,16 @@ const Card: React.FC<CardProps> = ({
 									href={profileLink}
 									className="rounded-circle background-100 icon-shape icon icon-sm hover-up border icon-shape-arrow"
 								>
-									<img className="m-0" src={arrowIconSrc} alt="arrow" />
+									{arrowIconSrc && (
+										<Image
+											className="m-0"
+											src={withBasePath(arrowIconSrc || "")}
+											alt="arrow"
+											width={24}
+											height={24}
+											onClick={onClick}
+										/>
+									)}
 								</Link>
 							</div>
 						</div>
@@ -129,7 +157,15 @@ const Card: React.FC<CardProps> = ({
 					<div className="card-top pt-40 border-0 mb-0">
 						<div className="card-author">
 							<div className="card-image">
-								<img src={authorImage} alt={authorName} />
+								{authorImage && (
+									<Image
+										src={withBasePath(authorImage || "")}
+										alt={authorName || ""}
+										width={48}
+										height={48}
+										style={{ borderRadius: "50%" }}
+									/>
+								)}
 							</div>
 							<div className="card-info">
 								<p className="text-lg-bold neutral-1000">{authorName}</p>
@@ -140,11 +176,17 @@ const Card: React.FC<CardProps> = ({
 							{Array(rating)
 								.fill(0)
 								.map((_, idx) => (
-									<img
+									<Image
 										key={idx}
 										className="background-brand-2 p-1"
-										src="/assets/imgs/template/icons/star-black.svg"
+										src={
+											withBasePath(
+												"/assets/imgs/template/icons/star-black.svg"
+											) || ""
+										}
 										alt="Star"
+										width={20}
+										height={20}
 									/>
 								))}
 						</div>

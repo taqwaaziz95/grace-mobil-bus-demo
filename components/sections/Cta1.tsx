@@ -17,7 +17,10 @@ export default function Cta1() {
 										className="btn btn-play popup-youtube"
 										onClick={() => setOpen(true)}
 									/>
-									<img src="/assets/imgs/cta/cta-1/video.png" alt="Carento" />
+									<img
+										src="/assets/imgs/cta/cta-1/video.png"
+										alt="Gracetrans"
+									/>
 								</div>
 							</div>
 						</div>

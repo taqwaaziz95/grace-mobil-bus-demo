@@ -3,6 +3,6 @@
 	"rules": {
 		"react/no-unescaped-entities": 0,
 		"@next/next/no-img-element": "off",
-		"eslint-rule-to-disable": "off"
+		"eslint-rule-to-disable": "on"
 	}
 }

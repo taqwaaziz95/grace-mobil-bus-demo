@@ -1,5 +1,6 @@
 "use client";
 
+import React, { useState } from "react";
 import { Alert } from "@/components/alert";
 import { LinkButton } from "@/components/button";
 import Card from "@/components/card";
@@ -20,15 +21,13 @@ import {
 	Pre,
 	UL,
 } from "@/components/typography";
-import React, { useState } from "react";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { swiperGroupAnimate } from "@/util/swiperOptions";
 import Accordion, { AccordionItem } from "@/components/accordion";
-import Link from "next/link";
 import RadioButton from "@/components/radio-button";
 import { Checkbox } from "@/components/checkbox";
-import { size } from "lodash";
 import CustomGridImage from "@/components/custom-grid-image";
 import Breadcrumbs from "@/components/breadcrumbs";
 
@@ -125,8 +124,6 @@ const teamMembers = [
 	},
 	// ...add more team members here
 ];
-
-// data/testimonialData.ts
 
 export const testimonialData = [
 	{

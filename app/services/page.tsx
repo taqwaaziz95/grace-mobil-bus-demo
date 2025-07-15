@@ -1,4 +1,5 @@
 "use client";
+import { withBasePath } from "@/lib/basePath";
 import CounterUp from "../../components/elements/CounterUp";
 import Layout from "../../components/layout/Layout";
 import {
@@ -18,7 +19,7 @@ export default function Services() {
 							<div className="bg-overlay rounded-12 overflow-hidden">
 								<img
 									className="w-100 h-100 img-banner"
-									src="/assets/imgs/page-header/banner1.png"
+									src={withBasePath("/assets/imgs/page-header/banner1.png")}
 									alt="Gracetrans"
 								/>
 							</div>

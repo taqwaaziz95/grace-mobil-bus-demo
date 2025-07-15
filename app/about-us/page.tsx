@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useState } from "react";
 import ModalVideo from "react-modal-video";
 import { Swiper, SwiperSlide } from "swiper/react";
+
 export default function AboutUs() {
 	const [isOpen, setOpen] = useState(false);
 	const [isAccordion, setIsAccordion] = useState(1);
@@ -14,6 +15,33 @@ export default function AboutUs() {
 	const handleAccordion = (key: any) => {
 		setIsAccordion((prevState) => (prevState === key ? null : key));
 	};
+	const statsData = [
+		{
+			count: 45,
+			suffix: "+",
+			lines: ["Global", "Branches"],
+		},
+		{
+			count: 29,
+			suffix: "K",
+			lines: ["Destinations", "Collaboration"],
+		},
+		{
+			count: 20,
+			suffix: "+",
+			lines: ["Years", "Experience"],
+		},
+		{
+			count: 168,
+			suffix: "K",
+			lines: ["Happy", "Customers"],
+		},
+		{
+			count: 15,
+			suffix: "M",
+			lines: ["User", "Account"],
+		},
+	];
 	return (
 		<>
 			<Layout footerStyle={1}>

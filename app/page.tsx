@@ -53,6 +53,24 @@ const features = [
 		description:
 			"Setiap kendaraan memiliki dokumen resmi dan pajak yang tertib sesuai regulasi.",
 	},
+	{
+		icon: <FileText size={24} />,
+		title: "Kelengkapan Surat Kendaraan",
+		description:
+			"Setiap kendaraan memiliki dokumen resmi dan pajak yang tertib sesuai regulasi.",
+	},
+	{
+		icon: <FileText size={24} />,
+		title: "Kelengkapan Surat Kendaraan",
+		description:
+			"Setiap kendaraan memiliki dokumen resmi dan pajak yang tertib sesuai regulasi.",
+	},
+	{
+		icon: <FileText size={24} />,
+		title: "Kelengkapan Surat Kendaraan",
+		description:
+			"Setiap kendaraan memiliki dokumen resmi dan pajak yang tertib sesuai regulasi.",
+	},
 ];
 
 function MengapaKami() {

@@ -3,6 +3,7 @@ import { Urbanist } from "next/font/google";
 
 import "/public/assets/css/main.css";
 import "/node_modules/react-modal-video/css/modal-video.css";
+import "/public/assets/css/plugins/custom-datepicker.css";
 import "./globals.css";
 
 const urbanist = Urbanist({

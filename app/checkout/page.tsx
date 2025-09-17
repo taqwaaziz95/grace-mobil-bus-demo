@@ -4,174 +4,116 @@ import Layout from "@/components/layout/Layout";
 import { useRouter } from "next/navigation";
 import "./checkoutPage.css";
 import TopupModal from "../../components/modal/TopupModal";
+import {
+	PaymentMethodSelector,
+	PaymentSummary,
+	CountdownTimer,
+} from "@/components/payment-components";
+import Button from "@/components/button";
 
 const CheckoutPage = () => {
-  const router = useRouter();
-  const [bookingDetails, setBookingDetails] = useState<any>(null);
-  const [paymentMethod, setPaymentMethod] = useState<string>("");
-  const [countdown, setCountdown] = useState<number>(24 * 60 * 60); // 24 hours in seconds
+	const router = useRouter();
+	const [bookingDetails, setBookingDetails] = useState<any>(null);
+	const [paymentMethod, setPaymentMethod] = useState<string>("");
+	const [countdown, setCountdown] = useState<number>(5 * 60); // 24 hours in seconds
+	const [wallet, setWallet] = useState<number>(0);
+	const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
+	const handleOpenModal = () => {
+		setIsModalOpen(true);
+	};
 
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
-  };
+	const handleCloseModal = () => {
+		setIsModalOpen(false);
+	};
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
+	useEffect(() => {
+		const storedBookingDetails = localStorage.getItem("checkoutDetails");
+		if (storedBookingDetails) {
+			setBookingDetails(JSON.parse(storedBookingDetails));
+		}
 
-  useEffect(() => {
-    const storedBookingDetails = localStorage.getItem("bookingDetails");
-    if (storedBookingDetails) {
-      setBookingDetails(JSON.parse(storedBookingDetails));
-    }
-  }, []);
+		const storedWallet = localStorage.getItem("wallet");
+		if (storedWallet) {
+			setWallet(parseInt(storedWallet, 10));
+		}
+	}, []);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCountdown((prevCountdown) =>
-        prevCountdown > 0 ? prevCountdown - 1 : 0
-      );
-    }, 1000);
+	useEffect(() => {
+		const timer = setInterval(() => {
+			setCountdown((prevCountdown) =>
+				prevCountdown > 0 ? prevCountdown - 1 : 0
+			);
+		}, 1000);
 
-    return () => clearInterval(timer);
-  }, []);
+		return () => clearInterval(timer);
+	}, []);
 
-  const formatTime = (seconds: number) => {
-    const hrs = Math.floor(seconds / 3600);
-    const mins = Math.floor((seconds % 3600) / 60);
-    const secs = seconds % 60;
-    return `${hrs.toString().padStart(2, "0")}:${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
-  };
+	const handlePayment = () => {
+		if (paymentMethod) {
+			const receiptDetails = {
+				...bookingDetails,
+				paymentMethod,
+				issuedDate: new Date().toLocaleDateString(),
+			};
+			localStorage.setItem("receiptDetails", JSON.stringify(receiptDetails));
+			router.push("/receipt");
+		} else {
+			alert("Please select a payment method.");
+		}
+	};
 
-  const handlePayment = () => {
-    if (paymentMethod) {
-      const eticketDetails = {
-        ...bookingDetails,
-        paymentMethod,
-        issuedDate: new Date().toLocaleDateString(),
-      };
-      localStorage.setItem("eticketDetails", JSON.stringify(eticketDetails));
-      router.push("/eticket");
-    } else {
-      alert("Please select a payment method.");
-    }
-  };
+	const handleTopupConfirm = (amount: number) => {
+		const newWallet = wallet + amount;
+		localStorage.setItem("wallet", newWallet.toString());
+		setWallet(newWallet);
+		setIsModalOpen(false);
+	};
 
-  if (!bookingDetails) {
-    return <p>Loading...</p>;
-  }
+	if (!bookingDetails) {
+		return <p>Loading...</p>;
+	}
 
-  return (
-    <Layout footerStyle={1}>
-      <div className="checkout-page">
-        <h2 className="title">Bayar</h2>
-        <div className="booking-summary">
-          <h5>Rincian Pembelian</h5>
-          {bookingDetails.bookings.map((booking: any, index: number) => (
-            <div key={index} className="card">
-              <div className="card-content">
-                <p>
-                  <strong>Booking Code:</strong> {booking.bookingCode}
-                </p>
-                <p>
-                  <strong>Bus Name:</strong> {booking.busName}
-                </p>
-                <p>
-                  <strong>Bus Plate:</strong> {booking.busPlate}
-                </p>
-                <p>
-                  <strong>From:</strong> {booking.from} <strong>To:</strong>{" "}
-                  {booking.to}
-                </p>
-                <p>
-                  <strong>Date and Time:</strong> {booking.dateTime}
-                </p>
-                <p>
-                  <strong>Price:</strong> Rp{booking.price}
-                </p>
-              </div>
-            </div>
-          ))}
-          <div className="total-section">
-            <p>
-              <strong>Grand Total:</strong> Rp{bookingDetails.totalPrice}
-            </p>
-          </div>
-        </div>
-        <div className="payment-method">
-          <h5 style={{ textAlign: "left" }}>Payment Method</h5>
-          <div className="payment-options">
-            <label className="tw:!flex-row tw:!items-center tw:!justify-start tw:!flex tw:w-full">
-              <div className="tw:w-[10%]">
-                <input
-                  type="radio"
-                  name="paymentMethod"
-                  value="Debit"
-                  onChange={(e) => setPaymentMethod(e.target.value)}
-                />
-              </div>
-              <div className="tw:w-[60%]">Pay with Debit</div>
-            </label>
-            <label className="tw:!flex-row tw:!items-center tw:!justify-start tw:!flex tw:w-full">
-              <div className="tw:w-[10%]">
-                <input
-                  type="radio"
-                  name="paymentMethod"
-                  value="Wallet Balance"
-                  onChange={(e) => setPaymentMethod(e.target.value)}
-                />
-              </div>
-              <div className="tw:w-[60%]">
-                Pay with Wallet Balance (Rp200.000)
-              </div>
-              <div className="tw:w-[10%]">
-                <button
-                  className="btn btn-gray btn-sm"
-                  onClick={handleOpenModal}
-                >
-                  Topup
-                </button>
-              </div>
-            </label>
-            <label className="tw:!flex-row tw:!items-center tw:!justify-start tw:!flex tw:w-full">
-              <div className="tw:w-[10%]">
-                <input
-                  type="radio"
-                  name="paymentMethod"
-                  value="QR"
-                  onChange={(e) => setPaymentMethod(e.target.value)}
-                />
-              </div>
-              <div className="tw:w-[60%]">Pay with QR</div>
-            </label>
-            <label className="tw:!flex-row tw:!items-center tw:!justify-start tw:!flex tw:w-full">
-              <div className="tw:w-[10%]">
-                <input
-                  type="radio"
-                  name="paymentMethod"
-                  value="Xendit"
-                  onChange={(e) => setPaymentMethod(e.target.value)}
-                />
-              </div>
-              <div className="tw:w-[60%]">Pay with Virtual Account</div>
-            </label>
-          </div>
-        </div>
+	return (
+		<Layout footerStyle={1}>
+			<div className="tw:!max-w-3xl tw:!mx-auto tw:!py-8 tw:!px-4">
+				<h2 className="tw:!title tw:!text-2xl tw:!font-bold tw:!mb-6 tw:!text-center">
+					Bayar
+				</h2>
+				<div className="tw:!gap-8">
+					<PaymentSummary bookings={bookingDetails.tickets} />
+					<div className="tw:!flex tw:!flex-col tw:!gap-6">
+						<PaymentMethodSelector
+							walletBalance={wallet}
+							paymentMethod={paymentMethod}
+							setPaymentMethod={setPaymentMethod}
+							onTopup={handleOpenModal}
+						/>
+						<CountdownTimer seconds={countdown} />
 
-        <div className="countdown-timer">
-          <p>
-            <strong>Time Remaining:</strong> {formatTime(countdown)}
-          </p>
-        </div>
-        <button onClick={handlePayment} className="checkout-button">
-          Proceed to Payment
-        </button>
-      </div>
-      {isModalOpen && <TopupModal onClose={handleCloseModal} />}
-    </Layout>
-  );
+						<div className="tw:!flex tw:!gap-4 tw:!justify-between">
+							<Button
+								variant="secondary"
+								onClick={() => router.back()}
+								className="tw:!flex-1"
+							>
+								Back
+							</Button>
+							<Button
+								onClick={handlePayment}
+								className="tw:!flex-1"
+							>
+								Proses Bayar
+							</Button>
+						</div>
+					</div>
+				</div>
+			</div>
+			{isModalOpen && (
+				<TopupModal onClose={handleCloseModal} onTopupConfirm={handleTopupConfirm} />
+			)}
+		</Layout>
+	);
 };
 
 export default CheckoutPage;

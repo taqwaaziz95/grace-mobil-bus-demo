@@ -19,7 +19,7 @@ export default function Banners2() {
 										whether it's a road trip or business travel
 									</p>
 									<div className="banner-button pt-3">
-										<Link className="btn btn-primary background-brand-2" href="/cars-list-1">
+										<Link className="btn btn-primary background-brand-2" href="/search">
 											Get Started Now
 											<svg width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<path d="M8 15L15 8L8 1M15 8L1 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -40,7 +40,7 @@ export default function Banners2() {
 										rent or sell with confidence
 									</p>
 									<div className="banner-button pt-3">
-										<Link className="btn btn-primary bg-white" href="/cars-list-1">
+										<Link className="btn btn-primary bg-white" href="/search">
 											Get Started Now
 											<svg width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<path d="M8 15L15 8L8 1M15 8L1 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

@@ -86,8 +86,10 @@ const CustomGridImage = ({
 				<div className="col-lg-4 col-12">
 					<div className="d-flex flex-column gap-4 align-self-stretch h-100">
 						<div className="box-tag background-brand-2 p-5 d-flex rounded-12 align-items-center justify-content-center">
-							<H1 className="text-dark fs-96 me-3">{tagTwo.number}</H1>
-							<H3>
+							<H1 className="text-dark fs-96 me-3" color="white">
+								{tagTwo.number}
+							</H1>
+							<H3 color="white">
 								{tagTwo.title} <br /> {tagTwo.subtitle}
 							</H3>
 						</div>

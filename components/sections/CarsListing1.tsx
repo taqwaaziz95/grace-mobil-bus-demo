@@ -64,7 +64,7 @@ export default function CarsListing1() {
 									<SwiperSlide>
 										<div className="card-journey-small background-card hover-up">
 											<div className="card-image">
-												<Link href="/cars-details-1">
+												<Link href="/details">
 													<img
 														src="/assets/imgs/cars-listing/cars-listing-1/car-1.png"
 														alt="Gracetrans"
@@ -86,7 +86,7 @@ export default function CarsListing1() {
 												<div className="card-title">
 													<Link
 														className="heading-6 neutral-1000"
-														href="/cars-details-1"
+														href="/details"
 													>
 														Audi A3 1.6 TDI S line
 													</Link>
@@ -117,7 +117,7 @@ export default function CarsListing1() {
 														<div className="card-button">
 															<Link
 																className="btn btn-gray"
-																href="/cars-details-1"
+																href="/details"
 															>
 																Book Now
 															</Link>
@@ -128,7 +128,7 @@ export default function CarsListing1() {
 										</div>
 										<div className="card-journey-small background-card hover-up">
 											<div className="card-image">
-												<Link href="/cars-details-1">
+												<Link href="/details">
 													<img
 														src="/assets/imgs/cars-listing/cars-listing-1/car-2.png"
 														alt="Gracetrans"
@@ -150,7 +150,7 @@ export default function CarsListing1() {
 												<div className="card-title">
 													<Link
 														className="heading-6 neutral-1000"
-														href="/cars-details-1"
+														href="/details"
 													>
 														Volvo S60 D4 R-Design
 													</Link>
@@ -181,7 +181,7 @@ export default function CarsListing1() {
 														<div className="card-button">
 															<Link
 																className="btn btn-gray"
-																href="/cars-details-1"
+																href="/details"
 															>
 																Book Now
 															</Link>
@@ -194,7 +194,7 @@ export default function CarsListing1() {
 									<SwiperSlide>
 										<div className="card-journey-small background-card hover-up">
 											<div className="card-image">
-												<Link href="/cars-details-1">
+												<Link href="/details">
 													<img
 														src="/assets/imgs/cars-listing/cars-listing-1/car-3.png"
 														alt="Gracetrans"
@@ -216,7 +216,7 @@ export default function CarsListing1() {
 												<div className="card-title">
 													<Link
 														className="heading-6 neutral-1000"
-														href="/cars-details-1"
+														href="/details"
 													>
 														Mercedes-Benz C220d
 													</Link>
@@ -247,7 +247,7 @@ export default function CarsListing1() {
 														<div className="card-button">
 															<Link
 																className="btn btn-gray"
-																href="/cars-details-1"
+																href="/details"
 															>
 																Book Now
 															</Link>
@@ -258,7 +258,7 @@ export default function CarsListing1() {
 										</div>
 										<div className="card-journey-small background-card hover-up">
 											<div className="card-image">
-												<Link href="/cars-details-1">
+												<Link href="/details">
 													<img
 														src="/assets/imgs/cars-listing/cars-listing-1/car-4.png"
 														alt="Gracetrans"
@@ -280,7 +280,7 @@ export default function CarsListing1() {
 												<div className="card-title">
 													<Link
 														className="heading-6 neutral-1000"
-														href="/cars-details-1"
+														href="/details"
 													>
 														Jaguar XE 2.0d R-Sport
 													</Link>
@@ -311,7 +311,7 @@ export default function CarsListing1() {
 														<div className="card-button">
 															<Link
 																className="btn btn-gray"
-																href="/cars-details-1"
+																href="/details"
 															>
 																Book Now
 															</Link>
@@ -324,7 +324,7 @@ export default function CarsListing1() {
 									<SwiperSlide>
 										<div className="card-journey-small background-card hover-up">
 											<div className="card-image">
-												<Link href="/cars-details-1">
+												<Link href="/details">
 													<img
 														src="/assets/imgs/cars-listing/cars-listing-1/car-5.png"
 														alt="Gracetrans"
@@ -346,7 +346,7 @@ export default function CarsListing1() {
 												<div className="card-title">
 													<Link
 														className="heading-6 neutral-1000 text-nowrap"
-														href="/cars-details-1"
+														href="/details"
 													>
 														Volkswagen Golf GTD 2.0 TDI
 													</Link>
@@ -377,7 +377,7 @@ export default function CarsListing1() {
 														<div className="card-button">
 															<Link
 																className="btn btn-gray"
-																href="/cars-details-1"
+																href="/details"
 															>
 																Book Now
 															</Link>
@@ -388,7 +388,7 @@ export default function CarsListing1() {
 										</div>
 										<div className="card-journey-small background-card hover-up">
 											<div className="card-image">
-												<Link href="/cars-details-1">
+												<Link href="/details">
 													<img
 														src="/assets/imgs/cars-listing/cars-listing-1/car-6.png"
 														alt="Gracetrans"
@@ -410,7 +410,7 @@ export default function CarsListing1() {
 												<div className="card-title">
 													<Link
 														className="heading-6 neutral-1000"
-														href="/cars-details-1"
+														href="/details"
 													>
 														Lexus IS 300h F Sport
 													</Link>
@@ -441,7 +441,7 @@ export default function CarsListing1() {
 														<div className="card-button">
 															<Link
 																className="btn btn-gray"
-																href="/cars-details-1"
+																href="/details"
 															>
 																Book Now
 															</Link>
@@ -458,7 +458,7 @@ export default function CarsListing1() {
 					<div className="d-flex justify-content-center">
 						<Link
 							className="btn btn-brand-2 text-nowrap wow "
-							href="/cars-list-1"
+							href="/search"
 						>
 							<svg
 								className="me-2"

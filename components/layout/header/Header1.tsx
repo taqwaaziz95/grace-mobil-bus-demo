@@ -67,7 +67,7 @@ export default function Header1({
 							</div>
 							<Link
 								className="btn btn-brand-2 btn-small text-dark px-3 py-2 text-xs-medium "
-								href="/cars-list-1"
+								href="/search"
 							>
 								Access Now
 								<svg
@@ -203,7 +203,7 @@ export default function Header1({
 															</h6>
 															<ul className="sub-menu">
 																<li>
-																	<Link href="/cars-list-1">Cars List v1</Link>
+																	<Link href="/search">Cars List v1</Link>
 																</li>
 																<li>
 																	<Link href="/cars-list-2">Cars List v2</Link>
@@ -222,7 +222,7 @@ export default function Header1({
 															</h6>
 															<ul className="sub-menu">
 																<li>
-																	<Link href="/cars-details-1">
+																	<Link href="/details">
 																		Car Details v1
 																	</Link>
 																</li>
@@ -361,13 +361,13 @@ export default function Header1({
 												fill="white"
 											/>
 										</svg>
-										Sign in
+										Sign inx
 									</Link>
 									<Link
 										className="btn btn-signin bg-white text-dark"
 										href="/pricing"
 									>
-										Add Listing
+										Add Listingx
 									</Link>
 								</div>
 								<div

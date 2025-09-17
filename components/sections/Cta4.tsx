@@ -30,7 +30,7 @@ export default function Cta4() {
 									Find your perfect rental car for any journey, from road trips
 									to business travel.
 								</p>
-								<Link className="btn btn-primary wow " href="/cars-list-1">
+								<Link className="btn btn-primary wow " href="/search">
 									Get Started Now
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +70,7 @@ export default function Cta4() {
 									Find your perfect rental car for any journey, from road trips
 									to business travel.
 								</p>
-								<Link className="btn btn-primary wow " href="/cars-list-1">
+								<Link className="btn btn-primary wow " href="/search">
 									Get Started Now
 									<svg
 										xmlns="http://www.w3.org/2000/svg"

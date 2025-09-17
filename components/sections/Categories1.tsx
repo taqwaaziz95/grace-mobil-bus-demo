@@ -14,7 +14,7 @@ export default function Categories1() {
 						</div>
 						<div className="col-md-4">
 							<div className="d-flex justify-content-md-end mt-md-0 mt-4">
-								<Link className="btn btn-primary wow " href="/cars-list-1">
+								<Link className="btn btn-primary wow " href="/search">
 									View More
 									<svg
 										width={16}
@@ -43,7 +43,7 @@ export default function Categories1() {
 									data-wow-delay="0.1s"
 								>
 									<div className="card-image">
-										<Link className="card-title" href="/cars-list-1">
+										<Link className="card-title" href="/search">
 											<img
 												src="/assets/imgs/categories/categories-1/car-1.png"
 												alt="Gracetrans"
@@ -51,15 +51,15 @@ export default function Categories1() {
 										</Link>
 									</div>
 									<div className="card-info">
-										<Link className="card-title" href="/cars-list-1">
+										<Link className="card-title" href="/search">
 											SUV
 										</Link>
 										<div className="card-meta">
 											<div className="meta-links">
-												<Link href="/cars-list-1">24 Vehicles</Link>
+												<Link href="/search">24 Vehicles</Link>
 											</div>
 											<div className="card-button">
-												<Link href="/cars-list-1">
+												<Link href="/search">
 													<svg
 														width={10}
 														height={10}
@@ -86,7 +86,7 @@ export default function Categories1() {
 									data-wow-delay="0.2s"
 								>
 									<div className="card-image">
-										<Link className="card-title" href="/cars-list-1">
+										<Link className="card-title" href="/search">
 											<img
 												src="/assets/imgs/categories/categories-1/car-2.png"
 												alt="Gracetrans"
@@ -94,15 +94,15 @@ export default function Categories1() {
 										</Link>
 									</div>
 									<div className="card-info">
-										<Link className="card-title" href="/cars-list-1">
+										<Link className="card-title" href="/search">
 											Hatchback
 										</Link>
 										<div className="card-meta">
 											<div className="meta-links">
-												<Link href="/cars-list-1">16 Vehicles</Link>
+												<Link href="/search">16 Vehicles</Link>
 											</div>
 											<div className="card-button">
-												<Link href="/cars-list-1">
+												<Link href="/search">
 													<svg
 														width={10}
 														height={10}
@@ -129,7 +129,7 @@ export default function Categories1() {
 									data-wow-delay="0.3s"
 								>
 									<div className="card-image">
-										<Link className="card-title" href="/cars-list-1">
+										<Link className="card-title" href="/search">
 											<img
 												src="/assets/imgs/categories/categories-1/car-3.png"
 												alt="Gracetrans"
@@ -137,15 +137,15 @@ export default function Categories1() {
 										</Link>
 									</div>
 									<div className="card-info">
-										<Link className="card-title" href="/cars-list-1">
+										<Link className="card-title" href="/search">
 											Sedan
 										</Link>
 										<div className="card-meta">
 											<div className="meta-links">
-												<Link href="/cars-list-1">150 Vehicles</Link>
+												<Link href="/search">150 Vehicles</Link>
 											</div>
 											<div className="card-button">
-												<Link href="/cars-list-1">
+												<Link href="/search">
 													<svg
 														width={10}
 														height={10}
@@ -172,7 +172,7 @@ export default function Categories1() {
 									data-wow-delay="0.4s"
 								>
 									<div className="card-image">
-										<Link className="card-title" href="/cars-list-1">
+										<Link className="card-title" href="/search">
 											<img
 												src="/assets/imgs/categories/categories-1/car-4.png"
 												alt="Gracetrans"
@@ -180,15 +180,15 @@ export default function Categories1() {
 										</Link>
 									</div>
 									<div className="card-info">
-										<Link className="card-title" href="/cars-list-1">
+										<Link className="card-title" href="/search">
 											Crossover
 										</Link>
 										<div className="card-meta">
 											<div className="meta-links">
-												<Link href="/cars-list-1">25 Vehicles</Link>
+												<Link href="/search">25 Vehicles</Link>
 											</div>
 											<div className="card-button">
-												<Link href="/cars-list-1">
+												<Link href="/search">
 													<svg
 														width={10}
 														height={10}
@@ -215,7 +215,7 @@ export default function Categories1() {
 									data-wow-delay="0.1s"
 								>
 									<div className="card-image">
-										<Link className="card-title" href="/cars-list-1">
+										<Link className="card-title" href="/search">
 											<img
 												src="/assets/imgs/categories/categories-1/car-5.png"
 												alt="Gracetrans"
@@ -223,15 +223,15 @@ export default function Categories1() {
 										</Link>
 									</div>
 									<div className="card-info">
-										<Link className="card-title" href="/cars-list-1">
+										<Link className="card-title" href="/search">
 											Minivan
 										</Link>
 										<div className="card-meta">
 											<div className="meta-links">
-												<Link href="/cars-list-1">56 Vehicles</Link>
+												<Link href="/search">56 Vehicles</Link>
 											</div>
 											<div className="card-button">
-												<Link href="/cars-list-1">
+												<Link href="/search">
 													<svg
 														width={10}
 														height={10}
@@ -258,7 +258,7 @@ export default function Categories1() {
 									data-wow-delay="0.2s"
 								>
 									<div className="card-image">
-										<Link className="card-title" href="/cars-list-1">
+										<Link className="card-title" href="/search">
 											<img
 												src="/assets/imgs/categories/categories-1/car-6.png"
 												alt="Gracetrans"
@@ -266,15 +266,15 @@ export default function Categories1() {
 										</Link>
 									</div>
 									<div className="card-info">
-										<Link className="card-title" href="/cars-list-1">
+										<Link className="card-title" href="/search">
 											Coupe
 										</Link>
 										<div className="card-meta">
 											<div className="meta-links">
-												<Link href="/cars-list-1">25 Vehicles</Link>
+												<Link href="/search">25 Vehicles</Link>
 											</div>
 											<div className="card-button">
-												<Link href="/cars-list-1">
+												<Link href="/search">
 													<svg
 														width={10}
 														height={10}
@@ -301,7 +301,7 @@ export default function Categories1() {
 									data-wow-delay="0.3s"
 								>
 									<div className="card-image">
-										<Link className="card-title" href="/cars-list-1">
+										<Link className="card-title" href="/search">
 											<img
 												src="/assets/imgs/categories/categories-1/car-7.png"
 												alt="Gracetrans"
@@ -309,15 +309,15 @@ export default function Categories1() {
 										</Link>
 									</div>
 									<div className="card-info">
-										<Link className="card-title" href="/cars-list-1">
+										<Link className="card-title" href="/search">
 											Sport Cars
 										</Link>
 										<div className="card-meta">
 											<div className="meta-links">
-												<Link href="/cars-list-1">125 Vehicles</Link>
+												<Link href="/search">125 Vehicles</Link>
 											</div>
 											<div className="card-button">
-												<Link href="/cars-list-1">
+												<Link href="/search">
 													<svg
 														width={10}
 														height={10}
@@ -344,7 +344,7 @@ export default function Categories1() {
 									data-wow-delay="0.4s"
 								>
 									<div className="card-image">
-										<Link className="card-title" href="/cars-list-1">
+										<Link className="card-title" href="/search">
 											<img
 												src="/assets/imgs/categories/categories-1/car-8.png"
 												alt="Gracetrans"
@@ -352,15 +352,15 @@ export default function Categories1() {
 										</Link>
 									</div>
 									<div className="card-info">
-										<Link className="card-title" href="/cars-list-1">
+										<Link className="card-title" href="/search">
 											Pickup Truck
 										</Link>
 										<div className="card-meta">
 											<div className="meta-links">
-												<Link href="/cars-list-1">Vehicles</Link>
+												<Link href="/search">Vehicles</Link>
 											</div>
 											<div className="card-button">
-												<Link href="/cars-list-1">
+												<Link href="/search">
 													<svg
 														width={10}
 														height={10}

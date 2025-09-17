@@ -354,7 +354,7 @@ export default function DealerDetails() {
 														<div className="card-title">
 															<Link
 																className="text-lg-bold neutral-1000 text-nowrap"
-																href="/cars-details-1"
+																href="/details"
 															>
 																Hyundai Sonata SEL Plus
 															</Link>
@@ -389,7 +389,7 @@ export default function DealerDetails() {
 																<div className="card-button">
 																	<Link
 																		className="btn btn-gray"
-																		href="/cars-details-1"
+																		href="/details"
 																	>
 																		Book Now
 																	</Link>
@@ -422,7 +422,7 @@ export default function DealerDetails() {
 														<div className="card-title">
 															<Link
 																className="text-lg-bold neutral-1000 text-nowrap"
-																href="/cars-details-1"
+																href="/details"
 															>
 																Buick Enclave Avenir
 															</Link>
@@ -457,7 +457,7 @@ export default function DealerDetails() {
 																<div className="card-button">
 																	<Link
 																		className="btn btn-gray"
-																		href="/cars-details-1"
+																		href="/details"
 																	>
 																		Book Now
 																	</Link>
@@ -490,7 +490,7 @@ export default function DealerDetails() {
 														<div className="card-title">
 															<Link
 																className="text-lg-bold neutral-1000 text-nowrap"
-																href="/cars-details-1"
+																href="/details"
 															>
 																Chevrolet Silverado
 															</Link>
@@ -525,7 +525,7 @@ export default function DealerDetails() {
 																<div className="card-button">
 																	<Link
 																		className="btn btn-gray"
-																		href="/cars-details-1"
+																		href="/details"
 																	>
 																		Book Now
 																	</Link>
@@ -558,7 +558,7 @@ export default function DealerDetails() {
 														<div className="card-title">
 															<Link
 																className="text-lg-bold neutral-1000 text-nowrap"
-																href="/cars-details-1"
+																href="/details"
 															>
 																Subaru Outback Limited XT
 															</Link>
@@ -593,7 +593,7 @@ export default function DealerDetails() {
 																<div className="card-button">
 																	<Link
 																		className="btn btn-gray"
-																		href="/cars-details-1"
+																		href="/details"
 																	>
 																		Book Now
 																	</Link>

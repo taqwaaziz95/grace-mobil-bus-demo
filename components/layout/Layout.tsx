@@ -10,8 +10,11 @@ import Header1 from "./header/Header1";
 import Header2 from "./header/Header2";
 import Header3 from "./header/Header3";
 import Marquee from "react-fast-marquee";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Video } from "lucide-react";
 import { withBasePath } from "@/lib/basePath";
+import CustomHeroBanner from "./CustomHeroBanner";
+import Layanan from "../sections/Layanan";
+import VideoTestimonial from "../elements/VideoTestimonial";
 
 interface LayoutProps {
 	headerStyle?: Number;
@@ -25,16 +28,17 @@ function Footer() {
 		<footer className="tw:!bg-[#f9fafb] tw:!text-gray-800 tw:!py-10 tw:!px-4 tw:!border-t tw:!border-gray-200">
 			<div className="tw:!max-w-7xl tw:!mx-auto tw:!flex tw:!flex-wrap tw:!justify-between tw:!gap-6">
 				{/* 1. Logo & Mission */}
-				<div className="tw:!basis-64 tw:!flex-shrink-0">
+				<div className="tw:!basis-72 tw:!flex-shrink-0">
 					<img
 						src={withBasePath("/assets/imgs/template/grace-logo.png")}
 						alt="Grace Trans Logo"
 						className="tw:!h-16 tw:!mb-4"
 					/>
 					<p className="tw:!text-sm tw:!text-gray-600 tw:!mb-4">
-						Kami adalah perusahaan transportasi dan travel terkemuka di
-						Indonesia yang mengutamakan pelayanan terbaik, keselamatan,
-						kenyamanan, dan keamanan pelanggan.
+						Menjadi perusahaan jasa transportasi dan travel terdepan dan
+						terbesar di Indonesia dengan kualitas pelayanan terbaik dengan
+						prioritas utama adalah keselamatan, kenyamanan, dan keamanan dari
+						konsumen
 					</p>
 					<a href="#" target="_blank" rel="noopener noreferrer">
 						<img
@@ -124,7 +128,7 @@ function Footer() {
 
 			{/* Footer Bottom */}
 			<div className="tw:!mt-8 tw:!pt-4 tw:!text-center tw:!text-xs tw:!text-gray-400">
-				© {new Date().getFullYear()} Grace Trans. All rights reserved.
+				Copyright © PT Matari Jelajah Indonesia. {new Date().getFullYear()}.
 			</div>
 		</footer>
 	);
@@ -325,52 +329,20 @@ function Clients() {
 
 function HeroBanner() {
 	return (
-		<section className="tw:!relative tw:!bg-[url('/assets/imgs/cta/cta-2/background-2.png')] tw:!bg-cover tw:!bg-center tw:!text-white tw:!py-20 tw:!px-6">
-			<div className="tw:!max-w-7xl tw:!mx-auto tw:!flex tw:!flex-col md:tw:!flex-row tw:!items-center tw:!justify-between">
-				{/* Left content over image */}
-				<div className="tw:!max-w-xl tw:!z-10">
-					<h1 className="tw:!text-3xl md:tw:!text-4xl tw:!text-[#0e2972] tw:text-center tw:!font-bold tw:!leading-tight">
-						Rencanakan Perjalanan
-						<br />
-						<span className="tw:!text-[#0e2972]">
-							Tanpa Ribet, Pesan Sekarang!
-						</span>
-					</h1>
-
-					{/* CTA Buttons */}
-					<div className="tw:!mt-6 tw:!flex tw:!flex-wrap tw:!gap-3">
-						{/* Kontak Kami */}
-						<a
-							href="#"
-							className="tw:!inline-flex tw:!items-center tw:!bg-white tw:!text-sky-600 tw:!border tw:!border-sky-500 tw:!rounded-full tw:!px-5 tw:!py-2 tw:!text-sm tw:!font-semibold tw:hover:!bg-sky-500 tw:hover:!text-white tw:!transition"
-						>
-							Kontak Kami
-							<ArrowRight className="tw:!ml-2 tw:!w-4 tw:!h-4" />
-						</a>
-
-						{/* Book Shuttle */}
-						<a
-							href="/book-shuttle"
-							className="tw:!inline-flex tw:!items-center tw:!bg-sky-500 tw:!text-white tw:!px-5 tw:!py-2 tw:!rounded-full tw:!text-sm tw:!font-semibold tw:hover:!bg-sky-600 tw:!transition"
-						>
-							Pesan Shuttle
-							<ArrowRight className="tw:!ml-2 tw:!w-4 tw:!h-4" />
-						</a>
-
-						{/* Rent Car */}
-						<a
-							href="/sewa-mobil"
-							className="tw:!inline-flex tw:!items-center tw:!bg-yellow-400 tw:!text-black tw:!px-5 tw:!py-2 tw:!rounded-full tw:!text-sm tw:!font-semibold tw:hover:!bg-yellow-300 tw:!transition"
-						>
-							Sewa Mobil
-							<ArrowRight className="tw:!ml-2 tw:!w-4 tw:!h-4" />
-						</a>
-					</div>
-				</div>
-
-				{/* No right content; image is already the background */}
-			</div>
-		</section>
+		<CustomHeroBanner
+			title="Rencanakan Perjalanan"
+			subtitle="Tanpa Ribet, Pesan Sekarang!"
+			backgroundImage={withBasePath("/assets/imgs/cta/cta-2/background-2.png")}
+			kontakHref="/contact"
+			kontakLabel="Contact Us"
+			shuttleHref="/shuttle"
+			shuttleLabel="Book Shuttle"
+			rentHref="/rent"
+			rentLabel="Rent a Car"
+			disableKontak
+			disableShuttle
+			disableRent
+		/>
 	);
 }
 
@@ -474,7 +446,18 @@ export default function Layout({
 			{/* {!footerStyle && <Footer1 />}
       {footerStyle == 1 ? <Footer1 /> : null}
       {footerStyle == 2 ? <Footer2 /> : null} */}
-			<Clients />
+			{/* <Clients /> */}
+			{/* <Layanan /> */}
+			{/* <VideoTestimonial
+				className="tw:!mt-0 tw:md:!mt-24"
+				title1="Ulasan Nyata"
+				title2="Pelanggan Kami"
+				isVideoPosition="left"
+				src="/videos/jirayut.mp4"
+				name="Jirayut Afisan Jehdueramae"
+				role="Penyanyi, Presenter, dan Aktor"
+				testimonial="Orang nya keren, mobil nya bersih, bisa nyanyi ada karaoke juga. Pokoknya keren, terima kasih Grace Trans udah menemani dan libur bareng Jirayut. Kalau nanti ada waktu lagi kita jalan bareng lagi ya, terima kasih."
+			/> */}
 			<HeroBanner />
 			<Footer />
 

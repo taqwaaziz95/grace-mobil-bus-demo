@@ -1,281 +1,145 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
-import PerfectScrollbar from "react-perfect-scrollbar";
+import { withBasePath } from "@/lib/basePath";
+import { X } from "lucide-react";
+import { useState, useEffect } from "react";
+import Button from "../button";
 
-export default function MobileMenu({ isMobileMenu, handleMobileMenu }: any) {
-	const [isAccordion, setIsAccordion] = useState(0);
+interface MobileMenuProps {
+	isMobileMenu: boolean;
+	handleMobileMenu: () => void;
+}
 
-	const handleAccordion = (key: any) => {
-		setIsAccordion((prevState) => (prevState === key ? null : key));
+export default function MobileMenu({
+	isMobileMenu,
+	handleMobileMenu,
+}: MobileMenuProps) {
+	const [user, setUser] = useState<string | null>(null);
+	const [balance, setBalance] = useState<number>(0);
+	const [dropdownVisible, setDropdownVisible] = useState(false);
+
+	useEffect(() => {
+		const loggedInUser = localStorage.getItem("username");
+		const userBalance = localStorage.getItem("balance");
+		if (loggedInUser) {
+			setUser(loggedInUser);
+			setBalance(userBalance ? parseInt(userBalance) : 0);
+		}
+	}, []);
+
+	const handleLogout = () => {
+		localStorage.removeItem("username");
+		localStorage.removeItem("balance");
+		setUser(null);
+		setBalance(0);
+		setDropdownVisible(false);
+		window.location.reload();
 	};
+
+	const toggleDropdown = () => {
+		setDropdownVisible(!dropdownVisible);
+	};
+
+	const menuItems = [
+		{ name: "Daftar Pesanan", link: "/cart" },
+		{ name: "Riwayat Pembayaran", link: "/riwayat-pembayaran" },
+		{ name: "Riwayat Pembelian", link: "/riwayat-pembelian" },
+		{ name: "Cek Posisi Mobil", link: "/track-position" },
+		{
+			name: "Driver Assistant Management",
+			link: "/driver-assistant-management",
+		},
+		{ name: "Profil", link: "/profile" },
+	];
+
 	return (
 		<>
+			{/* Overlay */}
+			{isMobileMenu && (
+				<div
+					onClick={handleMobileMenu}
+					className="tw:!fixed tw:!inset-0 tw:!bg-black/40 tw:!z-40 tw:!transition-opacity"
+				/>
+			)}
+
+			{/* Sidebar Menu */}
 			<div
-				className={`mobile-header-active mobile-header-wrapper-style perfect-scrollbar button-bg-2 ${
-					isMobileMenu ? "sidebar-visible" : ""
+				className={`tw:!fixed tw:!top-[64px] tw:!right-0 tw:!h-full tw:!w-80 tw:!bg-white tw:!shadow-lg tw:!z-50 tw:!transition-transform tw:!duration-300 tw:!flex tw:!flex-col ${
+					isMobileMenu ? "tw:!translate-x-0" : "tw:!translate-x-full"
 				}`}
 			>
-				<PerfectScrollbar className="mobile-header-wrapper-inner">
-					<div className="mobile-header-logo">
-						<Link className="d-flex" href="/">
-							<img
-								className="light-mode"
-								alt="Gracetrans"
-								src="/assets/imgs/template/grace-logo.png"
-								width={150}
-								height={50}
-							/>
-							<img
-								className="dark-mode"
-								alt="Gracetrans"
-								src="/assets/imgs/template/grace-logo.png"
-								width={150}
-								height={50}
-							/>
-						</Link>
-						<div
-							className="burger-icon burger-icon-white"
-							onClick={handleMobileMenu}
-						/>
-					</div>
-					<div className="mobile-header-content-area">
-						<div className="perfect-scroll">
-							<div className="mobile-menu-wrap mobile-header-border">
-								<nav>
-									<ul className="mobile-menu font-heading">
-										{/* <li
-											className={`has-children ${
-												isAccordion === 1 ? "active" : ""
-											}`}
-										>
-											<span
-												className="menu-expand"
-												onClick={() => handleAccordion(1)}
-											>
-												<i className="arrow-small-down"></i>
+				{/* Profile Section */}
+				{user && (
+					<div className="tw:!flex tw:!flex-col tw:!gap-3 tw:!p-4 tw:!border-b tw:!border-gray-100">
+						<>
+							<div className="tw:!flex tw:!flex-row tw:!items-center tw:!justify-between">
+								<div className="tw:!flex tw:!items-center tw:!gap-3">
+									<img
+										src={withBasePath(
+											"/assets/imgs/team/team-1/portrait-1.png"
+										)}
+										alt="Profile"
+										className="tw:!w-12 tw:!h-12 tw:!rounded-full tw:!border"
+									/>
+									<div>
+										<p className="tw:!font-semibold tw:!text-gray-900">
+											Hi, {user}
+										</p>
+										<p className="tw:!text-sm tw:!text-gray-500">
+											Wallet:{" "}
+											<span className="tw:!font-bold tw:!text-[#2A9FD6]">
+												Rp {balance.toLocaleString("id-ID")}
 											</span>
-											<Link href="#">Home Pages</Link>
-											<ul
-												className="sub-menu"
-												style={{
-													display: `${isAccordion == 1 ? "block" : "none"}`,
-												}}
-											>
-												<li>
-													<Link href="/">Home page v1</Link>
-												</li>
-												<li>
-													<Link href="/index-2">Home page v2</Link>
-												</li>
-												<li>
-													<Link href="/index-3">Home page v3</Link>
-												</li>
-											</ul>
-										</li>
-										<li
-											className={`has-children ${
-												isAccordion === 2 ? "active" : ""
-											}`}
-										>
-											<span
-												className="menu-expand"
-												onClick={() => handleAccordion(2)}
-											>
-												<i className="arrow-small-down"></i>
-											</span>
-											<Link href="#">Vehicles</Link>
-											<ul
-												className="sub-menu"
-												style={{
-													display: `${isAccordion == 2 ? "block" : "none"}`,
-												}}
-											>
-												<li>
-													<Link href="/cars-list-1">Cars List v1</Link>
-												</li>
-												<li>
-													<Link href="/cars-list-2">Cars List v2</Link>
-												</li>
-												<li>
-													<Link href="/cars-list-3">Cars List v3</Link>
-												</li>
-												<li>
-													<Link href="/cars-list-4">Cars List v4</Link>
-												</li>
-												<li>
-													<Link href="/cars-details-1">Car Details v1</Link>
-												</li>
-												<li>
-													<Link href="/cars-details-2">Car Details v2</Link>
-												</li>
-												<li>
-													<Link href="/cars-details-3">Car Details v3</Link>
-												</li>
-												<li>
-													<Link href="/cars-details-4">Car Details v4</Link>
-												</li>
-											</ul>
-										</li>
-										<li
-											className={`has-children ${
-												isAccordion === 3 ? "active" : ""
-											}`}
-										>
-											<span
-												className="menu-expand"
-												onClick={() => handleAccordion(3)}
-											>
-												<i className="arrow-small-down"></i>
-											</span>
-											<Link href="#">Dealers</Link>
-											<ul
-												className="sub-menu"
-												style={{
-													display: `${isAccordion == 3 ? "block" : "none"}`,
-												}}
-											>
-												<li>
-													<Link href="/dealer-listing">Dealers Listing</Link>
-												</li>
-												<li>
-													<Link href="/dealer-details">Dealer Details</Link>
-												</li>
-											</ul>
-										</li>
-										<li
-											className={`has-children ${
-												isAccordion === 4 ? "active" : ""
-											}`}
-										>
-											<span
-												className="menu-expand"
-												onClick={() => handleAccordion(4)}
-											>
-												<i className="arrow-small-down"></i>
-											</span>
-											<Link href="#">Shop</Link>
-											<ul
-												className="sub-menu"
-												style={{
-													display: `${isAccordion == 4 ? "block" : "none"}`,
-												}}
-											>
-												<li>
-													<Link href="/shop-list">Shop Grid</Link>
-												</li>
-												<li>
-													<Link href="/shop-details">Product Details</Link>
-												</li>
-											</ul>
-										</li>
-										<li
-											className={`has-children ${
-												isAccordion === 5 ? "active" : ""
-											}`}
-										>
-											<span
-												className="menu-expand"
-												onClick={() => handleAccordion(5)}
-											>
-												<i className="arrow-small-down"></i>
-											</span>
-											<Link href="#">Pages</Link>
-											<ul
-												className="sub-menu"
-												style={{
-													display: `${isAccordion == 5 ? "block" : "none"}`,
-												}}
-											>
-												<li>
-													<Link href="/about-us">About Us</Link>
-												</li>
-												<li>
-													<Link href="/services">Our Services</Link>
-												</li>
-												<li>
-													<Link href="/pricing">Pricing</Link>
-												</li>
-												<li>
-													<Link href="/calculator">Loan Calculator</Link>
-												</li>
-												<li>
-													<Link href="/faqs">FAQs</Link>
-												</li>
-												<li>
-													<Link href="/term">Term</Link>
-												</li>
-												<li>
-													<Link href="/contact">Contact</Link>
-												</li>
-												<li>
-													<Link href="/login">Login</Link>
-												</li>
-												<li>
-													<Link href="/register">Register</Link>
-												</li>
-												<li>
-													<Link href="/404">Error 404</Link>
-												</li>
-											</ul>
-										</li>
-										<li
-											className={`has-children ${
-												isAccordion === 6 ? "active" : ""
-											}`}
-										>
-											<span
-												className="menu-expand"
-												onClick={() => handleAccordion(6)}
-											>
-												<i className="arrow-small-down"></i>
-											</span>
-											<Link href="#">News</Link>
-											<ul
-												className="sub-menu"
-												style={{
-													display: `${isAccordion == 6 ? "block" : "none"}`,
-												}}
-											>
-												<li>
-													<Link href="/blog-grid">News Grid</Link>
-												</li>
-												<li>
-													<Link href="/blog-list">News List</Link>
-												</li>
-												<li>
-													<Link href="/blog-details">News Details</Link>
-												</li>
-											</ul>
-										</li> */}
-										<li>
-											<Link href="/">Booking Shuttle</Link>
-										</li>
-										<li>
-											<Link href="/">Check Posisi Mobil</Link>
-										</li>
-										<li>
-											<Link href="/">History Pembayaran</Link>
-										</li>
-										<li>
-											<Link href="/">Profile</Link>
-										</li>
-										<li>
-											<Link href="/">FAQ</Link>
-										</li>
-										<li style={{ color: "red" }}>
-											<Link href="/">Logout</Link>
-										</li>
-									</ul>
-								</nav>
+										</p>
+									</div>
+								</div>
+
+								{/* Close Button on the Right */}
+								<button
+									onClick={handleMobileMenu}
+									aria-label="Close Menu"
+									className="tw:!p-2 tw:!rounded-full hover:tw:!bg-gray-100"
+								>
+									<X className="tw:!w-6 tw:!h-6 tw:!text-gray-700" />
+								</button>
 							</div>
-						</div>
+
+							{/* Top-Up Button */}
+							<button className="tw:!bg-[#2A9FD6] tw:!text-white tw:!py-2 tw:!rounded-lg tw:!font-semibold hover:tw:!bg-[#238bb8]">
+								Top Up
+							</button>
+						</>
 					</div>
-				</PerfectScrollbar>
+				)}
+
+				{/* Menu Links */}
+				<nav className="tw:!flex-1 tw:!overflow-y-auto tw:!p-4">
+					<ul className="tw:!space-y-4 tw:!font-medium">
+						{menuItems.map((item, idx) => (
+							<li key={idx}>
+								<Link
+									href={item.link}
+									className="tw:!block tw:!py-2 tw:!rounded-md tw:!transition tw:hover:!text-[#2A9FD6]"
+								>
+									{item.name}
+								</Link>
+							</li>
+						))}
+					</ul>
+				</nav>
+
+				{/* Logout */}
+				{user && (
+					<div className="tw:!p-4 tw:!border-t tw:!border-gray-200">
+						<button
+							onClick={handleLogout}
+							className="tw:!w-full tw:!bg-red-500 tw:!text-white tw:!py-2 tw:!rounded-lg tw:!font-semibold hover:tw:!bg-red-600"
+						>
+							Logout
+						</button>
+					</div>
+				)}
 			</div>
-			{isMobileMenu && (
-				<div className="body-overlay-1" onClick={handleMobileMenu} />
-			)}
 		</>
 	);
 }

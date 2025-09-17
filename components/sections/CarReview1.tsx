@@ -19,7 +19,7 @@ export default function CarReview1() {
 						</div>
 						<div className="col-md-3 mb-30 wow ">
 							<div className="d-flex justify-content-center justify-content-md-end">
-								<Link className="btn btn-primary" href="/cars-list-1">
+								<Link className="btn btn-primary" href="/search">
 									View More
 									<svg
 										width={16}
@@ -86,7 +86,7 @@ export default function CarReview1() {
 											/>
 										</div>
 										<div className="item-info">
-											<Link className="heading-6" href="/cars-details-1">
+											<Link className="heading-6" href="/details">
 												Best Midsize 3-row SUVs 2024
 											</Link>
 											<p className="text-md-medium neutral-500">
@@ -112,7 +112,7 @@ export default function CarReview1() {
 											/>
 										</div>
 										<div className="item-info">
-											<Link className="heading-6" href="/cars-details-1">
+											<Link className="heading-6" href="/details">
 												5 Best Luxury sport coupes 2024
 											</Link>
 											<p className="text-md-medium neutral-500">
@@ -138,7 +138,7 @@ export default function CarReview1() {
 											/>
 										</div>
 										<div className="item-info">
-											<Link className="heading-6" href="/cars-details-1">
+											<Link className="heading-6" href="/details">
 												Best Small hatchbacks 2024 and 2025
 											</Link>
 											<p className="text-md-medium neutral-500">

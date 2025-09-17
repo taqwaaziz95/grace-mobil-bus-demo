@@ -17,7 +17,7 @@ export default function Services1() {
 						</div>
 						<div className="col-md-4 mt-md-0 mt-4">
 							<div className="d-flex justify-content-md-end justify-content-center">
-								<Link className="btn btn-primary" href="/cars-list-1">
+								<Link className="btn btn-primary" href="/search">
 									View More
 									<svg
 										width={16}

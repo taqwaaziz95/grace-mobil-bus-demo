@@ -5634,7 +5634,8 @@ label {
 }
 
 .header .main-header .header-right {
-	width: 30%;
+	/* width: 30%; */
+	/* left: 30px; */
 	min-width: 200px;
 	text-align: right;
 	display: flex;
@@ -11042,7 +11043,7 @@ a.icon-socials:hover svg path {
 	height: 58px;
 	right: 10px;
 	width: 1px;
-	background-color: var(--bs-border-color);
+	/* background-color: var(--bs-border-color); */
 	position: absolute;
 	top: 1px;
 }

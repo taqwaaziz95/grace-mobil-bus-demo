@@ -14,7 +14,7 @@ export default function Categories2() {
 						</div>
 						<div className="col-md-4">
 							<div className="d-flex justify-content-md-end mt-md-0 mt-4">
-								<Link className="btn btn-primary" href="/cars-list-1">
+								<Link className="btn btn-primary" href="/search">
 									View All
 									<svg
 										width={16}
@@ -60,7 +60,7 @@ export default function Categories2() {
 								</div>
 								<Link
 									className="card-title text-lg-bold neutral-1000"
-									href="/cars-list-1"
+									href="/search"
 								>
 									Crossover
 								</Link>
@@ -88,7 +88,7 @@ export default function Categories2() {
 								</div>
 								<Link
 									className="card-title text-lg-bold neutral-1000"
-									href="/cars-list-1"
+									href="/search"
 								>
 									Hatchback
 								</Link>
@@ -116,7 +116,7 @@ export default function Categories2() {
 								</div>
 								<Link
 									className="card-title text-lg-bold neutral-1000"
-									href="/cars-list-1"
+									href="/search"
 								>
 									Sedan
 								</Link>
@@ -144,7 +144,7 @@ export default function Categories2() {
 								</div>
 								<Link
 									className="card-title text-lg-bold neutral-1000"
-									href="/cars-list-1"
+									href="/search"
 								>
 									SUV
 								</Link>
@@ -172,7 +172,7 @@ export default function Categories2() {
 								</div>
 								<Link
 									className="card-title text-lg-bold neutral-1000"
-									href="/cars-list-1"
+									href="/search"
 								>
 									Sport
 								</Link>
@@ -200,7 +200,7 @@ export default function Categories2() {
 								</div>
 								<Link
 									className="card-title text-lg-bold neutral-1000"
-									href="/cars-list-1"
+									href="/search"
 								>
 									Minivan
 								</Link>

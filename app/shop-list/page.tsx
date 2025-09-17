@@ -78,7 +78,7 @@ export default function ShopList() {
 												<div className="box-view-type">
 													<Link
 														className="display-type display-grid active"
-														href="/cars-list-1"
+														href="/search"
 													>
 														<svg
 															width={22}

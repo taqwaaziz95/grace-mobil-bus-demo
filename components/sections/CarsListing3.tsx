@@ -189,7 +189,7 @@ export default function CarsListing3() {
 									<SwiperSlide>
 										<div className="card-journey-small card-journey-small-listing-3 background-0 d-flex flex-md-row flex-column align-items-center mw-100 position-relative">
 											<div className="card-image w-100">
-												<Link href="/cars-details-1">
+												<Link href="/details">
 													<img
 														src="/assets/imgs/cars-listing/cars-listing-3/car-1.png"
 														alt="Gracetrans"
@@ -211,7 +211,7 @@ export default function CarsListing3() {
 												<div className="card-title pb-1">
 													<Link
 														className="heading-6 neutral-1000"
-														href="/cars-details-1"
+														href="/details"
 													>
 														Audi A3 1.6 TDI S line
 													</Link>
@@ -235,7 +235,7 @@ export default function CarsListing3() {
 														<div className="card-button">
 															<Link
 																className="btn btn-gray"
-																href="/cars-details-1"
+																href="/details"
 															>
 																Book Now
 															</Link>
@@ -246,7 +246,7 @@ export default function CarsListing3() {
 										</div>
 										<div className="card-journey-small card-journey-small-listing-3 background-0 d-flex flex-md-row flex-column align-items-center mw-100 position-relative">
 											<div className="card-image w-100">
-												<Link href="/cars-details-1">
+												<Link href="/details">
 													<img
 														src="/assets/imgs/cars-listing/cars-listing-3/car-2.png"
 														alt="Gracetrans"
@@ -268,7 +268,7 @@ export default function CarsListing3() {
 												<div className="card-title pb-1">
 													<Link
 														className="heading-6 neutral-1000"
-														href="/cars-details-1"
+														href="/details"
 													>
 														BMW 320d xDrive M
 													</Link>
@@ -292,7 +292,7 @@ export default function CarsListing3() {
 														<div className="card-button">
 															<Link
 																className="btn btn-gray"
-																href="/cars-details-1"
+																href="/details"
 															>
 																Book Now
 															</Link>
@@ -303,7 +303,7 @@ export default function CarsListing3() {
 										</div>
 										<div className="card-journey-small card-journey-small-listing-3 background-0 d-flex flex-md-row flex-column align-items-center mw-100 position-relative">
 											<div className="card-image w-100">
-												<Link href="/cars-details-1">
+												<Link href="/details">
 													<img
 														src="/assets/imgs/cars-listing/cars-listing-3/car-3.png"
 														alt="Gracetrans"
@@ -325,7 +325,7 @@ export default function CarsListing3() {
 												<div className="card-title pb-1">
 													<Link
 														className="heading-6 neutral-1000"
-														href="/cars-details-1"
+														href="/details"
 													>
 														Mercedes-Benz C220d
 													</Link>
@@ -349,7 +349,7 @@ export default function CarsListing3() {
 														<div className="card-button">
 															<Link
 																className="btn btn-gray"
-																href="/cars-details-1"
+																href="/details"
 															>
 																Book Now
 															</Link>
@@ -362,7 +362,7 @@ export default function CarsListing3() {
 									<SwiperSlide>
 										<div className="card-journey-small card-journey-small-listing-3 background-0 d-flex flex-md-row flex-column align-items-center mw-100 position-relative">
 											<div className="card-image w-100">
-												<Link href="/cars-details-1">
+												<Link href="/details">
 													<img
 														src="/assets/imgs/cars-listing/cars-listing-3/car-4.png"
 														alt="Gracetrans"
@@ -384,7 +384,7 @@ export default function CarsListing3() {
 												<div className="card-title pb-1">
 													<Link
 														className="heading-6 neutral-1000"
-														href="/cars-details-1"
+														href="/details"
 													>
 														Volkswagen Golf GTD
 													</Link>
@@ -408,7 +408,7 @@ export default function CarsListing3() {
 														<div className="card-button">
 															<Link
 																className="btn btn-gray"
-																href="/cars-details-1"
+																href="/details"
 															>
 																Book Now
 															</Link>
@@ -419,7 +419,7 @@ export default function CarsListing3() {
 										</div>
 										<div className="card-journey-small card-journey-small-listing-3 background-0 d-flex flex-md-row flex-column align-items-center mw-100 position-relative">
 											<div className="card-image w-100">
-												<Link href="/cars-details-1">
+												<Link href="/details">
 													<img
 														src="/assets/imgs/cars-listing/cars-listing-3/car-5.png"
 														alt="Gracetrans"
@@ -441,7 +441,7 @@ export default function CarsListing3() {
 												<div className="card-title pb-1">
 													<Link
 														className="heading-6 neutral-1000"
-														href="/cars-details-1"
+														href="/details"
 													>
 														Volvo S60 D4 R-Design
 													</Link>
@@ -465,7 +465,7 @@ export default function CarsListing3() {
 														<div className="card-button">
 															<Link
 																className="btn btn-gray"
-																href="/cars-details-1"
+																href="/details"
 															>
 																Book Now
 															</Link>
@@ -476,7 +476,7 @@ export default function CarsListing3() {
 										</div>
 										<div className="card-journey-small card-journey-small-listing-3 background-0 d-flex flex-md-row flex-column align-items-center mw-100 position-relative">
 											<div className="card-image w-100">
-												<Link href="/cars-details-1">
+												<Link href="/details">
 													<img
 														src="/assets/imgs/cars-listing/cars-listing-3/car-6.png"
 														alt="Gracetrans"
@@ -498,7 +498,7 @@ export default function CarsListing3() {
 												<div className="card-title pb-1">
 													<Link
 														className="heading-6 neutral-1000"
-														href="/cars-details-1"
+														href="/details"
 													>
 														Jaguar XE 2.0d R-Sport
 													</Link>
@@ -522,7 +522,7 @@ export default function CarsListing3() {
 														<div className="card-button">
 															<Link
 																className="btn btn-gray"
-																href="/cars-details-1"
+																href="/details"
 															>
 																Book Now
 															</Link>
@@ -535,7 +535,7 @@ export default function CarsListing3() {
 									<SwiperSlide>
 										<div className="card-journey-small card-journey-small-listing-3 background-0 d-flex flex-md-row flex-column align-items-center mw-100 position-relative">
 											<div className="card-image w-100">
-												<Link href="/cars-details-1">
+												<Link href="/details">
 													<img
 														src="/assets/imgs/cars-listing/cars-listing-3/car-1.png"
 														alt="Gracetrans"
@@ -557,7 +557,7 @@ export default function CarsListing3() {
 												<div className="card-title pb-1">
 													<Link
 														className="heading-6 neutral-1000"
-														href="/cars-details-1"
+														href="/details"
 													>
 														Audi A3 1.6 TDI S line
 													</Link>
@@ -581,7 +581,7 @@ export default function CarsListing3() {
 														<div className="card-button">
 															<Link
 																className="btn btn-gray"
-																href="/cars-details-1"
+																href="/details"
 															>
 																Book Now
 															</Link>
@@ -592,7 +592,7 @@ export default function CarsListing3() {
 										</div>
 										<div className="card-journey-small card-journey-small-listing-3 background-0 d-flex flex-md-row flex-column align-items-center mw-100 position-relative">
 											<div className="card-image w-100">
-												<Link href="/cars-details-1">
+												<Link href="/details">
 													<img
 														src="/assets/imgs/cars-listing/cars-listing-3/car-2.png"
 														alt="Gracetrans"
@@ -614,7 +614,7 @@ export default function CarsListing3() {
 												<div className="card-title pb-1">
 													<Link
 														className="heading-6 neutral-1000"
-														href="/cars-details-1"
+														href="/details"
 													>
 														BMW 320d xDrive M
 													</Link>
@@ -638,7 +638,7 @@ export default function CarsListing3() {
 														<div className="card-button">
 															<Link
 																className="btn btn-gray"
-																href="/cars-details-1"
+																href="/details"
 															>
 																Book Now
 															</Link>
@@ -649,7 +649,7 @@ export default function CarsListing3() {
 										</div>
 										<div className="card-journey-small card-journey-small-listing-3 background-0 d-flex flex-md-row flex-column align-items-center mw-100 position-relative">
 											<div className="card-image w-100">
-												<Link href="/cars-details-1">
+												<Link href="/details">
 													<img
 														src="/assets/imgs/cars-listing/cars-listing-3/car-3.png"
 														alt="Gracetrans"
@@ -671,7 +671,7 @@ export default function CarsListing3() {
 												<div className="card-title pb-1">
 													<Link
 														className="heading-6 neutral-1000"
-														href="/cars-details-1"
+														href="/details"
 													>
 														Mercedes-Benz C220d
 													</Link>
@@ -695,7 +695,7 @@ export default function CarsListing3() {
 														<div className="card-button">
 															<Link
 																className="btn btn-gray"
-																href="/cars-details-1"
+																href="/details"
 															>
 																Book Now
 															</Link>
@@ -708,7 +708,7 @@ export default function CarsListing3() {
 									<SwiperSlide>
 										<div className="card-journey-small card-journey-small-listing-3 background-0 d-flex flex-md-row flex-column align-items-center mw-100 position-relative">
 											<div className="card-image w-100">
-												<Link href="/cars-details-1">
+												<Link href="/details">
 													<img
 														src="/assets/imgs/cars-listing/cars-listing-3/car-4.png"
 														alt="Gracetrans"
@@ -730,7 +730,7 @@ export default function CarsListing3() {
 												<div className="card-title pb-1">
 													<Link
 														className="heading-6 neutral-1000"
-														href="/cars-details-1"
+														href="/details"
 													>
 														Volkswagen Golf GTD
 													</Link>
@@ -754,7 +754,7 @@ export default function CarsListing3() {
 														<div className="card-button">
 															<Link
 																className="btn btn-gray"
-																href="/cars-details-1"
+																href="/details"
 															>
 																Book Now
 															</Link>
@@ -765,7 +765,7 @@ export default function CarsListing3() {
 										</div>
 										<div className="card-journey-small card-journey-small-listing-3 background-0 d-flex flex-md-row flex-column align-items-center mw-100 position-relative">
 											<div className="card-image w-100">
-												<Link href="/cars-details-1">
+												<Link href="/details">
 													<img
 														src="/assets/imgs/cars-listing/cars-listing-3/car-5.png"
 														alt="Gracetrans"
@@ -787,7 +787,7 @@ export default function CarsListing3() {
 												<div className="card-title pb-1">
 													<Link
 														className="heading-6 neutral-1000"
-														href="/cars-details-1"
+														href="/details"
 													>
 														Volvo S60 D4 R-Design
 													</Link>
@@ -811,7 +811,7 @@ export default function CarsListing3() {
 														<div className="card-button">
 															<Link
 																className="btn btn-gray"
-																href="/cars-details-1"
+																href="/details"
 															>
 																Book Now
 															</Link>
@@ -822,7 +822,7 @@ export default function CarsListing3() {
 										</div>
 										<div className="card-journey-small card-journey-small-listing-3 background-0 d-flex flex-md-row flex-column align-items-center mw-100 position-relative">
 											<div className="card-image w-100">
-												<Link href="/cars-details-1">
+												<Link href="/details">
 													<img
 														src="/assets/imgs/cars-listing/cars-listing-3/car-6.png"
 														alt="Gracetrans"
@@ -844,7 +844,7 @@ export default function CarsListing3() {
 												<div className="card-title pb-1">
 													<Link
 														className="heading-6 neutral-1000"
-														href="/cars-details-1"
+														href="/details"
 													>
 														Jaguar XE 2.0d R-Sport
 													</Link>
@@ -868,7 +868,7 @@ export default function CarsListing3() {
 														<div className="card-button">
 															<Link
 																className="btn btn-gray"
-																href="/cars-details-1"
+																href="/details"
 															>
 																Book Now
 															</Link>
@@ -885,7 +885,7 @@ export default function CarsListing3() {
 					<div className="d-flex justify-content-center">
 						<Link
 							className="btn btn-brand-2 text-nowrap wow "
-							href="/cars-list-1"
+							href="/search"
 						>
 							<svg
 								className="me-2"

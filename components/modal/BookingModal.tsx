@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./BookingModal.css";
 import { useRouter } from "next/navigation";
 import moment from "moment";
 
@@ -35,54 +34,59 @@ const BookingModal: React.FC<BookingModalProps> = ({
     const bookingDetails = {
       car,
       username: localStorage.getItem("username"),
-      date: new Date().toLocaleDateString(),
+      date: dateSelected,
       time,
       seats: selectedSeats,
     };
     localStorage.setItem("bookingDetails", JSON.stringify(bookingDetails));
-    // window.open("/eticket", "_blank");
-    // handleBooking();
+    handleBooking();
     onClose();
   };
 
   const renderSeats = () => {
-    const seats = [];
-    for (let i = 1; i <= 5; i++) {
-      seats.push(
-        <div key={`row-${i}`} className="seat-row">
-          {["A", "B", "C"].map((suffix) => {
-            const seat = `${i}${suffix}`;
-            const isSelected = selectedSeats.includes(seat);
-            return (
-              <div
-                key={seat}
-                className={`seat ${isSelected ? "selected" : ""}`}
-                onClick={() => handleSeatClick(seat)}
-              >
-                {seat}
-              </div>
-            );
-          })}
-          <div className="seat-spacer"></div>
-          {["D", "E"].map((suffix) => {
-            const seat = `${i}${suffix}`;
-            const isSelected = selectedSeats.includes(seat);
-            return (
-              <>
+    const layout = [
+      ["1", "2", "", "3", "4"],
+      ["5", "6", "", "7", "8"],
+      ["9", "10", "", "11", "12"],
+      ["13", "14", "", "15", "16"],
+      ["17", "18", "", "19", "20"],
+      ["21", "22", "", "23", "24"],
+      ["", "", "", "", ""], // Gap for door
+      ["25", "26", "", "", ""],
+      ["27", "28", "29", "30", "31"], // Last row full
+    ];
+
+    return (
+      <div className="tw:!flex tw:!gap-8 tw:!overflow-x-auto tw:!py-3 tw:!scrollbar-hide">
+        {layout.map((row, rowIndex) => (
+          <div
+            key={`row-${rowIndex}`}
+            className="tw:!flex tw:!flex-col tw:!items-center tw:!gap-2"
+          >
+            {row.map((seat, index) =>
+              seat ? (
                 <div
                   key={seat}
-                  className={`seat ${isSelected ? "selected" : ""}`}
                   onClick={() => handleSeatClick(seat)}
+                  className={`tw:!w-10 tw:!h-10 tw:!flex tw:!items-center tw:!justify-center tw:!rounded-md tw:!cursor-pointer tw:!border tw:!text-xs tw:!font-semibold
+                  ${selectedSeats.includes(seat)
+                      ? "tw:!bg-[#2A9FD6] tw:!text-white"
+                      : "tw:!bg-white tw:!text-gray-700"
+                    } hover:tw:!bg-gray-100`}
                 >
                   {seat}
                 </div>
-              </>
-            );
-          })}
-        </div>
-      );
-    }
-    return seats;
+              ) : (
+                <div
+                  key={`empty-${rowIndex}-${index}`}
+                  className="tw:!w-10 tw:!h-10"
+                ></div>
+              )
+            )}
+          </div>
+        ))}
+      </div>
+    );
   };
 
   const renderTimeOptions = () => {
@@ -101,27 +105,19 @@ const BookingModal: React.FC<BookingModalProps> = ({
   const renderDateOptions = () => {
     const dates = [];
     const today = moment();
-
     for (let i = 0; i <= 10; i++) {
+      const dateValue = today.clone().add(i, "days").format("YYYY-MM-DD");
       dates.push(
-        <option
-          key={today.clone().add(i, "days").format("YYYY-MM-DD")}
-          value={today.clone().add(i, "days").format("YYYY-MM-DD")}
-        >
-          {today.clone().add(i, "days").format("DD/MM/YYYY")} {time} -{" "}
-          {selectedList[
-            today.clone().add(i, "days").format("YYYY-MM-DD")
-          ]?.join(", ")}
+        <option key={dateValue} value={dateValue}>
+          {today.clone().add(i, "days").format("DD/MM/YYYY")}
         </option>
       );
     }
-
     return dates;
   };
 
   useEffect(() => {
-    let newSelectedList = { ...selectedList, [dateSelected]: selectedSeats };
-
+    const newSelectedList = { ...selectedList, [dateSelected]: selectedSeats };
     setSelectedList(newSelectedList);
   }, [selectedSeats]);
 
@@ -130,73 +126,101 @@ const BookingModal: React.FC<BookingModalProps> = ({
   }, [dateSelected]);
 
   return (
-    <div className="modal">
-      <div className="modal-content">
-        <label>
-          Book <strong>{car.name}</strong>
-        </label>
-
-        <div className="form-group">
-          <label>Waktu</label>
-          <select value={time} onChange={(e) => setTime(e.target.value)}>
-            <option value="">Pilih...</option>
-            {renderTimeOptions()}
-          </select>
-        </div>
-        <div className="form-row">
-          <div className="form-group">
-            <label>Destinasi</label>
-            <input type="text" value={car.location} disabled />
+    <div className="tw:!fixed tw:!inset-0 tw:!flex tw:!items-center tw:!justify-center tw:!bg-black/50 tw:!z-50 tw:!p-4 md:tw:!p-8">
+      <div className="tw:!bg-white tw:!rounded-xl tw:!p-6 tw:!w-full tw:!max-w-4xl tw:!shadow-lg">
+        <h2 className="tw:!text-2xl tw:!font-bold tw:!mb-6">
+          Booking <span className="tw:!text-[#2A9FD6]">{car.name}</span>
+        </h2>
+        <div className="tw:!grid tw:!grid-cols-1 tw:md:!grid-cols-2 tw:!gap-4 tw:!mb-4">
+          {/* Time */}
+          <div>
+            <label className="tw:!block tw:!text-sm tw:!font-medium tw:!mb-1">
+              Pilih Waktu
+            </label>
+            <select
+              value={time}
+              onChange={(e) => setTime(e.target.value)}
+              className="tw:!w-full tw:!border tw:!rounded-md tw:!p-2 focus:tw:!ring-1 focus:tw:!ring-[#2A9FD6]"
+            >
+              <option value="">Pilih...</option>
+              {renderTimeOptions()}
+            </select>
           </div>
 
-          <div className="form-group">
-            <label>Jumlah Penumpang</label>
+          {time && (
+            <div>
+              <label className="tw:!block tw:!text-sm tw:!font-medium tw:!mb-1">
+                Pilih Tanggal
+              </label>
+              <select
+                value={dateSelected}
+                onChange={(e) => setDateSelected(e.target.value)}
+                className="tw:!w-full tw:!border tw:!rounded-md tw:!p-2 focus:tw:!ring-1 focus:tw:!ring-[#2A9FD6]"
+              >
+                <option value="">Pilih...</option>
+                {renderDateOptions()}
+              </select>
+            </div>
+          )}
+
+
+
+          {/* Passenger Count */}
+          <div>
+            <label className="tw:!block tw:!text-sm tw:!font-medium tw:!mb-1">
+              Jumlah Penumpang
+            </label>
             <input
               type="number"
               min="1"
-              max="3"
+              max="5"
               value={passengerCount}
               onChange={(e) => {
                 setPassengerCount(parseInt(e.target.value));
                 setSelectedList({});
                 setSelectedSeats([]);
               }}
+              className="tw:!w-full tw:!border tw:!rounded-md tw:!p-2 tw:!text-center focus:tw:!ring-1 focus:tw:!ring-[#2A9FD6]"
             />
           </div>
-        </div>
-        {time != "" && passengerCount > 0 && <hr />}
-        {time != "" && passengerCount > 0 && (
-          <div className="form-group">
-            <label>Tanggal</label>
 
-            <select
-              value={dateSelected}
-              onChange={(e) => setDateSelected(e.target.value)}
-            >
-              <option value="" disabled>
-                Pilih...
-              </option>
-              {renderDateOptions()}
-            </select>
+          {/* Destination */}
+          <div>
+            <label className="tw:!block tw:!text-sm tw:!font-medium tw:!mb-1">
+              Destinasi
+            </label>
+            <input
+              type="text"
+              value={car.location}
+              disabled
+              className="tw:!w-full tw:!border tw:!rounded-md tw:!p-2 tw:!bg-gray-100"
+            />
+          </div>
+
+        </div>
+
+        {/* Seats Selection */}
+        {time && passengerCount > 0 && dateSelected && (
+          <div className="tw:!mb-4">
+            <label className="tw:!block tw:!text-sm tw:!font-medium tw:!mb-2">
+              Pilih Kursi
+            </label>
+            {renderSeats()}
           </div>
         )}
-        {time != "" && passengerCount > 0 && dateSelected != "" && (
-          <div className="form-group">
-            <label>Bangku</label>
-            <div className="seats-container">{renderSeats()}</div>
-          </div>
-        )}
-        <div className="tw:!flex tw:!justify-between tw:!items-center tw:!mt-6">
+
+        {/* Buttons */}
+        <div className="tw:!flex tw:!justify-between tw:!gap-4 tw:!mt-6">
           <button
             onClick={onClose}
-            className="tw:!bg-black tw:!text-white tw:!font-semibold tw:!py-2 tw:!px-5 tw:!rounded-lg tw:!hover:bg-gray-800 tw:!transition"
+            className="tw:!bg-gray-200 tw:!text-gray-800 tw:!px-4 tw:!py-2 tw:!rounded-md tw:!font-semibold hover:tw:!bg-gray-300"
           >
             Tutup
           </button>
-          {time != "" && dateSelected != "" && passengerCount > 0 && (
+          {time && dateSelected && selectedSeats.length > 0 && (
             <button
               onClick={handleSubmit}
-              className="tw:!bg-black tw:!text-white tw:!font-semibold tw:!py-2 tw:!px-5 tw:!rounded-lg tw:!hover:bg-gray-800 tw:!transition"
+              className="tw:!bg-[#2A9FD6] tw:!text-white tw:!px-4 tw:!py-2 tw:!rounded-md tw:!font-semibold hover:tw:!bg-[#238bb8]"
             >
               Tambah ke Keranjang
             </button>

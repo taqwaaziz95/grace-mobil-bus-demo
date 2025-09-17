@@ -65,7 +65,7 @@ const RadioButton = ({
 	const sizeClass = sizeMap[size] || sizeMap.md;
 	return (
 		<div
-			className={`tw:!inline-flex tw:!items-center tw:!gap-2 ${className} ${colorClass}`}
+			className={`tw:!inline-flex tw:!items-center tw:!gap-1 ${className} ${colorClass}`}
 		>
 			<label htmlFor={inputId}>
 				<input
@@ -79,7 +79,7 @@ const RadioButton = ({
 					className={`tw:!${colorClass} tw:!${sizeClass}`}
 				/>
 			</label>
-			<span className="tw:!mb-2">{label}</span>
+			<span className="tw:!mb-3">{label}</span>
 		</div>
 	);
 };

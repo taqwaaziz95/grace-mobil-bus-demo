@@ -49,7 +49,7 @@ export default function DealerListing() {
 									<div className="d-flex justify-content-end mt-md-0 mt-4">
 										<Link
 											className="btn btn-primary rounded-3"
-											href="/cars-list-1"
+											href="/search"
 										>
 											Become a renter
 											<svg
@@ -97,7 +97,7 @@ export default function DealerListing() {
 											<div className="card-method-contact2">
 												<Link
 													className="email text-xs-bold"
-													href="/cars-list-1"
+													href="/search"
 												>
 													180 Vehicles
 												</Link>
@@ -130,7 +130,7 @@ export default function DealerListing() {
 											<div className="card-method-contact2">
 												<Link
 													className="email text-xs-bold"
-													href="/cars-list-1"
+													href="/search"
 												>
 													180 Vehicles
 												</Link>
@@ -163,7 +163,7 @@ export default function DealerListing() {
 											<div className="card-method-contact2">
 												<Link
 													className="email text-xs-bold"
-													href="/cars-list-1"
+													href="/search"
 												>
 													180 Vehicles
 												</Link>
@@ -196,7 +196,7 @@ export default function DealerListing() {
 											<div className="card-method-contact2">
 												<Link
 													className="email text-xs-bold"
-													href="/cars-list-1"
+													href="/search"
 												>
 													180 Vehicles
 												</Link>
@@ -229,7 +229,7 @@ export default function DealerListing() {
 											<div className="card-method-contact2">
 												<Link
 													className="email text-xs-bold"
-													href="/cars-list-1"
+													href="/search"
 												>
 													180 Vehicles
 												</Link>
@@ -262,7 +262,7 @@ export default function DealerListing() {
 											<div className="card-method-contact2">
 												<Link
 													className="email text-xs-bold"
-													href="/cars-list-1"
+													href="/search"
 												>
 													180 Vehicles
 												</Link>
@@ -295,7 +295,7 @@ export default function DealerListing() {
 											<div className="card-method-contact2">
 												<Link
 													className="email text-xs-bold"
-													href="/cars-list-1"
+													href="/search"
 												>
 													180 Vehicles
 												</Link>
@@ -328,7 +328,7 @@ export default function DealerListing() {
 											<div className="card-method-contact2">
 												<Link
 													className="email text-xs-bold"
-													href="/cars-list-1"
+													href="/search"
 												>
 													180 Vehicles
 												</Link>
@@ -361,7 +361,7 @@ export default function DealerListing() {
 											<div className="card-method-contact2">
 												<Link
 													className="email text-xs-bold"
-													href="/cars-list-1"
+													href="/search"
 												>
 													180 Vehicles
 												</Link>
@@ -394,7 +394,7 @@ export default function DealerListing() {
 											<div className="card-method-contact2">
 												<Link
 													className="email text-xs-bold"
-													href="/cars-list-1"
+													href="/search"
 												>
 													180 Vehicles
 												</Link>
@@ -427,7 +427,7 @@ export default function DealerListing() {
 											<div className="card-method-contact2">
 												<Link
 													className="email text-xs-bold"
-													href="/cars-list-1"
+													href="/search"
 												>
 													180 Vehicles
 												</Link>
@@ -460,7 +460,7 @@ export default function DealerListing() {
 											<div className="card-method-contact2">
 												<Link
 													className="email text-xs-bold"
-													href="/cars-list-1"
+													href="/search"
 												>
 													180 Vehicles
 												</Link>
@@ -493,7 +493,7 @@ export default function DealerListing() {
 											<div className="card-method-contact2">
 												<Link
 													className="email text-xs-bold"
-													href="/cars-list-1"
+													href="/search"
 												>
 													180 Vehicles
 												</Link>
@@ -526,7 +526,7 @@ export default function DealerListing() {
 											<div className="card-method-contact2">
 												<Link
 													className="email text-xs-bold"
-													href="/cars-list-1"
+													href="/search"
 												>
 													180 Vehicles
 												</Link>
@@ -559,7 +559,7 @@ export default function DealerListing() {
 											<div className="card-method-contact2">
 												<Link
 													className="email text-xs-bold"
-													href="/cars-list-1"
+													href="/search"
 												>
 													180 Vehicles
 												</Link>

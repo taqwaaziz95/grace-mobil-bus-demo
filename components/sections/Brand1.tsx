@@ -13,7 +13,7 @@ export default function Brand1() {
 								Unveil the Finest Selection of High-End Vehicles
 							</p>
 							<Link
-								href="/cars-list-1"
+								href="/search"
 								className="text-sm-bold neutral-1000 wow "
 							>
 								Show All Brands

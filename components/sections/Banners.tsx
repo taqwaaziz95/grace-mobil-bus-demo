@@ -26,7 +26,7 @@ export default function Banners() {
 									<div className="banner-button pb-70 pt-3">
 										<Link
 											className="btn btn-primary background-brand-2 wow "
-											href="/cars-list-1"
+											href="/search"
 										>
 											Get Started Now
 											<svg
@@ -69,7 +69,7 @@ export default function Banners() {
 									<div className="banner-button pb-70 pt-3">
 										<Link
 											className="btn btn-primary bg-white wow "
-											href="/cars-list-1"
+											href="/search"
 										>
 											Get Started Now
 											<svg

@@ -1,3 +1,4 @@
+import { withBasePath } from "@/lib/basePath";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 export default function Offcanvas({ isOffcanvas, handleOffcanvas }: any) {
@@ -93,7 +94,7 @@ export default function Offcanvas({ isOffcanvas, handleOffcanvas }: any) {
 								{" "}
 								<img
 									alt="Gracetrans"
-									src="/assets/imgs/template/icons/close.png"
+									src={withBasePath("/assets/imgs/template/icons/close.png")}
 								/>
 							</a>
 						</div>
@@ -104,7 +105,9 @@ export default function Offcanvas({ isOffcanvas, handleOffcanvas }: any) {
 								<div className="card-author">
 									<div className="card-image">
 										<img
-											src="/assets/imgs/page/homepage1/author2.png"
+											src={withBasePath(
+												"/assets/imgs/page/homepage1/author2.png"
+											)}
 											alt="Gracetrans"
 										/>
 									</div>
@@ -147,12 +150,15 @@ export default function Offcanvas({ isOffcanvas, handleOffcanvas }: any) {
 											price: 120000,
 										},
 									].map((ticket, idx) => (
-										<li key={idx} className="border-b pb-2">
-											<p className="text-md-bold">{ticket.route}</p>
-											<p className="text-sm text-gray-700">
+										<li
+											key={idx}
+											className="tw:!border tw:!rounded-lg tw:!shadow-md tw:!pb-2 tw:!px-4 tw:!py-3 tw:!mb-2 tw:!bg-white"
+										>
+											<p className="tw:!text-md-bold">{ticket.route}</p>
+											<p className="tw:!text-sm tw:!text-gray-700">
 												{ticket.date} {ticket.time} - Kursi: {ticket.seat}
 											</p>
-											<p className="text-md-bold">
+											<p className="tw:!text-md-bold">
 												Rp{ticket.price.toFixed(0)}
 											</p>
 										</li>

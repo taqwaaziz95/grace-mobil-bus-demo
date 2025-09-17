@@ -4,6 +4,7 @@ import { Alert } from "@/components/alert";
 import { LinkButton } from "@/components/button";
 import Card from "@/components/card";
 import { Input, MultiTextInput } from "@/components/inputs";
+import { Star, PhoneCall, Car, Shield, FileText } from "lucide-react";
 import {
 	Blockquote,
 	Caption,
@@ -34,6 +35,27 @@ import Breadcrumbs from "@/components/breadcrumbs";
 import { on } from "events";
 import CustomDatePicker from "@/components/date-picker";
 import SelectInput from "@/components/select-input";
+import BookingCards from "@/components/booking-cards";
+import HeroSearch from "@/components/elements/HeroSearch";
+import CategoryButton from "../HeroSearch/CategoryButton";
+import CustomFooter from "@/components/layout/CustomFooter";
+import CustomMarquee from "@/components/layout/CustomMarquee";
+import { withBasePath } from "@/lib/basePath";
+import CustomHeroBanner from "@/components/layout/CustomHeroBanner";
+import VideoTestimonial from "@/components/video-testimonial";
+import LeftIconGridCard from "@/components/left-icon-grid-card";
+import StatsSection from "@/components/stats-section";
+import JumbotronHeader from "@/components/jumbotron-header";
+import DetailsCard, { DetailsCardList } from "@/components/details-card";
+import CarCard, { CarCardList } from "@/components/car-card";
+import BookingModal from "@/components/modal/BookingModal";
+import CheckOutList from "@/components/check-out-list";
+import {
+	CheckoutPaymentSection,
+	CountdownTimer,
+	PaymentMethodSelector,
+	PaymentSummary,
+} from "@/components/payment-components";
 
 // Define the RadioButtonColor type if not imported from the component
 type RadioButtonColor =
@@ -65,6 +87,7 @@ const sidebarItems = [
 	{ key: "checklist", label: "Checklist Button" },
 	{ key: "breadcrumbs", label: "Breadcrumbs" },
 	{ key: "custom-grid-components", label: "Custom Image Grid Section" },
+	{ key: "custom-components", label: "All Custom Reusable" },
 ];
 
 const teamMembers = [
@@ -145,7 +168,7 @@ const teamMembers = [
 
 // data/testimonialData.ts
 
-const testimonialData = [
+export const testimonialData = [
 	{
 		title: "No Hidden Fees",
 		content:
@@ -186,7 +209,7 @@ const testimonialData = [
 
 // data/whyData.tsx
 
-const whyData = [
+export const whyData = [
 	{
 		icon: (
 			<svg width={62} height={62} viewBox="0 0 62 62" fill="none">
@@ -365,6 +388,7 @@ const InputDemo = () => (
 const SelectInputDemo = () => {
 	const [dropOffLocation, setDropOffLocation] =
 		useState<string>("Stasiun Gambir");
+
 	const dropOffLocations = [
 		"Bandara Soekarno-Hatta",
 		"Stasiun Gambir",
@@ -722,6 +746,392 @@ const AccordionDemo = () => (
 	</div>
 );
 
+const CustomComponentsDemo = () => {
+	const [selectedCategory, setSelectedCategory] = useState<string>("resident");
+
+	const defaultBrands = [
+		{
+			lightMode: "/assets/imgs/page/homepage2/lexus.png",
+			darkMode: withBasePath("/assets/imgs/page/homepage2/lexus-w.png"),
+			alt: "Gracetransx",
+		},
+		{
+			lightMode: withBasePath("/assets/imgs/page/homepage2/mer.png"),
+			darkMode: withBasePath("/assets/imgs/page/homepage2/mer-w.png"),
+			alt: "Gracetrans",
+		},
+		{
+			lightMode: withBasePath("/assets/imgs/page/homepage2/bugatti.png"),
+			darkMode: withBasePath("/assets/imgs/page/homepage2/bugatti-w.png"),
+			alt: "Gracetrans",
+		},
+		{
+			lightMode: withBasePath("/assets/imgs/page/homepage2/jaguar.png"),
+			darkMode: withBasePath("/assets/imgs/page/homepage2/jaguar-w.png"),
+			alt: "Gracetrans",
+		},
+		{
+			lightMode: withBasePath("/assets/imgs/page/homepage2/honda.png"),
+			darkMode: withBasePath("/assets/imgs/page/homepage2/honda-w.png"),
+			alt: "Gracetrans",
+		},
+		{
+			lightMode: withBasePath("/assets/imgs/page/homepage2/chevrolet.png"),
+			darkMode: withBasePath("/assets/imgs/page/homepage2/chevrolet-w.png"),
+			alt: "Gracetrans",
+		},
+		{
+			lightMode: withBasePath("/assets/imgs/page/homepage2/acura.png"),
+			darkMode: withBasePath("/assets/imgs/page/homepage2/acura-w.png"),
+			alt: "Gracetrans",
+		},
+		{
+			lightMode: withBasePath("/assets/imgs/page/homepage2/bmw.png"),
+			darkMode: withBasePath("/assets/imgs/page/homepage2/bmw-w.png"),
+			alt: "Gracetrans",
+		},
+		{
+			lightMode: withBasePath("/assets/imgs/page/homepage2/toyota.png"),
+			darkMode: withBasePath("/assets/imgs/page/homepage2/toyota-w.png"),
+			alt: "Gracetrans",
+		},
+	];
+
+	const customFeaturesArray = [
+		{
+			icon: <Star size={24} />, // Use Lucide React icons
+			title: "Jaminan Kenyamanan",
+			description:
+				"Kami memberikan kenyamanan terbaik bagi pengguna layanan transportasi sesuai standar pemerintah.",
+		},
+		{
+			icon: <PhoneCall size={24} />,
+			title: "Customer Service 24/7",
+			description:
+				"Pelayanan pelanggan 24 jam dengan layanan ramah dan responsif.",
+		},
+		{
+			icon: <Car size={24} />,
+			title: "Unit Pengganti",
+			description:
+				"Jika unit mengalami kendala, kami menyediakan unit pengganti sesuai pesanan awal.",
+		},
+		{
+			icon: <Shield size={24} />,
+			title: "Asuransi",
+			description:
+				"Kami menjamin keamanan dengan perlindungan asuransi jika terjadi kecelakaan.",
+		},
+		{
+			icon: <FileText size={24} />,
+			title: "Kelengkapan Surat Kendaraan",
+			description:
+				"Setiap kendaraan memiliki dokumen resmi dan pajak yang tertib sesuai regulasi.",
+		},
+		{
+			icon: <FileText size={24} />,
+			title: "Kelengkapan Surat Kendaraan",
+			description:
+				"Setiap kendaraan memiliki dokumen resmi dan pajak yang tertib sesuai regulasi.",
+		},
+		{
+			icon: <FileText size={24} />,
+			title: "Kelengkapan Surat Kendaraan",
+			description:
+				"Setiap kendaraan memiliki dokumen resmi dan pajak yang tertib sesuai regulasi.",
+		},
+		{
+			icon: <FileText size={24} />,
+			title: "Kelengkapan Surat Kendaraan",
+			description:
+				"Setiap kendaraan memiliki dokumen resmi dan pajak yang tertib sesuai regulasi.",
+		},
+	];
+
+	const statsData = [
+		{ count: 45, suffix: "+", lines: ["Global", "Branches"] },
+		{ count: 29, suffix: "K", lines: ["Destinations", "Collaboration"] },
+		{ count: 20, suffix: "+", lines: ["Years", "Experience"] },
+		{ count: 168, suffix: "K", lines: ["Happy", "Customers"] },
+		{ count: 15, suffix: "M", lines: ["User", "Account"] },
+	];
+
+	const cardsDataDetails = [
+		{
+			imageSrc: "/assets/imgs/services/services-list-1/img-1.png",
+			linkSrc: "/blog-details",
+			title: "Daily and Weekly Car Rentals",
+			description:
+				"Flexible rental options available for both short-term and weekly needs, ideal for vacations or business trips.",
+			buttonLabel: "View Details",
+			buttonLink: "/blog-details",
+			withBasePath,
+		},
+
+		{
+			imageSrc: "/assets/imgs/services/services-list-1/img-1.png",
+			linkSrc: "/blog-details",
+			title: "Daily and Weekly Car Rentals",
+			description:
+				"Flexible rental options available for both short-term and weekly needs, ideal for vacations or business trips.",
+			buttonLabel: "View Details",
+			buttonLink: "/blog-details",
+			withBasePath,
+		},
+		// ...more card objects
+	];
+	const [modalCar, setModalCar] = useState<any>(false);
+
+	// Add paymentMethod state
+	const [paymentMethod, setPaymentMethod] = useState<string>("");
+
+	// Add countdown state for CountdownTimer
+	const [countdown, setCountdown] = useState<number>(180);
+
+	function handleBooking(car: any): void {
+		setModalCar(car);
+	}
+
+	function handleCloseModal() {
+		setModalCar(false);
+	}
+
+	const [selected, setSelected] = useState<number[]>([]);
+	const bookings = [
+		{
+			bookingCode: "STL-2211",
+			busName: "Medium Bus",
+			busPlate: "B 2951 XYA",
+			from: "Suvana Sutera",
+			to: "Menteng",
+			dateTime: "2023-10-15 08:00 AM",
+			price: 120000,
+		},
+		{
+			bookingCode: "RNT-2591",
+			busName: "Innova Reborn",
+			busPlate: "B 4582 ABC",
+			from: "1 Bulan",
+			to: "Mobil + Supir + Tol",
+			dateTime: "2023-10-16 09:00 AM",
+			price: 14000000,
+		},
+	];
+
+	const handleSelect = (idx: number) => {
+		setSelected((prev) =>
+			prev.includes(idx) ? prev.filter((i) => i !== idx) : [...prev, idx]
+		);
+	};
+
+	const total = selected.reduce((sum, idx) => sum + bookings[idx].price, 0);
+
+	const handleCheckout = () => {
+		// Your checkout logic here
+	};
+
+	function handlePayment(): void {
+		// Example: Show a success alert and reset payment state
+		alert("Payment successful! Thank you for your booking.");
+		setPaymentMethod("");
+		setCountdown(180); // Reset countdown timer
+		// Optionally, you could clear selected bookings or trigger a modal, etc.
+	}
+
+	return (
+		<div className="tw:!space-y-4">
+			<H3>Custom Cards Components</H3>
+			<div className="box-search-advance background-card tw:!top-0">
+				<div className="box-top-search">
+					<div className="left-top-search">
+						<CategoryButton
+							label="Resident"
+							value="resident"
+							selectedValue={selectedCategory}
+							onSelect={setSelectedCategory}
+						/>
+						<CategoryButton
+							label="Korporat"
+							value="korporat"
+							selectedValue={selectedCategory}
+							onSelect={setSelectedCategory}
+						/>
+						<CategoryButton
+							label="Antar Kota"
+							value="antar-kota"
+							selectedValue={selectedCategory}
+							onSelect={setSelectedCategory}
+						/>
+						<CategoryButton
+							label="Shopping Mall"
+							value="mall"
+							selectedValue={selectedCategory}
+							onSelect={setSelectedCategory}
+						/>
+					</div>
+					<div className="right-top-search d-none d-md-flex">
+						<Link className="text-sm-medium need-some-help" href="/contact">
+							Need help?
+						</Link>
+					</div>
+				</div>
+				<div
+					style={{
+						display: "flex",
+						justifyContent: "center",
+						alignItems: "center",
+					}}
+				>
+					<BookingCards category={selectedCategory} />
+				</div>
+			</div>
+
+			<H3>Custom Left Icon Grid Card with Header Title</H3>
+
+			<LeftIconGridCard data={customFeaturesArray} />
+
+			<H3>Custom Testimonial Video</H3>
+
+			<VideoTestimonial
+				src="/videos/jirayut.mp4"
+				name="Jirayut Afsan Jehdueramaes"
+				role="Penyanyi, Presenter, dan Aktor"
+				testimonial="Orang nya keren, mobil nya bersih, bisa nyanyi ada karaoke juga. Pokoknya keren, terima kasih Grace Trans udah menemani dan libur bareng Jirayut. Kalau nanti ada waktu lagi kita jalan bareng lagi ya, terima kasih."
+			/>
+
+			<H3>Custom Marquee</H3>
+
+			<CustomMarquee
+				brands={defaultBrands}
+				direction="right"
+				pauseOnHover={false}
+			/>
+
+			<H3>Custom Stats Sections</H3>
+
+			<StatsSection data={statsData} />
+
+			<H3>Custom Jumbotron Header</H3>
+
+			<JumbotronHeader
+				bannerImg="/assets/imgs/page-header/banner1.png"
+				title="Our Services (Custom Jumbotron Header)"
+				subtitle="Perfect service, top experts"
+				breadcrumbs={[
+					{ label: "Home", href: "/" },
+					{ label: "Services", href: "#", isActive: true },
+				]}
+				isBreadCrumbs={false}
+			/>
+
+			<H3>Custom Detail Card</H3>
+
+			<DetailsCardList cards={cardsDataDetails} />
+
+			<CarCardList
+				cars={[
+					{
+						id: 1,
+						name: "Toyota Avanza",
+						location: "Jakarta",
+						seats: 7,
+
+						isSupir: false,
+						carType: "MPV",
+						image: "car-1.png",
+						price: "Rp 350.000/hari",
+						description: "Mobil keluarga irit dan nyaman.",
+					},
+					{
+						id: 2,
+						name: "Honda Brio",
+						carType: "Sedan",
+						location: "Tangerang",
+						image: "car-2.png",
+						price: "Rp 300.000/hari",
+						description: "Mobil city car lincah dan ekonomis.",
+					},
+					{
+						id: 3,
+						name: "Suzuki Ertiga",
+						carType: "MPV",
+						location: "Cilegon",
+						image: "car-3.png",
+						price: "Rp 370.000/hari",
+						description: "MPV modern untuk perjalanan jauh.",
+					},
+				]}
+				handleBooking={handleBooking}
+				category={selectedCategory}
+			/>
+
+			<H3>Custom Checkout List</H3>
+
+			<CheckOutList
+				bookings={bookings}
+				selected={selected}
+				onSelect={handleSelect}
+				total={total}
+				onCheckout={handleCheckout}
+			/>
+
+			<H3>Custom Pembayaran List</H3>
+
+			<CheckoutPaymentSection
+				paymentMethod={paymentMethod}
+				setPaymentMethod={setPaymentMethod}
+				onTopup={handleCloseModal}
+				bookings={bookings}
+				totalPrice={total}
+				countdown={countdown}
+				onPayment={handlePayment}
+			/>
+
+			<H3>Custom Banner / Banner Divider</H3>
+
+			<CustomHeroBanner
+				title="Come and Use Gracetrans"
+				subtitle="Your trusted partner for seamless transportation solutions."
+				backgroundImage={withBasePath(
+					"/assets/imgs/cta/cta-2/background-2.png"
+				)}
+				kontakHref="/contact"
+				kontakLabel="Contact Us"
+				shuttleHref="/shuttle"
+				shuttleLabel="Book Shuttle"
+				rentHref="/rent"
+				rentLabel="Rent a Car"
+			/>
+
+			<H3>Custom Footer</H3>
+			<CustomFooter
+				logoSrc={withBasePath("/assets/imgs/template/grace-logo.png")}
+				mission="Anda bisa membuat custom visi dan misi anda di sini. agar lebih
+				menarik dan sesuai dengan brand Anda."
+				informasiLinks={["About Us", "Pricing", "Contact"]}
+				kontak={{
+					office1: "Your Office 1 Address",
+					office2: "Your Office 2 Address",
+					phone: "123-456-7890",
+					email: "info@yourdomain.com",
+					hours: "Mon-Fri: 8am-5pm",
+				}}
+				mapsEmbedUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15861.50048671!2d106.73755140892877!3d-6.345444646766658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ef0b29e78801%3A0xefd715749f1392c9!2sGRACE%20TRANS%20(PT%20MATARI%20JELAJAH%20INDONESIA)!5e0!3m2!1sen!2sid!4v1752575930426!5m2!1sen!2sid"
+				lokasiKantorTitle="Your Office Location"
+				copyright="© 2025 Gracetrans. All rights reserved."
+			/>
+
+			{modalCar && (
+				<BookingModal
+					car={modalCar}
+					onClose={handleCloseModal}
+					handleBooking={() => handleBooking(modalCar)}
+				/>
+			)}
+		</div>
+	);
+};
+
 // Radio Component Example
 const RadioButtonDemo = () => {
 	const [selected, setSelected] = useState("option1");
@@ -1025,6 +1435,9 @@ const ComponentDocs = () => {
 			break;
 		case "datePicker":
 			Content = <DatePickerDemo />;
+			break;
+		case "custom-components":
+			Content = <CustomComponentsDemo />;
 			break;
 		default:
 			Content = null;

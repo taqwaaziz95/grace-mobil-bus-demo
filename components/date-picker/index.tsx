@@ -1,11 +1,12 @@
 import React from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 type PickerType = "date" | "date-range-picker";
 
 interface CustomDatePickerProps {
-	selected: Date | null;
+	selected?: Date | null;
 	onChange: (date: Date | null | [Date | null, Date | null]) => void;
 	minDate?: Date;
 	maxDate?: Date;
@@ -58,10 +59,8 @@ const CustomDatePicker: React.FC<CustomDatePickerProps> = ({
 }) => {
 	// Default years if not provided
 	const currentYear = new Date().getFullYear();
-	const yearsList =
-		years || Array.from({ length: 5 }, (_, i) => currentYear + i);
+	const yearsList = years || Array.from({ length: 10 }, (_, i) => currentYear - 5 + i);
 
-	// Default custom header if not provided
 	const defaultHeader = ({
 		date,
 		changeYear,
@@ -71,17 +70,20 @@ const CustomDatePicker: React.FC<CustomDatePickerProps> = ({
 		prevMonthButtonDisabled,
 		nextMonthButtonDisabled,
 	}: import("react-datepicker").ReactDatePickerCustomHeaderProps): React.ReactElement => (
-		<div
-			style={{
-				margin: 10,
-				display: "flex",
-				justifyContent: "center",
-			}}
-		>
-			<button onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>
-				{"<"}
+		<div className="custom-header">
+			{/* Previous Button */}
+			<button
+				onClick={decreaseMonth}
+				disabled={prevMonthButtonDisabled}
+				aria-label="Previous Month"
+				className="nav-btn"
+			>
+				<ChevronLeft size={20} strokeWidth={2.5} />
 			</button>
+
+			{/* Year Select */}
 			<select
+				className="header-select"
 				value={date.getFullYear()}
 				onChange={({ target: { value } }) => changeYear(Number(value))}
 			>
@@ -91,7 +93,10 @@ const CustomDatePicker: React.FC<CustomDatePickerProps> = ({
 					</option>
 				))}
 			</select>
+
+			{/* Month Select */}
 			<select
+				className="header-select"
 				value={months[date.getMonth()]}
 				onChange={({ target: { value } }) => changeMonth(months.indexOf(value))}
 			>
@@ -101,11 +106,27 @@ const CustomDatePicker: React.FC<CustomDatePickerProps> = ({
 					</option>
 				))}
 			</select>
-			<button onClick={increaseMonth} disabled={nextMonthButtonDisabled}>
-				{">"}
+
+			{/* Next Button */}
+			<button
+				onClick={increaseMonth}
+				disabled={nextMonthButtonDisabled}
+				aria-label="Next Month"
+				className="nav-btn"
+			>
+				<ChevronRight size={20} strokeWidth={2.5} />
 			</button>
 		</div>
 	);
+
+	const commonProps = {
+		minDate,
+		maxDate,
+		todayButton,
+		dateFormat,
+		renderCustomHeader: renderCustomHeader || defaultHeader,
+		calendarClassName: "custom-datepicker", // For your CSS theme
+	};
 
 	if (type === "date-range-picker") {
 		return (
@@ -114,40 +135,25 @@ const CustomDatePicker: React.FC<CustomDatePickerProps> = ({
 				startDate={rangeValue ? rangeValue[0] : null}
 				endDate={rangeValue ? rangeValue[1] : null}
 				onChange={(update) => onChange(update)}
-				minDate={minDate}
-				maxDate={maxDate}
-				todayButton={todayButton}
-				dateFormat={dateFormat}
-				renderCustomHeader={renderCustomHeader || defaultHeader}
 				isClearable
 				className="tw:!w-[225px] tw:!max-w-[300px] tw:!min-w-[200px] tw:!border-neutral-300 tw:!border-2 tw:!rounded-lg tw:!p-2 tw:!text-sm"
+				{...commonProps}
 			/>
 		);
 	}
+
 	return (
 		<DatePicker
 			selected={selected}
 			onChange={(date) => onChange(date as Date | null)}
-			minDate={minDate}
-			maxDate={maxDate}
 			startDate={startDate}
 			endDate={endDate}
 			selectsStart={selectsStart}
 			selectsEnd={selectsEnd}
-			todayButton={todayButton}
-			dateFormat={dateFormat}
-			renderCustomHeader={renderCustomHeader || defaultHeader}
+			className="tw:w-full tw:border tw:border-gray-300 tw:rounded-lg tw:p-2 tw:text-sm"
+			{...commonProps}
 		/>
 	);
-
-	// Usage Example for Date Range:
-	//
-	// const [range, setRange] = useState<[Date | null, Date | null]>([null, null]);
-	// <CustomDatePicker
-	//   type="date-range-picker"
-	//   rangeValue={range}
-	//   onChange={(update) => setRange(update as [Date | null, Date | null])}
-	// />
 };
 
 export default CustomDatePicker;

@@ -7,12 +7,12 @@ import Link from "next/link";
 import { useState } from "react";
 import ModalVideo from "react-modal-video";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { H1, Span } from "@/components/typography";
 import Image from "next/image";
-import JumbotronHeader from "@/components/jumbotron-header";
 import CustomGridImage from "@/components/custom-grid-image";
-import VisionMissionCard from "@/components/vision-mission-card";
+import JumbotronHeader from "@/components/jumbotron-header";
 import StatsSection from "@/components/stats-section";
-import { H1, H3, Span } from "@/components/typography";
+import VisionMissionCard from "@/components/vision-mission-card";
 
 export default function AboutUs() {
 	const [isOpen, setOpen] = useState(false);
@@ -23,29 +23,29 @@ export default function AboutUs() {
 	};
 	const statsData = [
 		{
-			count: 2,
+			count: 45,
 			suffix: "+",
-			lines: ["Cabang", "Lokal"],
+			lines: ["Global", "Branches"],
 		},
 		{
 			count: 29,
 			suffix: "K",
-			lines: ["Destinasi", "Kolaborasi"],
+			lines: ["Destinations", "Collaboration"],
 		},
 		{
-			count: 10,
+			count: 20,
 			suffix: "+",
-			lines: ["Tahun", "Pengalaman"],
+			lines: ["Years", "Experience"],
 		},
 		{
 			count: 168,
 			suffix: "K",
-			lines: ["Pelanggan", "Bahagia"],
+			lines: ["Happy", "Customers"],
 		},
 		{
 			count: 15,
 			suffix: "M",
-			lines: ["User", "Akun"],
+			lines: ["User", "Account"],
 		},
 	];
 	return (

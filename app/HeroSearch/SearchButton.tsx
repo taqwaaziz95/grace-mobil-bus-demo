@@ -8,7 +8,7 @@ interface SearchButtonProps {
 export default function SearchButton({ category }: SearchButtonProps) {
 	return (
 		<div className="item-search bd-none d-flex justify-content-end">
-			<Link href={`/search?category=${category}`}>
+			<Link href={`/cars-list-1?category=${category}`}>
 				<button className="btn btn-brand-2 text-nowrap">
 					<svg
 						className="me-2"

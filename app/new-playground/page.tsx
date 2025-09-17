@@ -47,15 +47,6 @@ import LeftIconGridCard from "@/components/left-icon-grid-card";
 import StatsSection from "@/components/stats-section";
 import JumbotronHeader from "@/components/jumbotron-header";
 import DetailsCard, { DetailsCardList } from "@/components/details-card";
-import CarCard, { CarCardList } from "@/components/car-card";
-import BookingModal from "@/components/modal/BookingModal";
-import CheckOutList from "@/components/check-out-list";
-import {
-	CheckoutPaymentSection,
-	CountdownTimer,
-	PaymentMethodSelector,
-	PaymentSummary,
-} from "@/components/payment-components";
 
 // Define the RadioButtonColor type if not imported from the component
 type RadioButtonColor =
@@ -880,64 +871,6 @@ const CustomComponentsDemo = () => {
 		},
 		// ...more card objects
 	];
-	const [modalCar, setModalCar] = useState<any>(false);
-
-	// Add paymentMethod state
-	const [paymentMethod, setPaymentMethod] = useState<string>("");
-
-	// Add countdown state for CountdownTimer
-	const [countdown, setCountdown] = useState<number>(180);
-
-	function handleBooking(car: any): void {
-		setModalCar(car);
-	}
-
-	function handleCloseModal() {
-		setModalCar(false);
-	}
-
-	const [selected, setSelected] = useState<number[]>([]);
-	const bookings = [
-		{
-			bookingCode: "STL-2211",
-			busName: "Medium Bus",
-			busPlate: "B 2951 XYA",
-			from: "Suvana Sutera",
-			to: "Menteng",
-			dateTime: "2023-10-15 08:00 AM",
-			price: 120000,
-		},
-		{
-			bookingCode: "RNT-2591",
-			busName: "Innova Reborn",
-			busPlate: "B 4582 ABC",
-			from: "1 Bulan",
-			to: "Mobil + Supir + Tol",
-			dateTime: "2023-10-16 09:00 AM",
-			price: 14000000,
-		},
-	];
-
-	const handleSelect = (idx: number) => {
-		setSelected((prev) =>
-			prev.includes(idx) ? prev.filter((i) => i !== idx) : [...prev, idx]
-		);
-	};
-
-	const total = selected.reduce((sum, idx) => sum + bookings[idx].price, 0);
-
-	const handleCheckout = () => {
-		// Your checkout logic here
-	};
-
-	function handlePayment(): void {
-		// Example: Show a success alert and reset payment state
-		alert("Payment successful! Thank you for your booking.");
-		setPaymentMethod("");
-		setCountdown(180); // Reset countdown timer
-		// Optionally, you could clear selected bookings or trigger a modal, etc.
-	}
-
 	return (
 		<div className="tw:!space-y-4">
 			<H3>Custom Cards Components</H3>
@@ -1022,70 +955,12 @@ const CustomComponentsDemo = () => {
 					{ label: "Services", href: "#", isActive: true },
 				]}
 				isBreadCrumbs={false}
+				withBasePath={withBasePath}
 			/>
 
 			<H3>Custom Detail Card</H3>
 
 			<DetailsCardList cards={cardsDataDetails} />
-
-			<CarCardList
-				cars={[
-					{
-						id: 1,
-						name: "Toyota Avanza",
-						location: "Jakarta",
-						seats: 7,
-
-						isSupir: false,
-						carType: "MPV",
-						image: "car-1.png",
-						price: "Rp 350.000/hari",
-						description: "Mobil keluarga irit dan nyaman.",
-					},
-					{
-						id: 2,
-						name: "Honda Brio",
-						carType: "Sedan",
-						location: "Tangerang",
-						image: "car-2.png",
-						price: "Rp 300.000/hari",
-						description: "Mobil city car lincah dan ekonomis.",
-					},
-					{
-						id: 3,
-						name: "Suzuki Ertiga",
-						carType: "MPV",
-						location: "Cilegon",
-						image: "car-3.png",
-						price: "Rp 370.000/hari",
-						description: "MPV modern untuk perjalanan jauh.",
-					},
-				]}
-				handleBooking={handleBooking}
-				category={selectedCategory}
-			/>
-
-			<H3>Custom Checkout List</H3>
-
-			<CheckOutList
-				bookings={bookings}
-				selected={selected}
-				onSelect={handleSelect}
-				total={total}
-				onCheckout={handleCheckout}
-			/>
-
-			<H3>Custom Pembayaran List</H3>
-
-			<CheckoutPaymentSection
-				paymentMethod={paymentMethod}
-				setPaymentMethod={setPaymentMethod}
-				onTopup={handleCloseModal}
-				bookings={bookings}
-				totalPrice={total}
-				countdown={countdown}
-				onPayment={handlePayment}
-			/>
 
 			<H3>Custom Banner / Banner Divider</H3>
 
@@ -1120,14 +995,6 @@ const CustomComponentsDemo = () => {
 				lokasiKantorTitle="Your Office Location"
 				copyright="© 2025 Gracetrans. All rights reserved."
 			/>
-
-			{modalCar && (
-				<BookingModal
-					car={modalCar}
-					onClose={handleCloseModal}
-					handleBooking={() => handleBooking(modalCar)}
-				/>
-			)}
 		</div>
 	);
 };

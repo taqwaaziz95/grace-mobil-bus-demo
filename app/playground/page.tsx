@@ -447,14 +447,14 @@ const PlaygroundPage: React.FC = () => {
 					<Buttonx variant="primary">Go somewhere</Buttonx>
 				</Cardx.Body>
 			</Cardx> */}
-			{/* <Cardx
+			<Cardx
 				imageSrc="/assets/imgs/dummy/cth-bis.jpg"
 				title="Card Title"
 				text="Some quick example text to build on the card title and make up the bulk of the card's content."
 				buttonText="Go somewhere"
 				onButtonClick={() => alert("Button clicked!")}
 				style={{ width: "18rem", height: "24rem" }}
-			/> */}
+			/>
 		</div>
 	);
 };

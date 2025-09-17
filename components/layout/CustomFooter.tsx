@@ -39,7 +39,7 @@ const defaultKontak = {
 
 export default function CustomFooter({
 	logoSrc = withBasePath("/assets/imgs/template/grace-logo.png"),
-	mission = "Menjadi perusahaan jasa transportasi dan travel terdepan dan terbesar di Indonesia dengan kualitas pelayanan terbaik dengan prioritas utama adalah keselamatan, kenyamanan, dan keamanan dari konsumen",
+	mission = "Kami adalah perusahaan transportasi dan travel terkemuka di Indonesia yang mengutamakan pelayanan terbaik, keselamatan, kenyamanan, dan keamanan pelanggan.",
 	androidImgSrc = withBasePath("/assets/imgs/download_android.png"),
 	informasiLinks = defaultLinks,
 	kontak = defaultKontak,

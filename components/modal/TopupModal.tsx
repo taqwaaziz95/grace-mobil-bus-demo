@@ -4,68 +4,54 @@ import { useRouter } from "next/navigation";
 import moment from "moment";
 
 interface TopupModalProps {
-  onClose: () => void;
-  onTopupConfirm: (amount: number) => void;
+	car: any;
+	onClose: () => void;
+	handleBooking: () => void;
 }
 
+const TopupModal: React.FC<TopupModalProps> = ({ onClose }) => {
+	return (
+		<div className="modal">
+			<div className="modal-content">
+				<label>Topup Wallet</label>
 
-const TopupModal: React.FC<TopupModalProps> = ({ onClose, onTopupConfirm }) => {
+				<button className="btn btn-gray tw:!mt-4" onClick={null}>
+					Rp50.000
+				</button>
 
-  const [selectedAmount, setSelectedAmount] = useState<number | null>(null);
+				<button className="btn btn-gray tw:!mt-4" onClick={null}>
+					Rp100.000
+				</button>
 
-  const amounts = [50000, 100000, 150000, 200000, 300000];
+				<button className="btn btn-gray tw:!mt-4" onClick={null}>
+					Rp150.000
+				</button>
 
-  return (
-    <div className="modal">
-      <div className="modal-content">
-        <div className="">
-          {/* Header */}
-          <h3 className="tw:!text-xl tw:!font-bold tw:!mb-4 tw:!text-center">
-            Topup Wallet
-          </h3>
+				<button className="btn btn-gray tw:!mt-4" onClick={null}>
+					Rp200.000
+				</button>
 
-          {/* Amount Options */}
-          <div className="tw:!grid tw:!grid-cols-2 tw:!gap-4 tw:!mb-6">
-            {amounts.map((amount) => (
-              <button
-                key={amount}
-                onClick={() => setSelectedAmount(amount)}
-                className={`tw:!w-full tw:!py-3 tw:!rounded-lg tw:!border tw:!font-semibold tw:!transition-all ${selectedAmount === amount
-                  ? "tw:!border-[#2A9FD6] tw:!bg-[#EAF6FB] tw:!text-[#2A9FD6]"
-                  : "tw:!border-gray-300 hover:tw:!bg-gray-50"
-                  }`}
-              >
-                Rp{amount.toLocaleString("id-ID")}
-              </button>
-            ))}
-          </div>
+				<button className="btn btn-gray tw:!mt-4" onClick={null}>
+					Rp300.000
+				</button>
 
-          {/* Actions */}
-          <div className="tw:!flex tw:!justify-between tw:!items-center">
-            <button
-              onClick={onClose}
-              className="tw:!px-5 tw:!py-2 tw:!bg-gray-200 hover:tw:!bg-gray-300 tw:!rounded-lg tw:!font-medium"
-            >
-              Tutup
-            </button>
-            <button
-              onClick={() => {
-                if (selectedAmount) onTopupConfirm(selectedAmount);
-                onClose()
-              }}
-              disabled={!selectedAmount}
-              className={`tw:!px-6 tw:!py-2 tw:!rounded-lg tw:!font-semibold tw:!transition-all ${selectedAmount
-                ? "tw:!bg-[#2A9FD6] tw:!text-white hover:tw:!bg-[#238bbd]"
-                : "tw:!bg-gray-300 tw:!text-gray-500 tw:!cursor-not-allowed"
-                }`}
-            >
-              Bayar
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+				<div className="tw:!flex tw:!justify-between tw:!items-center tw:!mt-6">
+					<button
+						onClick={onClose}
+						className="tw:!bg-black tw:!text-white tw:!font-semibold tw:!py-2 tw:!px-5 tw:!rounded-lg tw:!hover:bg-gray-800 tw:!transition"
+					>
+						Tutup
+					</button>
+					<button
+						onClick={null}
+						className="tw:!bg-black tw:!text-white tw:!font-semibold tw:!py-2 tw:!px-5 tw:!rounded-lg tw:!hover:bg-gray-800 tw:!transition"
+					>
+						Bayar
+					</button>
+				</div>
+			</div>
+		</div>
+	);
 };
 
 export default TopupModal;

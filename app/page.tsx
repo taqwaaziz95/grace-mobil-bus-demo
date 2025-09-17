@@ -65,6 +65,24 @@ const features = [
 		description:
 			"Seluruh unit memiliki identitas kendaraan yang sah dan tertib pajak sesuai peraturan pemerintah.",
 	},
+	{
+		icon: <FileText size={24} />,
+		title: "Kelengkapan Surat Kendaraan",
+		description:
+			"Setiap kendaraan memiliki dokumen resmi dan pajak yang tertib sesuai regulasi.",
+	},
+	{
+		icon: <FileText size={24} />,
+		title: "Kelengkapan Surat Kendaraan",
+		description:
+			"Setiap kendaraan memiliki dokumen resmi dan pajak yang tertib sesuai regulasi.",
+	},
+	{
+		icon: <FileText size={24} />,
+		title: "Kelengkapan Surat Kendaraan",
+		description:
+			"Setiap kendaraan memiliki dokumen resmi dan pajak yang tertib sesuai regulasi.",
+	},
 ];
 
 const newsCardDummy: BlogCardProps[] = [

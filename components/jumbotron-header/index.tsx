@@ -1,7 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { H1, H2, Span } from "../typography";
-import { withBasePath } from "@/lib/basePath";
 
 export interface BreadcrumbItem {
 	label: string;
@@ -14,6 +12,7 @@ interface JumbotronHeaderProps {
 	title: string;
 	subtitle: string;
 	breadcrumbs?: BreadcrumbItem[];
+	withBasePath?: (path: string) => string;
 	isBreadCrumbs?: boolean;
 }
 
@@ -22,6 +21,7 @@ const JumbotronHeader = ({
 	title,
 	subtitle,
 	breadcrumbs = [],
+	withBasePath = (p) => p,
 	isBreadCrumbs = true,
 }: JumbotronHeaderProps) => (
 	<div className="page-header pt-30 background-body">
@@ -34,22 +34,22 @@ const JumbotronHeader = ({
 				/>
 			</div>
 			<div className="container position-absolute z-1 top-50 start-50 translate-middle">
-				<H1 className="text-white">{title}</H1>
-				<Span className="text-white text-xl-medium">{subtitle}</Span>
+				<h2 className="text-white">{title}</h2>
+				<span className="text-white text-xl-medium">{subtitle}</span>
 			</div>
 			{isBreadCrumbs && (
 				<div className="background-body position-absolute z-1 top-100 start-50 translate-middle px-3 py-2 rounded-12 border d-flex gap-3 @@navigation-page">
 					{breadcrumbs.map((item, idx) => (
 						<>
 							{idx > 0 && (
-								<>
+								<span>
 									<Image
 										src={withBasePath("/assets/imgs/icons/right.svg")}
-										alt=">"
+										alt="Gracetrans"
 										height={24}
 										width={24}
 									/>
-								</>
+								</span>
 							)}
 							<Link
 								key={item.label + idx}

@@ -95,7 +95,7 @@ export default function DateRangePicker({
 				category !== "bulanan" &&
 				category !== "harian" && (
 					<div className="item-search item-search-3">
-						<label>Sampai Tanggaxl</label>
+						<label>Sampai Tanggal</label>
 						<DatePicker
 							renderCustomHeader={({
 								date,

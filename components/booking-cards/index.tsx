@@ -126,7 +126,7 @@ export default function BookingCards({ category = "" }: BookingCardsProps) {
 	const getYear = (date: Date) => moment(date).format("YYYY");
 
 	return (
-		<div className="box-bottom-search background-card tw:!z-20">
+		<div className="box-bottom-search background-card">
 			{(category === "bulanan" || category === "harian") && (
 				<SelectInput
 					label="Durasi"
@@ -327,7 +327,7 @@ export default function BookingCards({ category = "" }: BookingCardsProps) {
 			)}
 
 			<div className="item-search bd-none d-flex justify-content-end">
-				<Link href={`/search?category=${category}`}>
+				<Link href={`/cars-list-1?category=${category}`}>
 					<button className="btn btn-brand-2 text-nowrap">
 						<svg
 							className="me-2"

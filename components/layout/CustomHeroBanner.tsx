@@ -12,24 +12,18 @@ export interface CustomHeroBannerProps {
 	shuttleLabel?: string;
 	rentHref?: string;
 	rentLabel?: string;
-	disableKontak?: boolean;
-	disableShuttle?: boolean;
-	disableRent?: boolean;
 }
 
 export default function CustomHeroBanner({
-	title,
-	subtitle,
-	backgroundImage,
-	kontakHref,
-	kontakLabel,
-	shuttleHref,
-	shuttleLabel,
-	rentHref,
-	rentLabel,
-	disableKontak = false,
-	disableShuttle = false,
-	disableRent = false,
+	title = "Rencanakan Perjalanan",
+	subtitle = "Tanpa Ribet, Pesan Sekarang!",
+	backgroundImage = "/assets/imgs/cta/cta-2/background-2.png",
+	kontakHref = "#",
+	kontakLabel = "Kontak Kami",
+	shuttleHref = "/book-shuttle",
+	shuttleLabel = "Pesan Shuttle",
+	rentHref = "/sewa-mobil",
+	rentLabel = "Sewa Mobil",
 }: CustomHeroBannerProps) {
 	return (
 		<section
@@ -48,37 +42,31 @@ export default function CustomHeroBanner({
 				</div>
 				<div className="tw:!mt-6 tw:!flex tw:!flex-wrap tw:!gap-3 tw:!text-center">
 					{/* Kontak Kami */}
-					{!disableKontak && kontakHref && (
-						<Link
-							href={kontakHref}
-							className="tw:!inline-flex tw:!items-center tw:!bg-white tw:!text-sky-600 tw:!border tw:!border-sky-500 tw:!rounded-full tw:!px-5 tw:!py-2 tw:!text-sm tw:!font-semibold tw:hover:!bg-sky-500 tw:hover:!text-white tw:!transition"
-						>
-							{kontakLabel}
-							<ArrowRight className="tw:!ml-2 tw:!w-4 tw:!h-4" />
-						</Link>
-					)}
+					<Link
+						href={kontakHref}
+						className="tw:!inline-flex tw:!items-center tw:!bg-white tw:!text-sky-600 tw:!border tw:!border-sky-500 tw:!rounded-full tw:!px-5 tw:!py-2 tw:!text-sm tw:!font-semibold tw:hover:!bg-sky-500 tw:hover:!text-white tw:!transition"
+					>
+						{kontakLabel}
+						<ArrowRight className="tw:!ml-2 tw:!w-4 tw:!h-4" />
+					</Link>
 
 					{/* Book Shuttle */}
-					{!disableShuttle && shuttleHref && (
-						<a
-							href={shuttleHref}
-							className="tw:!inline-flex tw:!items-center tw:!bg-sky-500 tw:!text-white tw:!px-5 tw:!py-2 tw:!rounded-full tw:!text-sm tw:!font-semibold tw:hover:!bg-sky-600 tw:!transition"
-						>
-							{shuttleLabel}
-							<ArrowRight className="tw:!ml-2 tw:!w-4 tw:!h-4" />
-						</a>
-					)}
+					<a
+						href={shuttleHref}
+						className="tw:!inline-flex tw:!items-center tw:!bg-sky-500 tw:!text-white tw:!px-5 tw:!py-2 tw:!rounded-full tw:!text-sm tw:!font-semibold tw:hover:!bg-sky-600 tw:!transition"
+					>
+						{shuttleLabel}
+						<ArrowRight className="tw:!ml-2 tw:!w-4 tw:!h-4" />
+					</a>
 
 					{/* Rent Car */}
-					{!disableRent && rentHref && (
-						<a
-							href={rentHref}
-							className="tw:!inline-flex tw:!items-center tw:!bg-yellow-400 tw:!text-black tw:!px-5 tw:!py-2 tw:!rounded-full tw:!text-sm tw:!font-semibold tw:hover:!bg-yellow-300 tw:!transition"
-						>
-							{rentLabel}
-							<ArrowRight className="tw:!ml-2 tw:!w-4 tw:!h-4" />
-						</a>
-					)}
+					<a
+						href={rentHref}
+						className="tw:!inline-flex tw:!items-center tw:!bg-yellow-400 tw:!text-black tw:!px-5 tw:!py-2 tw:!rounded-full tw:!text-sm tw:!font-semibold tw:hover:!bg-yellow-300 tw:!transition"
+					>
+						{rentLabel}
+						<ArrowRight className="tw:!ml-2 tw:!w-4 tw:!h-4" />
+					</a>
 				</div>
 				{/* No right content; image is already the background */}
 			</div>

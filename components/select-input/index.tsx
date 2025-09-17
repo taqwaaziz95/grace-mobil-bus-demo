@@ -5,7 +5,7 @@ import { ChevronDown, Lock } from "lucide-react";
 export interface SelectInputProps {
 	label?: string;
 	value: string;
-	options: { label: string; value: string; disabled?: boolean }[];
+	options?: { label: string; value: string; disabled?: boolean }[];
 	onChange: (value: string) => void;
 	className?: string;
 	labelClassName?: string;
@@ -18,7 +18,7 @@ export interface SelectInputProps {
 const SelectInput: React.FC<SelectInputProps> = ({
 	label,
 	value,
-	options,
+	options = [],
 	onChange,
 	className = "",
 	labelClassName = "",
